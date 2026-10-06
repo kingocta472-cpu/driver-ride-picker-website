@@ -85,7 +85,10 @@ line-height:1.05;
 margin:18px 0
 }
 
-.hero p{font-size:18px;color:#b9c6d8}
+.hero p{
+font-size:18px;
+color:#b9c6d8
+}
 
 .buttons{
 display:flex;
@@ -107,9 +110,11 @@ background:#1688ff;
 border-color:#1688ff
 }
 
-.secondary{background:#0c1c30}
+.secondary{
+background:#0c1c30
+}
 
-.hero-card,.card,.price,.setup-card{
+.hero-card,.card,.price,.setup-card,.video-card{
 background:#0b1a2d;
 border:1px solid #1e3853;
 border-radius:20px;
@@ -125,9 +130,11 @@ object-fit:cover;
 margin:0 auto 18px
 }
 
-.hero-card{text-align:center}
+.hero-card{
+text-align:center
+}
 
-.hero-card p,.card p,.price p,.policy p,.policy li,.setup-card p{
+.hero-card p,.card p,.price p,.policy p,.policy li,.setup-card p,.video-card p{
 color:#aebdd0
 }
 
@@ -155,9 +162,13 @@ grid-template-columns:repeat(3,1fr);
 gap:18px
 }
 
-.icon{font-size:30px}
+.icon{
+font-size:30px
+}
 
-.card h3{margin:8px 0}
+.card h3{
+margin:8px 0
+}
 
 .steps{
 max-width:800px;
@@ -184,7 +195,9 @@ place-items:center;
 font-weight:800
 }
 
-.steps{counter-reset:step}
+.steps{
+counter-reset:step
+}
 
 .pricing{
 display:grid;
@@ -192,13 +205,16 @@ grid-template-columns:repeat(3,1fr);
 gap:18px
 }
 
-.price{text-align:center}
+.price{
+text-align:center
+}
 
 .price strong{
 display:block;
 font-size:30px;
 margin:10px 0
 }
+
 
 /* SETTINGS SECTION */
 
@@ -239,21 +255,61 @@ font-size:20px
 margin:0
 }
 
+
+/* VIDEO SECTION */
+
+.video-card{
+max-width:850px;
+margin:30px auto 0;
+text-align:center;
+padding:20px
+}
+
+.video-wrapper{
+position:relative;
+width:100%;
+padding-bottom:177.78%;
+height:0;
+overflow:hidden;
+border-radius:16px;
+background:#050d18;
+margin-bottom:22px
+}
+
+.video-wrapper iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:0
+}
+
+.video-button{
+margin-top:8px
+}
+
 .email-link{
 color:#62b0ff;
 font-weight:700
 }
 
-.policy{max-width:900px}
+.policy{
+max-width:900px
+}
 
 .policy h3{
 margin:25px 0 7px;
 color:#dce9f8
 }
 
-.policy ul{padding-left:22px}
+.policy ul{
+padding-left:22px
+}
 
-.contact{text-align:center}
+.contact{
+text-align:center
+}
 
 .small{
 font-size:13px;
@@ -276,12 +332,24 @@ color:#8193a9
 grid-template-columns:1fr
 }
 
-.links{display:none}
+.links{
+display:none
+}
 
-.hero{padding:55px 0}
+.hero{
+padding:55px 0
+}
 
 .setup-card img{
 max-height:none
+}
+
+.video-card{
+padding:15px
+}
+
+.video-wrapper{
+padding-bottom:177.78%
 }
 
 }
@@ -291,35 +359,54 @@ max-height:none
 <body>
 
 <header>
+
 <div class="container nav">
 
 <a class="brand" href="#home">
-<img src="https://i.ibb.co/k244sKhx/IMG-20260929-204501.jpg" alt="Driver Ride Picker logo">
+
+<img
+src="https://i.ibb.co/k244sKhx/IMG-20260929-204501.jpg"
+alt="Driver Ride Picker logo"
+>
+
 <span>Driver Ride Picker</span>
+
 </a>
 
 <nav class="links">
+
 <a href="#features">Features</a>
 <a href="#settings">Settings</a>
+<a href="#setup-video">Setup Video</a>
 <a href="#credits">Credits</a>
 <a href="#about">About</a>
 <a href="#privacy">Privacy</a>
 <a href="#terms">Terms</a>
 <a href="#contact">Contact</a>
+
 </nav>
 
 </div>
+
 </header>
+
 
 <main id="home">
 
+
 <section class="hero">
+
 <div class="container hero-grid">
 
 <div>
-<span class="badge">Smart Ride Assistance for Drivers</span>
 
-<h1>Choose better rides. Work smarter.</h1>
+<span class="badge">
+Smart Ride Assistance for Drivers
+</span>
+
+<h1>
+Choose better rides. Work smarter.
+</h1>
 
 <p>
 Driver Ride Picker helps drivers organize ride preferences using fare,
@@ -327,17 +414,36 @@ pickup distance, trip distance, vehicle type and preferred-area filters.
 </p>
 
 <div class="buttons">
-<a class="btn primary" href="#download">Download App</a>
-<a class="btn secondary" href="#features">Explore Features</a>
+
+<a
+class="btn primary"
+href="#download"
+>
+Download App
+</a>
+
+<a
+class="btn secondary"
+href="#features"
+>
+Explore Features
+</a>
+
 </div>
 
 </div>
+
 
 <div class="hero-card">
 
-<img src="https://i.ibb.co/k244sKhx/IMG-20260929-204501.jpg" alt="Driver Ride Picker">
+<img
+src="https://i.ibb.co/k244sKhx/IMG-20260929-204501.jpg"
+alt="Driver Ride Picker"
+>
 
-<h2>Driver Ride Picker</h2>
+<h2>
+Driver Ride Picker
+</h2>
 
 <p>
 Simple tools for drivers to manage ride preferences and work more efficiently.
@@ -346,6 +452,7 @@ Simple tools for drivers to manage ride preferences and work more efficiently.
 </div>
 
 </div>
+
 </section>
 
 
@@ -353,7 +460,9 @@ Simple tools for drivers to manage ride preferences and work more efficiently.
 
 <div class="container">
 
-<h2 class="title">Features</h2>
+<h2 class="title">
+Features
+</h2>
 
 <p class="sub">
 Built around practical ride-selection preferences for drivers.
@@ -361,65 +470,130 @@ Built around practical ride-selection preferences for drivers.
 
 <div class="grid">
 
+
 <div class="card">
+
 <div class="icon">💰</div>
-<h3>Fare Filters</h3>
-<p>Set a minimum fare preference before considering a ride.</p>
+
+<h3>
+Fare Filters
+</h3>
+
+<p>
+Set a minimum fare preference before considering a ride.
+</p>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">📍</div>
-<h3>Pickup Distance</h3>
-<p>Use pickup-distance preferences to avoid unwanted long pickups.</p>
+
+<h3>
+Pickup Distance
+</h3>
+
+<p>
+Use pickup-distance preferences to avoid unwanted long pickups.
+</p>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">🗺️</div>
-<h3>Preferred Areas</h3>
-<p>Choose target areas and blocked areas according to your work plan.</p>
+
+<h3>
+Preferred Areas
+</h3>
+
+<p>
+Choose target areas and blocked areas according to your work plan.
+</p>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">🚗</div>
-<h3>Vehicle Type</h3>
-<p>Configure preferences for supported vehicle categories.</p>
+
+<h3>
+Vehicle Type
+</h3>
+
+<p>
+Configure preferences for supported vehicle categories.
+</p>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">⭐</div>
-<h3>Ride Scoring</h3>
-<p>Use scoring to prioritize rides matching your selected rules.</p>
+
+<h3>
+Ride Scoring
+</h3>
+
+<p>
+Use scoring to prioritize rides matching your selected rules.
+</p>
+
 </div>
+
 
 <div class="card">
+
 <div class="icon">🎁</div>
-<h3>Referral Credits</h3>
-<p>Qualifying successful referrals can earn additional credits.</p>
+
+<h3>
+Referral Credits
+</h3>
+
+<p>
+Qualifying successful referrals can earn additional credits.
+</p>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
 
-<!-- IMPORTANT SETTINGS SECTION -->
+<!-- IMPORTANT SETTINGS -->
 
 <section id="settings">
 
 <div class="container">
 
-<h2 class="title">Important Settings</h2>
+<h2 class="title">
+Important Settings
+</h2>
 
 <p class="sub">
 For the best Driver Ride Picker background performance, please enable
 the following settings on your Android device.
 </p>
 
+
 <div class="settings-grid">
+
 
 <div class="setup-card">
 
-<a href="https://ibb.co/383ssry" target="_blank" rel="noopener">
+<a
+href="https://ibb.co/383ssry"
+target="_blank"
+rel="noopener"
+>
 
 <img
 src="https://i.ibb.co/yM9RRfn/file-000000008c6c82118a761f779082d0b7.png"
@@ -429,7 +603,9 @@ loading="lazy"
 
 </a>
 
-<h3>1. Accessibility Service</h3>
+<h3>
+1. Accessibility Service
+</h3>
 
 <p>
 Enable Driver Ride Picker in Android Accessibility settings so the app
@@ -442,7 +618,11 @@ ride-selection assistance functions.
 
 <div class="setup-card">
 
-<a href="https://ibb.co/0pXk8GqG" target="_blank" rel="noopener">
+<a
+href="https://ibb.co/0pXk8GqG"
+target="_blank"
+rel="noopener"
+>
 
 <img
 src="https://i.ibb.co/j95dBrhr/file-00000000b2648211b645ad92457113af.png"
@@ -452,7 +632,9 @@ loading="lazy"
 
 </a>
 
-<h3>2. Display Over Other Apps</h3>
+<h3>
+2. Display Over Other Apps
+</h3>
 
 <p>
 Allow Driver Ride Picker to display over other apps so the ride
@@ -465,7 +647,11 @@ ride applications.
 
 <div class="setup-card">
 
-<a href="https://ibb.co/Tx1qcFn3" target="_blank" rel="noopener">
+<a
+href="https://ibb.co/Tx1qcFn3"
+target="_blank"
+rel="noopener"
+>
 
 <img
 src="https://i.ibb.co/1tMJZwpW/file-0000000038e48211a7fd06ee59854ca5.png"
@@ -475,7 +661,9 @@ loading="lazy"
 
 </a>
 
-<h3>3. Background Battery Usage</h3>
+<h3>
+3. Background Battery Usage
+</h3>
 
 <p>
 Allow Driver Ride Picker to run in the background without restrictive
@@ -484,9 +672,67 @@ battery-saving limits so background ride detection can work more reliably.
 
 </div>
 
+
 </div>
 
 </div>
+
+</section>
+
+
+<!-- SETUP VIDEO -->
+
+<section id="setup-video">
+
+<div class="container">
+
+<h2 class="title">
+How to Set Up Driver Ride Picker
+</h2>
+
+<p class="sub">
+Watch the setup video to learn how to enable the important Android
+settings required for Driver Ride Picker.
+</p>
+
+
+<div class="video-card">
+
+<div class="video-wrapper">
+
+<iframe
+src="https://www.youtube.com/embed/EnVAL30d59E"
+title="How to Set Up Driver Ride Picker"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+<h3>
+Driver Ride Picker Setup Guide
+</h3>
+
+<p>
+This video explains the important settings needed for the best
+background operation of Driver Ride Picker.
+</p>
+
+
+<a
+class="btn primary video-button"
+href="https://youtube.com/shorts/EnVAL30d59E?si=G4-fvTSZrTx0-07W"
+target="_blank"
+rel="noopener"
+>
+▶ Watch Setup Video on YouTube
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 
@@ -494,40 +740,69 @@ battery-saving limits so background ride detection can work more reliably.
 
 <div class="container">
 
-<h2 class="title">How It Works</h2>
+<h2 class="title">
+How It Works
+</h2>
 
 <div class="steps">
 
+
 <div class="step">
-<h3>Create your driver account</h3>
+
+<h3>
+Create your driver account
+</h3>
+
 <p>
 Register using your mobile number and your own 6-digit PIN.
 </p>
+
 </div>
 
+
 <div class="step">
-<h3>Set your ride preferences</h3>
+
+<h3>
+Set your ride preferences
+</h3>
+
 <p>
 Choose fare, pickup distance, areas, vehicle and other filters.
 </p>
+
 </div>
 
+
 <div class="step">
-<h3>Use your available credits</h3>
+
+<h3>
+Use your available credits
+</h3>
+
 <p>
 Credits are used according to the service's current credit rules.
 </p>
+
 </div>
 
+
 <div class="step">
-<h3>Recharge when needed</h3>
+
+<h3>
+Recharge when needed
+</h3>
+
 <p>
 Recharge credits when your balance is low.
 </p>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
 
@@ -535,7 +810,9 @@ Recharge credits when your balance is low.
 
 <div class="container">
 
-<h2 class="title">Credits & Pricing</h2>
+<h2 class="title">
+Credits & Pricing
+</h2>
 
 <p class="sub">
 Simple credit-based access.
@@ -543,58 +820,98 @@ Simple credit-based access.
 
 <div class="pricing">
 
+
 <div class="price">
-<h3>Free Trial</h3>
-<strong>10 Credits</strong>
+
+<h3>
+Free Trial
+</h3>
+
+<strong>
+10 Credits
+</strong>
+
 <p>
 Available to eligible new drivers subject to account and device security checks.
 </p>
+
 </div>
 
+
 <div class="price">
-<h3>Recharge</h3>
-<strong>₹1 = 1 Credit</strong>
+
+<h3>
+Recharge
+</h3>
+
+<strong>
+₹1 = 1 Credit
+</strong>
+
 <p>
 Minimum recharge amount: ₹10.
 </p>
+
 </div>
 
+
 <div class="price">
-<h3>Referral</h3>
-<strong>+5 Credits</strong>
+
+<h3>
+Referral
+</h3>
+
+<strong>
++5 Credits
+</strong>
+
 <p>
 Qualifying successful referrals may receive 5 bonus credits after verification.
 </p>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
+
+<!-- DOWNLOAD -->
 
 <section id="download">
 
 <div class="container contact">
 
-<h2 class="title">Download Driver Ride Picker</h2>
+<h2 class="title">
+Download Driver Ride Picker
+</h2>
 
 <p class="sub">
-The public APK download link will be connected here after the APK is hosted.
+Download the official Driver Ride Picker v1.0.1 APK.
 </p>
+
 
 <a
 class="btn primary"
-href="#"
-onclick="alert('The public APK download link will be available soon.');return false;"
+href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.0.1/DriverRidePicker-1.0.1.apk"
+target="_blank"
+rel="noopener"
+download
 >
-Download APK
+Download APK v1.0.1
 </a>
 
+
 <p class="small">
-Install APK files only from the official Driver Ride Picker download source.
+Official Driver Ride Picker release. Install APK files only from the
+official Driver Ride Picker download source.
 </p>
 
 </div>
+
 </section>
 
 
@@ -602,7 +919,9 @@ Install APK files only from the official Driver Ride Picker download source.
 
 <div class="container policy">
 
-<h2 class="title">About Driver Ride Picker</h2>
+<h2 class="title">
+About Driver Ride Picker
+</h2>
 
 <p>
 Driver Ride Picker is a driver-focused utility designed to help organize
@@ -617,6 +936,7 @@ a specific number of rides, income, acceptance rate or earnings.
 </p>
 
 </div>
+
 </section>
 
 
@@ -624,11 +944,20 @@ a specific number of rides, income, acceptance rate or earnings.
 
 <div class="container policy">
 
-<h2 class="title">Privacy Policy</h2>
+<h2 class="title">
+Privacy Policy
+</h2>
 
-<p><strong>Last updated: October 4, 2026</strong></p>
+<p>
+<strong>
+Last updated: October 4, 2026
+</strong>
+</p>
 
-<h3>1. Information We Collect</h3>
+
+<h3>
+1. Information We Collect
+</h3>
 
 <p>
 Depending on use, we may process your mobile number, account and
@@ -636,60 +965,103 @@ authentication information, device or installation identifiers, ride
 preferences, credits, referral information and transaction information.
 </p>
 
-<h3>2. PIN Security</h3>
+
+<h3>
+2. PIN Security
+</h3>
 
 <p>
 Your 6-digit account PIN is intended to be stored on our server in a
 protected hashed form rather than as plain text.
 </p>
 
-<h3>3. Device and Installation Security</h3>
+
+<h3>
+3. Device and Installation Security
+</h3>
 
 <p>
 Device and installation identifiers may be used for account security,
 abuse prevention, trial-credit protection and fraud detection.
 </p>
 
-<h3>4. Location</h3>
+
+<h3>
+4. Location
+</h3>
 
 <p>
 Location information may be used when you grant permission and a feature
 needs it, such as location-based work-zone functionality.
 </p>
 
-<h3>5. Payments</h3>
+
+<h3>
+5. Payments
+</h3>
 
 <p>
 Payments may be processed through Razorpay or other payment providers.
 Their own policies may also apply.
 </p>
 
-<h3>6. How Information Is Used</h3>
+
+<h3>
+6. How Information Is Used
+</h3>
 
 <ul>
-<li>Account creation and authentication</li>
-<li>Providing the service</li>
-<li>Managing credits and referrals</li>
-<li>Preventing abuse and fraud</li>
-<li>Security, troubleshooting and support</li>
-<li>Improving service reliability and features</li>
+
+<li>
+Account creation and authentication
+</li>
+
+<li>
+Providing the service
+</li>
+
+<li>
+Managing credits and referrals
+</li>
+
+<li>
+Preventing abuse and fraud
+</li>
+
+<li>
+Security, troubleshooting and support
+</li>
+
+<li>
+Improving service reliability and features
+</li>
+
 </ul>
 
-<h3>7. Third-Party Services</h3>
+
+<h3>
+7. Third-Party Services
+</h3>
 
 <p>
 The service may use third-party providers for hosting, authentication,
 payments, maps or other technical functions.
 </p>
 
-<h3>8. Data Security</h3>
+
+<h3>
+8. Data Security
+</h3>
 
 <p>
 Reasonable technical and organizational measures are used to protect
 information. No internet service can guarantee absolute security.
 </p>
 
-<h3>9. Policy Changes</h3>
+
+<h3>
+9. Policy Changes
+</h3>
 
 <p>
 This policy may be updated from time to time. The latest version will
@@ -697,6 +1069,7 @@ be published on this page.
 </p>
 
 </div>
+
 </section>
 
 
@@ -704,29 +1077,43 @@ be published on this page.
 
 <div class="container policy">
 
-<h2 class="title">Terms & Conditions</h2>
+<h2 class="title">
+Terms & Conditions
+</h2>
 
-<h3>1. Acceptance</h3>
+
+<h3>
+1. Acceptance
+</h3>
 
 <p>
 By using Driver Ride Picker, you agree to these Terms & Conditions and
 applicable laws and platform rules.
 </p>
 
-<h3>2. Account</h3>
+
+<h3>
+2. Account
+</h3>
 
 <p>
 You are responsible for keeping your mobile number and 6-digit PIN secure.
 </p>
 
-<h3>3. Credits</h3>
+
+<h3>
+3. Credits
+</h3>
 
 <p>
 Credits are digital service credits used within Driver Ride Picker
 according to current service rules. Credits have no cash value.
 </p>
 
-<h3>4. Referral Credits</h3>
+
+<h3>
+4. Referral Credits
+</h3>
 
 <p>
 Referral bonuses are subject to verification. Fraudulent, duplicate,
@@ -734,14 +1121,20 @@ self-referral or abusive activity may result in cancellation of bonus
 credits or account restrictions.
 </p>
 
-<h3>5. Prohibited Use</h3>
+
+<h3>
+5. Prohibited Use
+</h3>
 
 <p>
 You must not use the service for unlawful activity, fraud, abuse,
 unauthorized access, security bypasses or interference with third-party systems.
 </p>
 
-<h3>6. Third-Party Platforms</h3>
+
+<h3>
+6. Third-Party Platforms
+</h3>
 
 <p>
 Driver Ride Picker is an independent service. It is not an official
@@ -749,7 +1142,10 @@ application of Namma Yatri, Rapido, Uber or another third-party platform
 unless expressly authorized. Users must follow applicable third-party rules.
 </p>
 
-<h3>7. Availability</h3>
+
+<h3>
+7. Availability
+</h3>
 
 <p>
 Availability may be affected by internet, hosting, device settings,
@@ -757,7 +1153,10 @@ third-party services, maintenance or technical conditions. Continuous
 availability is not guaranteed.
 </p>
 
-<h3>8. Changes and Suspension</h3>
+
+<h3>
+8. Changes and Suspension
+</h3>
 
 <p>
 Features, credit rules, pricing and availability may change when reasonably
@@ -765,6 +1164,7 @@ required. Accounts may be restricted for abuse, fraud or violation of these term
 </p>
 
 </div>
+
 </section>
 
 
@@ -772,29 +1172,43 @@ required. Accounts may be restricted for abuse, fraud or violation of these term
 
 <div class="container policy">
 
-<h2 class="title">Refund & Cancellation Policy</h2>
+<h2 class="title">
+Refund & Cancellation Policy
+</h2>
 
-<h3>1. Digital Credits</h3>
+
+<h3>
+1. Digital Credits
+</h3>
 
 <p>
 Recharge amounts purchase digital service credits. Minimum recharge amount is ₹10.
 </p>
 
-<h3>2. Successful Recharge</h3>
+
+<h3>
+2. Successful Recharge
+</h3>
 
 <p>
 Once a recharge is successfully completed and credits are credited,
 cancellation may not be available because the service is digital.
 </p>
 
-<h3>3. Failed or Duplicate Transactions</h3>
+
+<h3>
+3. Failed or Duplicate Transactions
+</h3>
 
 <p>
 If payment is debited but recharge fails, or a duplicate transaction occurs,
 it will be reviewed according to payment-provider confirmation and applicable rules.
 </p>
 
-<h3>4. Refund Requests</h3>
+
+<h3>
+4. Refund Requests
+</h3>
 
 <p>
 Refund requests may be reviewed individually. Official support details
@@ -802,6 +1216,7 @@ will be published before public launch.
 </p>
 
 </div>
+
 </section>
 
 
@@ -809,7 +1224,9 @@ will be published before public launch.
 
 <div class="container policy">
 
-<h2 class="title">Disclaimer</h2>
+<h2 class="title">
+Disclaimer
+</h2>
 
 <p>
 Driver Ride Picker is an independent driver utility. It does not guarantee
@@ -820,6 +1237,7 @@ third-party platform terms.
 </p>
 
 </div>
+
 </section>
 
 
@@ -827,10 +1245,14 @@ third-party platform terms.
 
 <div class="container contact">
 
-<h2 class="title">Contact</h2>
+<h2 class="title">
+Contact
+</h2>
 
 <p class="sub">
+
 For official Driver Ride Picker support, contact us at:
+
 <br><br>
 
 <a
@@ -847,7 +1269,9 @@ Please do not use unofficial contacts claiming to represent Driver Ride Picker.
 </p>
 
 </div>
+
 </section>
+
 
 </main>
 
@@ -860,19 +1284,38 @@ Please do not use unofficial contacts claiming to represent Driver Ride Picker.
 
 <span class="small">
 
-<a href="#privacy">Privacy Policy</a>
+<a href="#privacy">
+Privacy Policy
+</a>
+
 ·
-<a href="#terms">Terms & Conditions</a>
+
+<a href="#terms">
+Terms & Conditions
+</a>
+
 ·
-<a href="#refund">Refund & Cancellation</a>
+
+<a href="#refund">
+Refund & Cancellation
+</a>
+
 ·
-<a href="#disclaimer">Disclaimer</a>
+
+<a href="#disclaimer">
+Disclaimer
+</a>
+
 ·
-<a href="mailto:driverridepicker@gmail.com">Contact Support</a>
+
+<a href="mailto:driverridepicker@gmail.com">
+Contact Support
+</a>
 
 </span>
 
 </footer>
 
+
 </body>
-</html>
+  </html>
