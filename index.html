@@ -1,6 +1,6 @@
 <!doctype html><html lang="kn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#160604"><title>Driver Ride Picker v1.14.0</title><meta name="description" content="Driver Ride Picker — Assistive ride filters, plans, setup video and five-language guide.">
 <style>
-:root{--bg:#160604;--panel:#2b100b;--line:#6f2b1b;--text:#fff6ed;--muted:#e7b6a4;--green:#ff4b00;--blue:#ffd166}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top right,#8a1c0b,transparent 38%),var(--bg);color:var(--text);font:17px/1.65 system-ui,Arial,sans-serif}a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}.top{position:sticky;top:0;background:#160604ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:5}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}.brand{display:flex;gap:10px;align-items:center;font-weight:900;text-decoration:none}.brand img{width:44px;height:44px;object-fit:contain;background:white;border-radius:12px}.brand small{display:block;color:var(--muted);font-size:12px}.links{display:flex;gap:14px}.links a{font-size:15px;color:var(--muted);text-decoration:none}.langChoices{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.langChoices button{background:#35120b;color:#fff;border:1px solid #914027;border-radius:10px;padding:9px 12px;text-align:center;font:inherit;cursor:pointer;min-height:42px}.langChoices button[aria-pressed="true"]{background:#651900;color:#fff;border-color:var(--green);box-shadow:0 0 0 2px var(--green) inset;font-weight:800}.langChoices button:focus-visible{outline:3px solid #ffd166;outline-offset:2px}.hero{padding:56px 0 20px}.heroGrid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}.badge,.pill{display:inline-block;border:1px solid #b84314;background:#4b1608;color:#ffe2a8;border-radius:999px;padding:6px 12px;font-weight:800;font-size:13px}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.1;letter-spacing:-1px}.gradient{background:linear-gradient(90deg,var(--green),var(--blue));color:transparent;background-clip:text}.hero p,.muted{color:var(--muted)}.hero p{font-size:19px}.card{background:linear-gradient(145deg,var(--panel),#1d0906);border:1px solid var(--line);border-radius:18px;padding:24px}.logoCard{text-align:center;padding:24px}.logoCard img{width:160px;max-width:75%;background:white;border-radius:25px;padding:8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:900;border:1px solid transparent;margin:5px 5px 5px 0;font-size:16px}.primary{background:var(--green);color:#210700}.secondary{background:#64220f;border-color:#b44a20;color:white}.telegram{background:#d93418;color:white}.actions{margin:20px 0}.pill{background:#2b100b;border-color:var(--line);color:#ffe2d7;margin:4px}section{padding:40px 0}.eyebrow{color:var(--green);font-size:13px;font-weight:900;letter-spacing:1.5px}.head h2{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:7px 0}.head p{color:var(--muted);max-width:800px;font-size:17px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.icon{font-size:32px}.card h3{margin:5px 0;font-size:20px}.card p,.card li{color:var(--muted);font-size:16px}.prices{grid-template-columns:repeat(5,1fr)}.price{font-size:32px;font-weight:950}.price small{font-size:14px;color:var(--muted)}.best{border-color:var(--green)}.tag{background:var(--green);color:#210700;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:900}.tableWrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:18px}table{border-collapse:collapse;width:100%;min-width:480px;background:#220b07}td,th{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:16px}th{background:#41140b}td{color:var(--muted)}.row{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.img{width:100%;border:1px solid var(--line);border-radius:15px;margin:10px 0}.callout{border-left:4px solid #ffd166;background:#421809;color:#ffe8c1;padding:16px;border-radius:0 10px 10px 0;font-size:16px}.steps{padding-left:24px}.steps li{margin:12px 0;font-size:16px}.band{background:linear-gradient(120deg,#8c200c,#f04a10);border:1px solid #b74617;border-radius:22px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.faq details{background:#2b0d08;border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:16px}.faq summary{cursor:pointer;font-weight:850;font-size:17px}.faq details p{color:var(--muted);font-size:16px}footer{border-top:1px solid var(--line);margin-top:30px;padding:30px 0 80px;color:var(--muted)}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}.foot a{display:block;color:var(--muted);text-decoration:none;font-size:16px;margin:6px 0}.note{font-size:14px;color:#d79a82}.mobileCta{display:none}.downloadLocked{opacity:.55;filter:saturate(.45);cursor:not-allowed;pointer-events:none}.downloadStatus{font-weight:800;color:#ffd166;margin:14px 0}.downloadFinal{text-align:center}.downloadFinal .btn{width:100%;max-width:520px;min-height:56px}.downloadFinal .btn[aria-disabled="true"]{opacity:.5;pointer-events:none;filter:grayscale(.8)}.watchProgress{height:10px;background:#3a160e;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin:16px 0}.watchProgress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#ff4b00,#ffd166);transition:width .3s}
+:root{--bg:#160604;--panel:#2b100b;--line:#6f2b1b;--text:#fff6ed;--muted:#e7b6a4;--green:#ff4b00;--blue:#ffd166}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top right,#8a1c0b,transparent 38%),var(--bg);color:var(--text);font:17px/1.65 system-ui,Arial,sans-serif}a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}.top{position:sticky;top:0;background:#160604ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:5}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}.brand{display:flex;gap:10px;align-items:center;font-weight:900;text-decoration:none}.brand img{width:44px;height:44px;object-fit:contain;background:white;border-radius:12px}.brand small{display:block;color:var(--muted);font-size:12px}.links{display:flex;gap:14px}.links a{font-size:15px;color:var(--muted);text-decoration:none}.langChoices{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.langChoices button{background:#35120b;color:#fff;border:1px solid #914027;border-radius:10px;padding:9px 12px;text-align:center;font:inherit;cursor:pointer;min-height:42px}.langChoices button[aria-pressed="true"]{background:#651900;color:#fff;border-color:var(--green);box-shadow:0 0 0 2px var(--green) inset;font-weight:800}.langChoices button:focus-visible{outline:3px solid #ffd166;outline-offset:2px}.hero{padding:56px 0 20px}.heroGrid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}.badge,.pill{display:inline-block;border:1px solid #b84314;background:#4b1608;color:#ffe2a8;border-radius:999px;padding:6px 12px;font-weight:800;font-size:13px}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.1;letter-spacing:-1px}.gradient{background:linear-gradient(90deg,var(--green),var(--blue));color:transparent;background-clip:text}.hero p,.muted{color:var(--muted)}.hero p{font-size:19px}.card{background:linear-gradient(145deg,var(--panel),#1d0906);border:1px solid var(--line);border-radius:18px;padding:24px}.logoCard{text-align:center;padding:24px}.logoCard img{width:160px;max-width:75%;background:white;border-radius:25px;padding:8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:900;border:1px solid transparent;margin:5px 5px 5px 0;font-size:16px}.primary{background:var(--green);color:#210700}.secondary{background:#64220f;border-color:#b44a20;color:white}.telegram{background:#d93418;color:white}.actions{margin:20px 0}.pill{background:#2b100b;border-color:var(--line);color:#ffe2d7;margin:4px}section{padding:40px 0}.eyebrow{color:var(--green);font-size:13px;font-weight:900;letter-spacing:1.5px}.head h2{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:7px 0}.head p{color:var(--muted);max-width:800px;font-size:17px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.icon{font-size:32px}.card h3{margin:5px 0;font-size:20px}.card p,.card li{color:var(--muted);font-size:16px}.prices{grid-template-columns:repeat(5,1fr)}.price{font-size:32px;font-weight:950}.price small{font-size:14px;color:var(--muted)}.best{border-color:var(--green)}.tag{background:var(--green);color:#210700;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:900}.tableWrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:18px}table{border-collapse:collapse;width:100%;min-width:480px;background:#220b07}td,th{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:16px}th{background:#41140b}td{color:var(--muted)}.row{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.img{width:100%;border:1px solid var(--line);border-radius:15px;margin:10px 0}.callout{border-left:4px solid #ffd166;background:#421809;color:#ffe8c1;padding:16px;border-radius:0 10px 10px 0;font-size:16px}.steps{padding-left:24px}.steps li{margin:12px 0;font-size:16px}.band{background:linear-gradient(120deg,#8c200c,#f04a10);border:1px solid #b74617;border-radius:22px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.faq details{background:#2b0d08;border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:16px}.faq summary{cursor:pointer;font-weight:850;font-size:17px}.faq details p{color:var(--muted);font-size:16px}footer{border-top:1px solid var(--line);margin-top:30px;padding:30px 0 80px;color:var(--muted)}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}.foot a{display:block;color:var(--muted);text-decoration:none;font-size:16px;margin:6px 0}.note{font-size:14px;color:#d79a82}.mobileCta{display:none}.downloadLocked{opacity:.55;filter:saturate(.45);cursor:not-allowed;pointer-events:none}.downloadStatus{font-weight:800;color:#ffd166;margin:14px 0}.downloadFinal{text-align:center;margin:12px auto 0;max-width:420px;padding:10px 0 0}.downloadFinal .btn{width:100%;max-width:520px;min-height:54px;margin:4px 0}.downloadFinal .btn[aria-disabled="true"]{opacity:.5;pointer-events:none;filter:grayscale(.8)}.watchProgress{height:10px;background:#3a160e;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin:16px 0}.watchProgress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#ff4b00,#ffd166);transition:width .3s}
 .legalWarn{border:2px solid #ffd166;background:#421809;color:#ffe8c1;border-radius:14px;padding:18px 20px;margin:20px 0;font-size:16px;line-height:1.6}
 .legalWarn b{color:#ffd166}
 .legal-content{white-space:pre-wrap; font-size:15px; color:var(--muted); padding-top:10px; line-height:1.7;}
@@ -15,7 +15,7 @@
 .pp-important-note strong { color: #00c853; font-size: 17px; }
 
 /* ✅ PLAY PROTECT VIDEO (9:16 Vertical Short) */
-.pp-video-wrap { margin-top: 32px; padding-top: 24px; border-top: 1px dashed var(--line); text-align: center; }
+.pp-video-wrap { margin-top: 24px; padding-top: 18px; border-top: 1px dashed var(--line); text-align: center; scroll-margin-top: 155px; }
 .pp-video-title { color: #ffd166; font-size: 20px; margin: 0 0 16px; text-align: left; }
 .pp-video-frame { position: relative; width: 100%; max-width: 380px; margin: 0 auto; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 14px; border: 2px solid #ff4b00; background: #000; box-shadow: 0 6px 20px rgba(255,75,0,0.35); }
 .pp-video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
@@ -94,29 +94,22 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
         <span data-k="ppOutroDesc">Once the app is installed, immediately go back to Google Play Store → Play Protect → and turn "Scan apps with Play Protect" back ON. Play Protect auto-resumes after 24 hours even if you forget. This keeps your phone safe.</span>
       </div>
 
-      <!-- ✅ NEW: PLAY PROTECT SETUP VIDEO (9:16 vertical, details ke neeche) -->
+      <!-- Setup video and download gate: keep the unlock control directly beneath the player. -->
       <div class="pp-video-wrap" id="setup-video-section">
         <h3 class="pp-video-title" id="videoTitle">▶ Setup Video (Full Screen)</h3>
         <div class="pp-video-actions">
-          <a class="btn primary" id="watchSetupVideoButton" data-watch-setup-video="true" data-k="watch" href="#setup-video-section">▶ Watch Setup Video Here</a>
+          <button class="btn primary" type="button" id="watchSetupVideoButton" data-watch-setup-video="true">▶ Watch Setup Video</button>
         </div>
-        <div class="pp-video-frame">
-          <iframe id="setupVideoFrame" src="https://www.youtube.com/embed/cqFL7a6zC0c?enablejsapi=1&rel=0&playsinline=1" title="Driver Ride Picker Setup Video" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="pp-video-frame" id="setupVideoFrameWrap">
+          <iframe id="setupVideoFrame" src="https://www.youtube.com/embed/cqFL7a6zC0c?enablejsapi=1&playsinline=1&rel=0" title="Driver Ride Picker Setup Video" loading="eager" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <p class="pp-video-tip" id="videoGateTip">🔒 Download link tabhi enable hoga jab aap setup video poora dekhenge.</p>
-<div id="final-download" class="card downloadFinal" style="border:2px solid #ff4b00">
-      <span class="eyebrow" id="gateEyebrow">FINAL STEP</span>
-      <h2 id="gateTitle">Watch the complete setup video to unlock the APK</h2>
-      <p id="gateDescription" class="muted">Please finish the full setup video above. The download button will unlock after the video reaches the end.</p>
-      <div class="watchProgress" aria-label="Video watch progress"><span id="watchProgressBar"></span></div>
-      <p id="gateStatus" class="downloadStatus" role="status" aria-live="polite">🔒 Download locked — complete the setup video first.</p>
-      <a id="finalDownloadButton" class="btn primary downloadLocked" href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.14.0/app-release.apk" aria-disabled="true" tabindex="-1" rel="noopener">
-        ⬇ Download APK v1.14.0
-      </a>
-      <p id="gateSafetyNote" class="note">Note: Watching this guide does not remove Google Play Protect warnings or guarantee that Android will install the APK. Review security warnings carefully.</p>
-    </div>
-  
-
+        <div id="final-download" class="downloadFinal" aria-live="polite">
+          <p id="gateStatus" class="downloadStatus" role="status">🔒 Download locked — complete the setup video first.</p>
+          <div class="watchProgress" aria-label="Video watch progress"><span id="watchProgressBar"></span></div>
+          <a id="finalDownloadButton" class="btn primary downloadLocked" href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.14.0/app-release.apk" aria-disabled="true" tabindex="-1" rel="noopener">⬇ Download APK v1.14.0</a>
+          <p id="gateSafetyNote" class="note">Watching this video does not remove Play Protect warnings or guarantee installation. Review security warnings carefully.</p>
+        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -510,60 +503,57 @@ let languageForGate = "kn";
 const APK_DOWNLOAD_URL = "https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.14.0/app-release.apk";
 
 function updateGateLanguage(code) {
-  languageForGate = code;
-  const t = gateTranslations[code] || gateTranslations.kn;
-  const setText = (id, value) => {
+  languageForGate = gateTranslations[code] ? code : "kn";
+  const t = gateTranslations[languageForGate];
+  const put = (id, value) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = value;
+    if (el && typeof value === "string") el.textContent = value;
   };
-  setText("gateEyebrow", t.eyebrow);
-  setText("videoTitle", t.videoTitle);
-  setText("watchSetupVideoButton", t.watchButton);
-  setText("gateTitle", t.title);
-  setText("gateDescription", t.description);
-  setText("gateSafetyNote", t.safety);
-  setText("videoGateTip", videoEnded ? t.unlocked : t.locked);
-  setText("finalDownloadButton", t.button);
+  put("videoTitle", t.videoTitle);
+  put("watchSetupVideoButton", videoEnded ? t.unlocked : t.watchButton);
+  const watchButton = document.getElementById("watchSetupVideoButton");
+  if (watchButton) {
+    watchButton.disabled = Boolean(videoEnded);
+    watchButton.setAttribute("aria-disabled", String(Boolean(videoEnded)));
+  }
+  put("gateSafetyNote", t.safety);
+  put("gateStatus", videoEnded ? t.unlocked : t.locked);
+  put("finalDownloadButton", t.button);
   const topNote = document.querySelector('[data-k="downloadLockedTop"]');
   if (topNote) topNote.textContent = t.lockedTop;
-  const status = document.getElementById("gateStatus");
-  if (status) status.textContent = videoEnded ? t.unlocked : t.locked;
-  const mobileButton = document.getElementById("mobileWatchDownloadButton");
-  if (mobileButton && !videoEnded) mobileButton.textContent = (common[code] && common[code].watch) || (kn.watch) || mobileButton.textContent;
-  if (mobileButton && videoEnded) mobileButton.textContent = t.button;
+  const downloadButton = document.getElementById("finalDownloadButton");
+  if (downloadButton && videoEnded) {
+    downloadButton.classList.remove("downloadLocked");
+    downloadButton.setAttribute("aria-disabled", "false");
+    downloadButton.removeAttribute("tabindex");
+  }
 }
 
 function unlockFinalDownload() {
   if (videoEnded) return;
   videoEnded = true;
+  try { localStorage.setItem("drpSetupVideoWatched", "1"); } catch (_) {}
   const t = gateTranslations[languageForGate] || gateTranslations.kn;
   const button = document.getElementById("finalDownloadButton");
   if (button) {
+    button.href = APK_DOWNLOAD_URL;
     button.classList.remove("downloadLocked");
     button.setAttribute("aria-disabled", "false");
     button.removeAttribute("tabindex");
+    button.textContent = t.button;
   }
   const status = document.getElementById("gateStatus");
   if (status) status.textContent = t.unlocked;
-  const tip = document.getElementById("videoGateTip");
-  if (tip) tip.textContent = t.unlocked;
   const bar = document.getElementById("watchProgressBar");
   if (bar) bar.style.width = "100%";
-  if (watchProgressTimer) {
-    clearInterval(watchProgressTimer);
-    watchProgressTimer = null;
+  const completedWatchButton = document.getElementById("watchSetupVideoButton");
+  if (completedWatchButton) {
+    completedWatchButton.textContent = t.unlocked;
+    completedWatchButton.disabled = true;
+    completedWatchButton.setAttribute("aria-disabled", "true");
   }
-
-  // The sticky mobile CTA transforms from a video shortcut into the download button only after ENDED.
-  const mobileButton = document.getElementById("mobileWatchDownloadButton");
-  if (mobileButton) {
-    mobileButton.removeAttribute("data-watch-setup-video");
-    mobileButton.href = APK_DOWNLOAD_URL;
-    mobileButton.target = "_blank";
-    mobileButton.rel = "noopener";
-    mobileButton.textContent = t.button;
-    mobileButton.setAttribute("aria-label", t.button);
-  }
+  if (watchProgressTimer) { clearInterval(watchProgressTimer); watchProgressTimer = null; }
+  if (playerStatePollTimer) { clearInterval(playerStatePollTimer); playerStatePollTimer = null; }
 }
 
 function updateVideoProgress() {
@@ -576,19 +566,23 @@ function updateVideoProgress() {
       const percent = Math.max(0, Math.min(99, Math.floor((current / duration) * 100)));
       const bar = document.getElementById("watchProgressBar");
       if (bar) bar.style.width = percent + "%";
+      // A fallback for mobile browsers that occasionally miss the ENDED callback.
+      // Only count it when playback has reached the end and is no longer playing.
+      const state = setupVideoPlayer.getPlayerState();
+      if (current >= duration - 0.6 && state !== YT.PlayerState.PLAYING && state !== YT.PlayerState.BUFFERING) {
+        unlockFinalDownload();
+      }
     }
-  } catch (_) {
-    // Keep playback working even if the player temporarily doesn't expose timing data.
-  }
+  } catch (_) { /* The player may temporarily be changing state. */ }
 }
 
 function onSetupVideoStateChange(event) {
-  if (!window.YT) return;
+  if (!window.YT || !YT.PlayerState) return;
   const t = gateTranslations[languageForGate] || gateTranslations.kn;
-
   if (event.data === YT.PlayerState.PLAYING) {
     const status = document.getElementById("gateStatus");
     if (status && !videoEnded) status.textContent = t.playing || t.locked;
     if (watchProgressTimer) clearInterval(watchProgressTimer);
-    watchPro
+    watchProgressTimer = setInterval(updateVideoProgress, 500);
+  } else if
 Preview truncated for large file
