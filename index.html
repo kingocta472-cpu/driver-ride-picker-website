@@ -14,12 +14,22 @@
 .pp-important-note { background: #0f2a1a; border-left: 4px solid #00c853; padding: 16px; border-radius: 8px; margin-top: 20px; font-size: 16px; line-height: 1.5; color: #fff; }
 .pp-important-note strong { color: #00c853; font-size: 17px; }
 
+/* ✅ PLAY PROTECT VIDEO (9:16 Vertical Short) */
+.pp-video-wrap { margin-top: 32px; padding-top: 24px; border-top: 1px dashed var(--line); text-align: center; }
+.pp-video-title { color: #ffd166; font-size: 20px; margin: 0 0 16px; text-align: left; }
+.pp-video-frame { position: relative; width: 100%; max-width: 380px; margin: 0 auto; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 14px; border: 2px solid #ff4b00; background: #000; box-shadow: 0 6px 20px rgba(255,75,0,0.35); }
+.pp-video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.pp-video-tip { color: #ffd166; font-size: 14px; margin: 14px 0 0; line-height: 1.5; }
+.pp-video-actions { display: flex; justify-content: center; margin-top: 16px; }
+.pp-video-actions .btn { width: 100%; max-width: 380px; }
+
 @media (max-width: 850px){.nav{align-items:flex-start;flex-wrap:wrap}.languageButtons{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.languageButtons button:last-child{grid-column:1/-1}.heroGrid,.row{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.prices{grid-template-columns:repeat(2,1fr)}.links a{display:none}.band{display:block}.foot{grid-template-columns:1fr 1fr}}
 @media(max-width: 600px){
   /* Mobile view for Play Protect images (Make them full width) */
   .pp-step { flex-direction: column; align-items: flex-start; padding: 16px; }
   .pp-step-img { width: 100%; height: auto; max-height: 350px; object-fit: contain; margin-top: 15px; border: 2px solid var(--green); }
   .pp-step-text { font-size: 16px; }
+  .pp-video-frame { max-width: 100%; }
 }
 @media(max-width:520px){.grid,.prices{grid-template-columns:1fr}.mobileCta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:10;background:#160604f2;border-top:1px solid var(--line);padding:8px;gap:7px}.mobileCta .btn{flex:1;font-size:14px;padding:12px 5px}.foot{grid-template-columns:1fr}.hero{padding-top:32px}}
 </style></head><body>
@@ -82,6 +92,18 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       <div class="pp-important-note">
         <strong data-k="ppOutroTitle">✅ After Installation:</strong>
         <span data-k="ppOutroDesc">Once the app is installed, go back to Google Play Store and turn "Scan apps with Play Protect" back ON. This keeps your phone safe.</span>
+      </div>
+
+      <!-- ✅ NEW: PLAY PROTECT SETUP VIDEO (9:16 vertical, details ke neeche) -->
+      <div class="pp-video-wrap">
+        <h3 class="pp-video-title">▶ Setup Video (Full Screen)</h3>
+        <div class="pp-video-frame">
+          <iframe src="https://www.youtube.com/embed/cqFL7a6zC0c?rel=0" title="Driver Ride Picker Setup Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="pp-video-tip">💡 <b>Full screen mein dekhne ke liye</b> — video ke bottom-right corner mein ⛶ (fullscreen) icon tap karo, ya neeche wala button dabao.</p>
+        <div class="pp-video-actions">
+          <a class="btn primary" href="https://youtu.be/cqFL7a6zC0c" target="_blank" rel="noopener">▶ Watch in Full Screen (YouTube)</a>
+        </div>
       </div>
     </div>
   </div>
