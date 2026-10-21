@@ -95,14 +95,14 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       </div>
 
       <!-- ✅ NEW: PLAY PROTECT SETUP VIDEO (9:16 vertical, details ke neeche) -->
-      <div class="pp-video-wrap">
+      <div class="pp-video-wrap" id="setup-video-section">
         <h3 class="pp-video-title">▶ Setup Video (Full Screen)</h3>
         <div class="pp-video-frame">
-          <iframe id="setupVideoFrame" src="https://www.youtube.com/embed/cqFL7a6zC0c?enablejsapi=1&rel=0&playsinline=1" title="Driver Ride Picker Setup Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe id="setupVideoFrame" src="https://www.youtube.com/embed/cqFL7a6zC0c?enablejsapi=1&origin=https%3A%2F%2Fdriver-ride-picker-website.vercel.app&rel=0&playsinline=1" title="Driver Ride Picker Setup Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <p class="pp-video-tip" id="videoGateTip">🔒 Download link tabhi enable hoga jab aap setup video poora dekhenge.</p>
         <div class="pp-video-actions">
-          <a class="btn primary" href="https://youtu.be/cqFL7a6zC0c" target="_blank" rel="noopener">▶ Watch in Full Screen (YouTube)</a>
+          <a class="btn primary" id="watchSetupVideoButton" href="#setup-video-section">▶ Watch Setup Video Here</a>
         </div>
       </div>
     </div>
@@ -512,18 +512,24 @@ let languageForGate = "kn";
 function updateGateLanguage(code) {
   languageForGate = code;
   const t = gateTranslations[code] || gateTranslations.kn;
-  const set = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
+  const set = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  };
   set("gateEyebrow", t.eyebrow);
   set("gateTitle", t.title);
   set("gateDescription", t.description);
-  set("gateSafetyNote", t.safety); set("videoGateTip", t.locked);
+  set("gateSafetyNote", t.safety);
+  set("videoGateTip", t.locked);
   set("finalDownloadButton", t.button);
   const topNote = document.querySelector('[data-k="downloadLockedTop"]');
   if (topNote) topNote.textContent = t.lockedTop;
   const status = document.getElementById("gateStatus");
   if (status) status.textContent = videoEnded ? t.unlocked : t.locked;
 }
+
 function unlockFinalDownload() {
+  if (videoEnded) return;
   videoEnded = true;
   const button = document.getElementById("finalDownloadButton");
   const t = gateTranslations[languageForGate] || gateTranslations.kn;
@@ -536,9 +542,15 @@ function unlockFinalDownload() {
   if (status) status.textContent = t.unlocked;
   const bar = document.getElementById("watchProgressBar");
   if (bar) bar.style.width = "100%";
+  if (watchTimer) {
+    clearInterval(watchTimer);
+    watchTimer = null;
+  }
 }
+
 function onSetupVideoStateChange(event) {
-  if (!setupVideoPlayer) return;
+  if (!setupVideoPlayer || !window.YT) return;
+
   if (event.data === YT.PlayerState.PLAYING) {
     if (watchTimer) clearInterval(watchTimer);
     lastVideoTime = setupVideoPlayer.getCurrentTime() || 0;
@@ -547,49 +559,79 @@ function onSetupVideoStateChange(event) {
       const now = setupVideoPlayer.getCurrentTime() || 0;
       const duration = setupVideoPlayer.getDuration() || videoDuration;
       if (duration > 0) videoDuration = duration;
+
+      // Count only forward playback; ignore large jumps caused by seeking.
       const delta = now - lastVideoTime;
-      // Count normal playback only; large forward jumps do not count as watched time.
-      if (delta > 0 && delta <= 2.5) accumulatedWatchSeconds += delta;
+      if (delta > 0 && delta <= 4.5) {
+        accumulatedWatchSeconds += delta;
+      }
       lastVideoTime = now;
+
       if (videoDuration > 0) {
         const percent = Math.min(99, Math.floor((accumulatedWatchSeconds / videoDuration) * 100));
         const bar = document.getElementById("watchProgressBar");
         if (bar) bar.style.width = percent + "%";
       }
     }, 1000);
-  } else {
-    if (watchTimer) { clearInterval(watchTimer); watchTimer = null; }
+  } else if (watchTimer) {
+    clearInterval(watchTimer);
+    watchTimer = null;
   }
+
   if (event.data === YT.PlayerState.ENDED) {
     const duration = setupVideoPlayer.getDuration() || videoDuration;
-    // Require nearly all duration to have been observed during normal playback.
-    if (duration > 0 && accumulatedWatchSeconds >= duration * 0.92) unlockFinalDownload();
-    else {
+    const currentTime = setupVideoPlayer.getCurrentTime() || 0;
+    // Require near-end playback plus substantial normally observed playback time.
+    if (duration > 0 &&
+        currentTime >= duration - 2.5 &&
+        accumulatedWatchSeconds >= duration * 0.80) {
+      unlockFinalDownload();
+    } else {
       const status = document.getElementById("gateStatus");
       const t = gateTranslations[languageForGate] || gateTranslations.kn;
       if (status) status.textContent = t.locked;
     }
   }
 }
+
 function onYouTubeIframeAPIReady() {
   const frame = document.getElementById("setupVideoFrame");
   if (!frame || !window.YT || !YT.Player) return;
   setupVideoPlayer = new YT.Player("setupVideoFrame", {
     events: {
-      onReady: e => { videoDuration = e.target.getDuration() || 0; },
+      onReady: e => {
+        videoDuration = e.target.getDuration() || 0;
+      },
       onStateChange: onSetupVideoStateChange
     }
   });
 }
+
 const ytApiScript = document.createElement("script");
 ytApiScript.src = "https://www.youtube.com/iframe_api";
+ytApiScript.async = true;
 document.head.appendChild(ytApiScript);
 
-function setLang(code){let t=({kn:kn,en:common.en,hi:common.hi,te:common.te,ta:common.ta})[code]||kn;document.documentElement.lang=code;document.querySelectorAll("[data-k]").forEach(e=>{let k=e.dataset.k;if(t[k]!==undefined)e.innerHTML=t[k]});renderFullGuide(code);updateGateLanguage(code);try{localStorage.setItem("drpLang",code)}catch(e){}document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===code)))}
-document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
-document.getElementById("year").textContent=new Date().getFullYear();
-try{setLang(localStorage.getItem("drpLang")||"kn")}catch(e){setLang("kn")}
-document.getElementById("finalDownloadButton").addEventListener("click", function(e) {
-  if (!videoEnded) { e.preventDefault(); return; }
+// Any setup-video CTA should take the visitor to the embedded player, not to an image.
+document.addEventListener("click", function (event) {
+  const link = event.target.closest("a");
+  if (!link) return;
+  const label = (link.innerText || link.textContent || "").toLowerCase();
+  const looksLikeSetupVideo =
+    /setup video|watch.*video|ಸೆಟಪ್ ವೀಡಿಯೊ|ಸೆಟಪ್ ವಿಡಿಯೋ|सेटअप वीडियो|वीडियो देखें|వీడియో చూడండి|அமைப்பு வீடியோ/.test(label);
+  if (looksLikeSetupVideo && link.id !== "watchSetupVideoButton") {
+    event.preventDefault();
+    document.getElementById("setup-video-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 });
-</script></body></html>
+
+const watchSetupVideoButton = document.getElementById("watchSetupVideoButton");
+if (watchSetupVideoButton) {
+  watchSetupVideoButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("setup-video-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+function setLang(code){let t=({kn:kn,en:common.en,hi:common.hi,te:common.te,ta:common.ta})[code]||kn;document.documentElement.lang=code;document.querySelectorAll("[data-k]").forEach(e=>{let k=e.dataset.k;if(t[k]!==undefined)e.innerHTML=t[k]});renderFullGuide(code);updateGateLanguage(code);try{localStorage.setItem("drpLang",code)}catch(e){}document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.
+Preview truncated for large file
