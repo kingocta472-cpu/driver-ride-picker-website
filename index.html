@@ -4,15 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#160604">
-<title>Driver Ride Picker v1.17.0</title>
-<meta name="description" content="Driver Ride Picker — Assistive ride filters, plans, setup video and five-language guide.">
+<!-- ✅ SECURITY HEADERS: Hacking aur data theft se bachane ke liye -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+
+<title>Driver Ride Picker v1.17.0 | Assistive Technology</title>
+<meta name="description" content="Driver Ride Picker — Assistive ride filters for disabled drivers, plans, setup video and five-language guide.">
 <style>
 :root{--bg:#160604;--panel:#2b100b;--line:#6f2b1b;--text:#fff6ed;--muted:#e7b6a4;--green:#ff4b00;--blue:#ffd166}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top right,#8a1c0b,transparent 38%),var(--bg);color:var(--text);font:17px/1.65 system-ui,Arial,sans-serif}a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}.top{position:sticky;top:0;background:#160604ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:5}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}.brand{display:flex;gap:10px;align-items:center;font-weight:900;text-decoration:none}.brand img{width:44px;height:44px;object-fit:contain;background:white;border-radius:12px}.brand small{display:block;color:var(--muted);font-size:12px}.links{display:flex;gap:14px}.links a{font-size:15px;color:var(--muted);text-decoration:none}.languageButtons{display:flex;flex-direction:column;gap:6px;min-width:145px}.languageButtons button{background:#35120b;color:#fff;border:1px solid #914027;border-radius:10px;padding:9px 12px;text-align:left;font:inherit;cursor:pointer}.languageButtons button[aria-pressed="true"]{background:#651900;border-color:var(--green);box-shadow:0 0 0 1px var(--green) inset}.hero{padding:56px 0 20px}.heroGrid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}.badge,.pill{display:inline-block;border:1px solid #b84314;background:#4b1608;color:#ffe2a8;border-radius:999px;padding:6px 12px;font-weight:800;font-size:13px}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.1;letter-spacing:-1px}.gradient{background:linear-gradient(90deg,var(--green),var(--blue));color:transparent;background-clip:text}.hero p,.muted{color:var(--muted)}.hero p{font-size:19px}.card{background:linear-gradient(145deg,var(--panel),#1d0906);border:1px solid var(--line);border-radius:18px;padding:24px}.logoCard{text-align:center;padding:24px}.logoCard img{width:160px;max-width:75%;background:white;border-radius:25px;padding:8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:900;border:1px solid transparent;margin:5px 5px 5px 0;font-size:16px}.primary{background:var(--green);color:#210700}.secondary{background:#64220f;border-color:#b44a20;color:white}.telegram{background:#d93418;color:white}.actions{margin:20px 0}.pill{background:#2b100b;border-color:var(--line);color:#ffe2d7;margin:4px}section{padding:40px 0}.eyebrow{color:var(--green);font-size:13px;font-weight:900;letter-spacing:1.5px}.head h2{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:7px 0}.head p{color:var(--muted);max-width:800px;font-size:17px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.icon{font-size:32px}.card h3{margin:5px 0;font-size:20px}.card p,.card li{color:var(--muted);font-size:16px}.prices{grid-template-columns:repeat(5,1fr)}.price{font-size:32px;font-weight:950}.price small{font-size:14px;color:var(--muted)}.best{border-color:var(--green)}.tag{background:var(--green);color:#210700;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:900}.tableWrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:18px}table{border-collapse:collapse;width:100%;min-width:480px;background:#220b07}td,th{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:16px}th{background:#41140b}td{color:var(--muted)}.row{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.img{width:100%;border:1px solid var(--line);border-radius:15px;margin:10px 0}.callout{border-left:4px solid #ffd166;background:#421809;color:#ffe8c1;padding:16px;border-radius:0 10px 10px 0;font-size:16px}.steps{padding-left:24px}.steps li{margin:12px 0;font-size:16px}.band{background:linear-gradient(120deg,#8c200c,#f04a10);border:1px solid #b74617;border-radius:22px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.faq details{background:#2b0d08;border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:16px}.faq summary{cursor:pointer;font-weight:850;font-size:17px}.faq details p{color:var(--muted);font-size:16px}footer{border-top:1px solid var(--line);margin-top:30px;padding:30px 0 80px;color:var(--muted)}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}.foot a{display:block;color:var(--muted);text-decoration:none;font-size:16px;margin:6px 0}.note{font-size:14px;color:#d79a82}.mobileCta{display:none}
 .legalWarn{border:2px solid #ffd166;background:#421809;color:#ffe8c1;border-radius:14px;padding:18px 20px;margin:20px 0;font-size:16px;line-height:1.6}
 .legalWarn b{color:#ffd166}
 .legal-content{white-space:pre-wrap; font-size:15px; color:var(--muted); padding-top:10px; line-height:1.7;}
 
-/* ✅ PLAY PROTECT CSS (BIGGER SIZES) */
+/* ✅ PLAY PROTECT CSS */
 .pp-step { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; background: #2b100b; padding: 20px; border-radius: 12px; border: 1px solid var(--line); }
 .pp-step-num { background: var(--green); color: white; width: 40px; height: 40px; font-size: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; box-shadow: 0 4px 10px rgba(255,75,0,0.4); }
 .pp-step-text { flex: 1; font-size: 18px; font-weight: 600; color: var(--text); line-height: 1.4; }
@@ -21,7 +26,7 @@
 .pp-important-note { background: #0f2a1a; border-left: 4px solid #00c853; padding: 16px; border-radius: 8px; margin-top: 20px; font-size: 16px; line-height: 1.5; color: #fff; }
 .pp-important-note strong { color: #00c853; font-size: 17px; }
 
-/* ✅ PLAY PROTECT VIDEO (9:16 Vertical Short) */
+/* ✅ PLAY PROTECT VIDEO */
 .pp-video-wrap { margin-top: 32px; padding-top: 24px; border-top: 1px dashed var(--line); text-align: center; }
 .pp-video-title { color: #ffd166; font-size: 20px; margin: 0 0 16px; text-align: left; }
 .pp-video-frame { position: relative; width: 100%; max-width: 380px; margin: 0 auto; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 14px; border: 2px solid #ff4b00; background: #000; box-shadow: 0 6px 20px rgba(255,75,0,0.35); }
@@ -36,10 +41,11 @@
 .legal-section ul { padding-left: 20px; }
 .legal-section li { margin-bottom: 12px; font-size: 15px; color: #e7b6a4; }
 .legal-section strong { color: #fff; }
+.shield-box { background: #0f2a1a; border: 2px solid #00c853; border-radius: 16px; padding: 24px; margin: 20px 0; }
+.shield-box h3 { color: #00c853; margin-top: 0; }
 
 @media (max-width: 850px){.nav{align-items:flex-start;flex-wrap:wrap}.languageButtons{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.languageButtons button:last-child{grid-column:1/-1}.heroGrid,.row{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.prices{grid-template-columns:repeat(2,1fr)}.links a{display:none}.band{display:block}.foot{grid-template-columns:1fr 1fr}}
 @media(max-width: 600px){
-  /* Mobile view for Play Protect images (Make them full width) */
   .pp-step { flex-direction: column; align-items: flex-start; padding: 16px; }
   .pp-step-img { width: 100%; height: auto; max-height: 350px; object-fit: contain; margin-top: 15px; border: 2px solid var(--green); }
   .pp-step-text { font-size: 16px; }
@@ -49,7 +55,7 @@
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap nav"><a class="brand" href="#home"><img src="https://i.ibb.co/23wYg7YM/file-0000000085b08211ae79c66db3f79e9d.png" alt="Driver Ride Picker logo"><span>DRIVER RIDE PICKER<small>Made for Indian Drivers</small></span></a><nav class="links"><a href="#features" data-k="navFeatures">ವೈಶಿಷ್ಟ್ಯಗಳು</a><a href="#plans" data-k="navPlans">ಯೋಜನೆಗಳು</a><a href="#guide" data-k="navGuide">ಮಾರ್ಗದರ್ಶಿ</a><a href="#support" data-k="navSupport">ಸಹಾಯ</a></nav><div class="langChoices" id="langChoices" aria-label="Choose language">
+<header class="top"><div class="wrap nav"><a class="brand" href="#home"><img src="https://i.ibb.co/23wYg7YM/file-0000000085b08211ae79c66db3f79e9d.png" alt="Driver Ride Picker logo" referrerpolicy="no-referrer"><span>DRIVER RIDE PICKER<small>Made for Indian Drivers</small></span></a><nav class="links"><a href="#features" data-k="navFeatures">ವೈಶಿಷ್ಟ್ಯಗಳು</a><a href="#plans" data-k="navPlans">ಯೋಜನೆಗಳು</a><a href="#guide" data-k="navGuide">ಮಾರ್ಗದರ್ಶಿ</a><a href="#support" data-k="navSupport">ಸಹಾಯ</a></nav><div class="langChoices" id="langChoices" aria-label="Choose language">
 <button type="button" data-lang="kn" aria-pressed="true">ಕನ್ನಡ</button>
 <button type="button" data-lang="en" aria-pressed="false">English</button>
 <button type="button" data-lang="hi" aria-pressed="false">हिन्दी</button>
@@ -67,19 +73,20 @@
 <span class="pill" data-k="pill1">🚗 ಆಟೋ • ಕಾರು • ಬೈಕ್</span>
 <span class="pill" data-k="pill2">🌐 5 ಭಾಷೆಗಳು</span>
 <span class="pill" data-k="pill3">🎁 24 ಗಂಟೆ ಉಚಿತ ಟ್ರಯಲ್</span>
-<p class="note" data-k="downloadNote">APK is distributed securely. Download the latest v1.17.0 version directly to ensure 100% working credit logic and speed.</p>
+<p class="note" data-k="downloadNote">APK is distributed securely. Download the latest v1.17.0 version directly.</p>
 </div>
 <aside class="card logoCard">
-<img src="https://i.ibb.co/23wYg7YM/file-0000000085b08211ae79c66db3f79e9d.png" alt="App logo">
+<img src="https://i.ibb.co/23wYg7YM/file-0000000085b08211ae79c66db3f79e9d.png" alt="App logo" referrerpolicy="no-referrer">
 <h3 data-k="cardTitle">ನಿಮ್ಮ ರೈಡ್‌ಗಳು. ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳು.</h3>
 <p class="muted" data-k="tagline">ಬುದ್ಧಿವಂತ ಚಾಲನೆ • ಸಮಯ ಉಳಿಸಿ • ಉತ್ತಮ ರೈಡ್!</p>
 </aside>
 </div>
 
+<!-- ✅ STRONG LEGAL DISCLOSURE -->
 <div class="legalWarn">
 <b>⚠️ IMPORTANT — ASSISTIVE TECHNOLOGY DISCLOSURE</b><br>
 Driver Ride Picker is an independent ASSISTIVE TECHNOLOGY and ROAD SAFETY tool designed specifically for drivers and delivery partners with physical limitations (such as motor impairments, hand fatigue, or those recovering from hand/finger surgeries) to help them accept ride requests safely without excessive manual tapping. It is <b>NOT affiliated with, endorsed by, or authorized by</b> Uber, Ola, Rapido, Namma Yatri, or any other ride platform.<br><br>
-By downloading or using this app, you acknowledge and accept: <b>Assistive Purpose</b> (we use the Accessibility Service solely to provide hands-free assistance), <b>Automation Risk</b> (platforms may detect automation and take action against your account), <b>No Guarantee</b>, <b>Your Responsibility</b>, <b>No Liability</b>, and <b>No Refund</b> after plan activation. Furthermore, you agree to <b>INDEMNIFY AND HOLD HARMLESS</b> the developers from ANY claims, losses, or damages arising from your use of this app. This explicitly includes, but is not limited to: <b>Any warning, restriction, temporary suspension, permanent ban, disablement, deletion, or termination of your account by any ride-hailing platform (Uber, Ola, Rapido, Namma Yatri, or any other).</b> Use at your own risk.
+By downloading or using this app, you acknowledge and accept: <b>Assistive Purpose</b>, <b>Automation Risk</b>, <b>No Guarantee</b>, <b>Your Responsibility</b>, <b>No Liability</b>, and <b>No Refund</b>. You agree to <b>INDEMNIFY AND HOLD HARMLESS</b> the developers from ANY claims, losses, or damages arising from your use of this app. This explicitly includes, but is not limited to: <b>Any warning, restriction, temporary suspension, permanent ban, disablement, deletion, or termination of your account by any ride-hailing platform.</b> Use at your own risk.
 </div>
 
 </div>
@@ -93,32 +100,32 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
     </div>
     <div class="card" style="border: 1px solid #ff4b00;">
       <p style="color: #ffd166; font-weight: bold; margin-bottom: 10px; font-size: 18px;" data-k="ppWarnTitle">⚠️ Important Notice</p>
-      <p style="color: var(--muted); margin-bottom: 20px; font-size: 16px;" data-k="ppWarnDesc">Because our app is not yet on the Google Play Store, Play Protect may block it. The safe method is to <b>PAUSE</b> Play Protect (NOT turn it off), install the APK, then turn it back ON. Follow these steps.</p>
+      <p style="color: var(--muted); margin-bottom: 20px; font-size: 16px;" data-k="ppWarnDesc">Because our app is not yet on the Google Play Store, Play Protect may block it. The safe method is to <b>PAUSE</b> Play Protect (NOT turn it off), install the APK, then turn it back ON.</p>
       
       <div style="text-align: center; margin-bottom: 30px;">
-        <img src="https://i.ibb.co/LDwSSj6d/In-Shot-20261016-090401955.jpg" alt="Google Play Protect Warning" style="max-width: 100%; height: auto; border-radius: 12px; border: 3px solid #ff4b00; box-shadow: 0 4px 15px rgba(255,75,0,0.3); cursor: pointer;" onclick="window.open(this.src)">
+        <img src="https://i.ibb.co/LDwSSj6d/In-Shot-20261016-090401955.jpg" alt="Google Play Protect Warning" style="max-width: 100%; height: auto; border-radius: 12px; border: 3px solid #ff4b00; box-shadow: 0 4px 15px rgba(255,75,0,0.3); cursor: pointer;" onclick="window.open(this.src)" referrerpolicy="no-referrer" loading="lazy">
       </div>
 
       <div class="pp-step-list">
         <div class="pp-step">
           <div class="pp-step-num">1</div>
           <div class="pp-step-text" data-k="ppStep1">Open Google Play Store and tap your profile icon at the top right.</div>
-          <img src="https://i.ibb.co/MyXfwnC1/In-Shot-20261021-123457469.jpg" alt="Step 1" class="pp-step-img" onclick="window.open(this.src)">
+          <img src="https://i.ibb.co/MyXfwnC1/In-Shot-20261021-123457469.jpg" alt="Step 1" class="pp-step-img" onclick="window.open(this.src)" referrerpolicy="no-referrer" loading="lazy">
         </div>
         <div class="pp-step">
           <div class="pp-step-num">2</div>
           <div class="pp-step-text" data-k="ppStep2">Select "Play Protect" from the menu.</div>
-          <img src="https://i.ibb.co/nMHWcFSN/In-Shot-20261021-123542851.jpg" alt="Step 2" class="pp-step-img" onclick="window.open(this.src)">
+          <img src="https://i.ibb.co/nMHWcFSN/In-Shot-20261021-123542851.jpg" alt="Step 2" class="pp-step-img" onclick="window.open(this.src)" referrerpolicy="no-referrer" loading="lazy">
         </div>
         <div class="pp-step">
           <div class="pp-step-num">3</div>
           <div class="pp-step-text" data-k="ppStep3">Tap the Settings (gear) icon at the top right.</div>
-          <img src="https://i.ibb.co/G6DkSFc/In-Shot-20261021-123718796.jpg" alt="Step 3" class="pp-step-img" onclick="window.open(this.src)">
+          <img src="https://i.ibb.co/G6DkSFc/In-Shot-20261021-123718796.jpg" alt="Step 3" class="pp-step-img" onclick="window.open(this.src)" referrerpolicy="no-referrer" loading="lazy">
         </div>
         <div class="pp-step">
           <div class="pp-step-num">4</div>
           <div class="pp-step-text" data-k="ppStep4">Tap "Pause" (NOT "Turn Off") and choose "Pause for 1 day". Then install the APK immediately.</div>
-          <img src="https://i.ibb.co/Z6x62NZ9/In-Shot-20261021-201952505.jpg" alt="Step 4 - Tap Pause" class="pp-step-img" onclick="window.open(this.src)">
+          <img src="https://i.ibb.co/Z6x62NZ9/In-Shot-20261021-201952505.jpg" alt="Step 4 - Tap Pause" class="pp-step-img" onclick="window.open(this.src)" referrerpolicy="no-referrer" loading="lazy">
         </div>
       </div>
 
@@ -130,14 +137,14 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       <div class="pp-video-wrap">
         <h3 class="pp-video-title">▶ Setup Video (Full Screen)</h3>
         <div class="pp-video-frame">
-          <iframe src="https://www.youtube.com/embed/cqFL7a6zC0c?rel=0" title="Driver Ride Picker Setup Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/cqFL7a6zC0c?rel=0" title="Driver Ride Picker Setup Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="no-referrer" loading="lazy"></iframe>
         </div>
         <div style="text-align:center;margin:14px 0;">
-          <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.17.0/app-release.apk" target="_blank" rel="noopener" data-k="download">⬇ Download APK v1.17.0</a>
+          <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.17.0/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="download">⬇ Download APK v1.17.0</a>
         </div>
         <p class="pp-video-tip">💡 <b>Full screen mein dekhne ke liye</b> — video ke bottom-right corner mein ⛶ (fullscreen) icon tap karo, ya neeche wala button dabao.</p>
         <div class="pp-video-actions">
-          <a class="btn primary" href="https://youtu.be/cqFL7a6zC0c" target="_blank" rel="noopener">▶ Watch in Full Screen (YouTube)</a>
+          <a class="btn primary" href="https://youtu.be/cqFL7a6zC0c" target="_blank" rel="noopener noreferrer">▶ Watch in Full Screen (YouTube)</a>
         </div>
       </div>
     </div>
@@ -231,9 +238,9 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
         <p class="note" data-k="speedNote">ಈ ವೇಗವು ಆಪ್‌ನ ನಿಜವಾದ ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು ಫೋನ್ ಸಾಮರ್ಥ್ಯವನ್ನು ಅವಲಂಬಿಸಿರುತ್ತದೆ.</p>
       </div>
       <div>
-        <img class="img" src="https://i.ibb.co/sJ13WjSg/file-00000000c834821194ef1e01cbb72679.png" alt="Accessibility setting guide">
-        <img class="img" src="https://i.ibb.co/WvWcMK8Q/file-00000000324882118115f9ae1b8892fc.png" alt="Display over apps setting">
-        <img class="img" src="https://i.ibb.co/BHSPS6L3/file-000000006f288208a0f938183f3b9240.png" alt="Battery background setting">
+        <img class="img" src="https://i.ibb.co/sJ13WjSg/file-00000000c834821194ef1e01cbb72679.png" alt="Accessibility setting guide" referrerpolicy="no-referrer" loading="lazy">
+        <img class="img" src="https://i.ibb.co/WvWcMK8Q/file-00000000324882118115f9ae1b8892fc.png" alt="Display over apps setting" referrerpolicy="no-referrer" loading="lazy">
+        <img class="img" src="https://i.ibb.co/BHSPS6L3/file-000000006f288208a0f938183f3b9240.png" alt="Battery background setting" referrerpolicy="no-referrer" loading="lazy">
       </div>
     </div>
     <div class="card">
@@ -249,7 +256,7 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
   </div>
 </section>
 
-<!-- ✅ NEW: INSTALLATION GUIDE SECTION -->
+<!-- ✅ INSTALLATION GUIDE SECTION -->
 <section id="install-guide">
   <div class="wrap">
     <div class="head">
@@ -271,51 +278,60 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
   </div>
 </section>
 
-<!-- ✅ NEW: ASSISTIVE TECHNOLOGY & DISABILITY RIGHTS LEGAL SECTION -->
+<!-- ✅ ULTIMATE LEGAL & DISABILITY RIGHTS SHIELD -->
 <section id="disability-legal">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">ASSISTIVE TECHNOLOGY PROTECTION</span>
-      <h2>Legal Framework for Disability & Assistive Technology</h2>
-      <p>This section references relevant Indian legislation that recognizes, protects, and promotes assistive technology for persons with disabilities. It is provided for informational and compliance purposes.</p>
+      <span class="eyebrow" style="color: #00c853;">LEGAL PROTECTION SHIELD</span>
+      <h2>Legal Framework & Anti-Targeting Notice</h2>
+      <p>This section serves as a formal legal notice to ride-hailing platforms (Uber, Ola, Rapido, Namma Yatri) and authorities. This app is a protected Assistive Technology.</p>
+    </div>
+
+    <div class="shield-box">
+      <h3>🛡️ NOTICE TO RIDE-HAILING PLATFORMS & AUTHORITIES</h3>
+      <p style="color: #fff; font-size: 16px; line-height: 1.6;">
+        <b>Driver Ride Picker</b> is not a commercial competitor or a fraud tool. It is a medical necessity and an Assistive Technology designed for drivers recovering from hand/finger surgeries or suffering from physical disabilities. 
+        <br><br>
+        Any attempt by a corporate entity (like Uber, Ola, etc.) to ban, suspend, or legally target a driver for using this app violates the fundamental rights of disabled citizens under <b>Article 21 (Right to Livelihood)</b> of the Constitution of India and the <b>Rights of Persons with Disabilities Act, 2016</b>. The developers of this app will legally defend any disabled driver targeted by a platform's discriminatory algorithmic bans.
+      </p>
     </div>
 
     <div class="legal-section">
       <h3>1. Rights of Persons with Disabilities Act, 2016 (RPwD Act)</h3>
       <ul>
-        <li><strong>Section 2(ze) - Universal Design:</strong> Defines "universal design" as the design of products, environments, programmes, and services to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design, and applies to assistive devices including advanced technologies for particular groups of persons with disabilities.[reference:0]</li>
-        <li><strong>Section 3 - Equality and Non-Discrimination:</strong> Ensures equality and non-discrimination for persons with disabilities, including the provision of additional facilities and benefits such as assistive devices and barrier-free accessibility.[reference:1]</li>
-        <li><strong>Section 40 - Accessibility:</strong> Mandates the formulation of rules laying down standards of accessibility for the physical environment, transportation, information and communications, including appropriate technologies and systems.[reference:2]</li>
-        <li><strong>Section 41 - Access to Transport:</strong> Ensures access to transport for persons with disabilities.[reference:3]</li>
-        <li><strong>Section 42 - Access to Information and Communication Technology:</strong> Ensures that all contents available in audio, print, and electronic media are in accessible format, and that electronic goods and equipment meant for everyday use are available in universal design.[reference:4][reference:5]</li>
+        <li><strong>Section 2(ze) - Universal Design:</strong> Defines "universal design" as the design of products, environments, programmes, and services to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design, and applies to assistive devices including advanced technologies for particular groups of persons with disabilities.</li>
+        <li><strong>Section 3 - Equality and Non-Discrimination:</strong> Ensures equality and non-discrimination for persons with disabilities, including the provision of additional facilities and benefits such as assistive devices and barrier-free accessibility.</li>
+        <li><strong>Section 40 - Accessibility:</strong> Mandates the formulation of rules laying down standards of accessibility for the physical environment, transportation, information and communications, including appropriate technologies and systems.</li>
+        <li><strong>Section 41 - Access to Transport:</strong> Ensures access to transport for persons with disabilities.</li>
+        <li><strong>Section 42 - Access to Information and Communication Technology:</strong> Ensures that all contents available in audio, print, and electronic media are in accessible format, and that electronic goods and equipment meant for everyday use are available in universal design.</li>
       </ul>
     </div>
 
     <div class="legal-section">
       <h3>2. Copyright Act, 1957 - Statutory Exceptions</h3>
       <ul>
-        <li><strong>Section 52(1)(ab) - Inter-operability:</strong> The doing of any act necessary to obtain information essential for operating inter-operability of an independently created computer programme with other programmes by a lawful possessor of a computer programme, provided that such information is not otherwise readily available, does not constitute copyright infringement.[reference:6]</li>
-        <li><strong>Section 52(1)(zb) - Accessible Formats:</strong> The adaptation, reproduction, issue of copies, or communication to the public of any work in any accessible format for persons with disabilities does not constitute copyright infringement.[reference:7]</li>
+        <li><strong>Section 52(1)(ab) - Inter-operability:</strong> The doing of any act necessary to obtain information essential for operating inter-operability of an independently created computer programme with other programmes by a lawful possessor of a computer programme, provided that such information is not otherwise readily available, does not constitute copyright infringement.</li>
+        <li><strong>Section 52(1)(zb) - Accessible Formats:</strong> The adaptation, reproduction, issue of copies, or communication to the public of any work in any accessible format for persons with disabilities does not constitute copyright infringement.</li>
       </ul>
     </div>
 
     <div class="legal-section">
       <h3>3. Information Technology Act, 2000 - Safe Harbour</h3>
       <ul>
-        <li><strong>Section 79 - Exemption from Liability of Intermediary:</strong> Provides safe harbour protection, stating that an intermediary shall not be liable for any third-party information, data, or communication link made available or hosted by him, subject to due diligence requirements.[reference:8][reference:9]</li>
+        <li><strong>Section 79 - Exemption from Liability of Intermediary:</strong> Provides safe harbour protection, stating that an intermediary shall not be liable for any third-party information, data, or communication link made available or hosted by him, subject to due diligence requirements.</li>
       </ul>
     </div>
 
     <div class="legal-section">
       <h3>4. Telecom Commercial Communications Customer Preference Regulations, 2018 (TRAI)</h3>
       <ul>
-        <li><strong>Accessibility of Telecom Products:</strong> Telecommunications products are designed to be accessible to individuals with a broad range of disabilities, and there is a recognized need for mandating international accessibility standards for telecommunication and broadcasting services.[reference:10]</li>
+        <li><strong>Accessibility of Telecom Products:</strong> Telecommunications products are designed to be accessible to individuals with a broad range of disabilities, and there is a recognized need for mandating international accessibility standards for telecommunication and broadcasting services.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ✅ LEGAL & POLICIES SECTION -->
+<!-- ✅ STANDARD LEGAL & POLICIES SECTION -->
 <section id="legal">
   <div class="wrap">
     <div class="head">
@@ -352,7 +368,7 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       <p class="muted" data-k="readyDesc">Download the latest APK directly. (v1.17.0)</p>
     </div>
     <div>
-      <a class="btn secondary" href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank" rel="noopener" data-k="whatsapp">WhatsApp ಚಾನೆಲ್</a>
+      <a class="btn secondary" href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank" rel="noopener noreferrer" data-k="whatsapp">WhatsApp ಚಾನೆಲ್</a>
     </div>
   </div>
 </section>
@@ -380,8 +396,8 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       <p data-k="supportDesc">ಬಿಡುಗಡೆ ಮಾಹಿತಿ, ಸೆಟಪ್ ಸಹಾಯ, ಯೋಜನೆ ಪ್ರಶ್ನೆಗಳು ಮತ್ತು ಪ್ರಕಟಣೆಗಳಿಗಾಗಿ.</p>
     </div>
     <div class="grid">
-      <div class="card"><h3>✈️ Telegram</h3><p data-k="telegramDesc">APK ಬಿಡುಗಡೆ ಮತ್ತು ಸಹಾಯ ಪ್ರಕಟಣೆಗಳು.</p><a class="btn telegram" href="https://t.me/+drVIKX1dsY0yZWNl" target="_blank" rel="noopener" data-k="join">Telegram ಸೇರಿ</a></div>
-      <div class="card"><h3>🟢 WhatsApp Channel</h3><p data-k="whatsappDesc">ಆಪ್ ಅಪ್‌ಡೇಟ್ ಮತ್ತು ಬಿಡುಗಡೆ ಟಿಪ್ಪಣಿಗಳು.</p><a class="btn secondary" href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank" rel="noopener" data-k="follow">WhatsApp ಅನುಸರಿಸಿ</a></div>
+      <div class="card"><h3>✈️ Telegram</h3><p data-k="telegramDesc">APK ಬಿಡುಗಡೆ ಮತ್ತು ಸಹಾಯ ಪ್ರಕಟಣೆಗಳು.</p><a class="btn telegram" href="https://t.me/+drVIKX1dsY0yZWNl" target="_blank" rel="noopener noreferrer" data-k="join">Telegram ಸೇರಿ</a></div>
+      <div class="card"><h3>🟢 WhatsApp Channel</h3><p data-k="whatsappDesc">ಆಪ್ ಅಪ್‌ಡೇಟ್ ಮತ್ತು ಬಿಡುಗಡೆ ಟಿಪ್ಪಣಿಗಳು.</p><a class="btn secondary" href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank" rel="noopener noreferrer" data-k="follow">WhatsApp ಅನುಸರಿಸಿ</a></div>
       <div class="card"><h3>✉️ Email</h3><p>driverridepicker@gmail.com</p><a class="btn secondary" href="mailto:driverridepicker@gmail.com" data-k="email">ಇಮೇಲ್ ಸಹಾಯ</a></div>
     </div>
   </div>
@@ -391,7 +407,7 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
 <footer>
   <div class="wrap foot">
     <div>
-      <a class="brand" href="#home"><img src="https://i.ibb.co/23wYg7YM/file-0000000085b08211ae79c66db3f79e9d.png" alt=""><span>DRIVER RIDE PICKER<small data-k="tagline">ಬುದ್ಧಿವಂತ ಚಾಲನೆ • ಸಮಯ ಉಳಿಸಿ • ಉತ್ತಮ ರೈಡ್!</small></span></a>
+      <a class="brand" href="#home"><img src="https://i.ibb.co/23wYg7YM/file-0000000085b08211ae79c66db3f79e9d.png" alt="" referrerpolicy="no-referrer"><span>DRIVER RIDE PICKER<small data-k="tagline">ಬುದ್ಧಿವಂತ ಚಾಲನೆ • ಸಮಯ ಉಳಿಸಿ • ಉತ್ತಮ ರೈಡ್!</small></span></a>
       <p data-k="disclaimer">Driver Ride Picker ಸ್ವತಂತ್ರ ಸಹಾಯಕ ತಂತ್ರಜ್ಞಾನ (Assistive Technology) ಯೋಜನೆಯಾಗಿದ್ದು, ದೈಹಿಕ ಮಿತಿಗಳಿರುವ (ಉದಾ: ಕೈ/ಬೆರಳಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ) ಚಾಲಕರಿಗಾಗಿ ಉದ್ದೇಶಿಸಲಾಗಿದೆ. ಇದು Uber, Ola, Rapido ಅಥವಾ Namma Yatri ಜೊತೆ ಸಂಬಂಧ ಹೊಂದಿಲ್ಲ. ಈ ಅಪ್ಲಿಕೇಶನ್ ಬಳಸುವ ಮೂಲಕ, ನೀವು ಯಾವುದೇ ಹಕ್ಕುಗಳು, ನಷ್ಟಗಳು ಅಥವಾ ಹಾನಿಗಳಿಂದ (ಖಾತೆ ನಿಷೇಧಗಳು, ನಿರ್ಬಂಧಗಳು, ತಾತ್ಕಾಲಿಕ ಅಮಾನತು, ಶಾಶ್ವತ ನಿಷೇಧ, ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವಿಕೆ, ಅಳಿಸುವಿಕೆ ಅಥವಾ ಖಾತೆ ಮುಕ್ತಾಯ ಅಥವಾ ಅಪಘಾತಗಳು ಸೇರಿದಂತೆ) ಡೆವಲಪರ್ಗಳನ್ನು ಸಂರಕ್ಷಿಸಲು (INDEMNIFY AND HOLD HARMLESS) ಒಪ್ಪುತ್ತೀರಿ. ಯಾವುದೇ ಸಂದರ್ಭದಲ್ಲಿ ಡೆವಲಪರ್ಗಳು ನೇರ, ಪರೋಕ್ಷ ಅಥವಾ ಅನುಷಂಗಿಕ ಹಾನಿಗಳಿಗೆ ಜವಾಬ್ದಾರರಾಗಿರುವುದಿಲ್ಲ. ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ನಿಯಮ ಮತ್ತು ಸ್ಥಳೀಯ ಕಾನೂನು ಪಾಲಿಸುವ ಜವಾಬ್ದಾರಿ ನಿಮ್ಮದಾಗಿದೆ.</p>
       <small>© <span id="year"></span> Driver Ride Picker</small>
     </div>
@@ -403,15 +419,15 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
     </div>
     <div>
       <h3 data-k="contact">ಸಂಪರ್ಕ</h3>
-      <a href="https://t.me/+drVIKX1dsY0yZWNl" target="_blank">Telegram</a>
-      <a href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank">WhatsApp</a>
+      <a href="https://t.me/+drVIKX1dsY0yZWNl" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       <a href="mailto:driverridepicker@gmail.com">Email</a>
     </div>
   </div>
 </footer>
 
 <div class="wrap" style="text-align:center;padding:16px 0 30px;">
-  <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.17.0/app-release.apk" target="_blank" rel="noopener" data-k="download">⬇ Download APK v1.17.0</a>
+  <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.17.0/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="download">⬇ Download APK v1.17.0</a>
 </div>
 
 <!-- Scripts section starts here -->
@@ -423,7 +439,7 @@ function renderFullGuide(lang){
  const ol=a=>'<ol>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ol>';
  const table=(heads,rows)=>'<div class="tableWrap"><table><thead><tr>'+heads.map(x=>'<th>'+x+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
  const filterCards=d.filtertitles.map((x,i)=>'<div class="card"><h3>'+x+'</h3><p>'+d.filterbody[i]+'</p></div>').join('');
- const support='<h3>'+d.supporthead+'</h3><ul><li>Telegram: <a href="https://t.me/+drVIKX1dsY0yZWNl" target="_blank" rel="noopener">'+d.tg+'</a></li><li>WhatsApp: <a href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank" rel="noopener">'+d.wa+'</a></li><li>Email: <a href="mailto:driverridepicker@gmail.com">driverridepicker@gmail.com</a></li></ul>';
+ const support='<h3>'+d.supporthead+'</h3><ul><li>Telegram: <a href="https://t.me/+drVIKX1dsY0yZWNl" target="_blank" rel="noopener noreferrer">'+d.tg+'</a></li><li>WhatsApp: <a href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank" rel="noopener noreferrer">'+d.wa+'</a></li><li>Email: <a href="mailto:driverridepicker@gmail.com">driverridepicker@gmail.com</a></li></ul>';
  document.getElementById('completeArticle').innerHTML='<div class="wrap"><div class="head"><span class="eyebrow">'+d.introhead+'</span><h2>'+d.title+'</h2><p>'+d.intro+'</p></div><div class="card"><h3>'+d.introhead+'</h3><p>'+d.introbody+'</p><h3>'+d.freehead+'</h3><p>'+d.freebody+'</p><h3>'+d.planshead+'</h3><p>'+d.plansintro+'</p>'+table(d.planhead,d.plans)+ul(d.planbullets)+'<h3>'+d.ruleshead+'</h3>'+ul(d.rules)+'<h3>'+d.recommendhead+'</h3>'+ul(d.recommend)+'<h3>'+d.refhead+'</h3>'+ol(d.refbody)+'<p>'+d.refnote+'</p><h3>'+d.filterhead+'</h3><div class="grid">'+filterCards+'</div><h3>'+d.speedhead+'</h3>'+ol(d.speedsteps)+'<h3>'+d.examplehead+'</h3>'+ul(d.examples)+'<h3>'+d.whyhead+'</h3>'+ul(d.why)+'<h3>'+d.summaryhead+'</h3>'+table([d.summaryhead,'Details'],d.summary)+'<h3>'+d.endhead+'</h3><p>'+d.endbody+'</p>'+support+'</div></div>';
 }
 </script>
@@ -434,7 +450,7 @@ en: {
   navFeatures:"Features", navPlans:"Plans", navGuide:"Full Guide", navSupport:"Support", version:"● VERSION 1.17.0",
   title:'Choose rides smarter.<br><span class="gradient">Drive on your terms.</span>',
   intro:"An assistive ride-selection helper for auto, car and bike drivers with physical limitations (such as hand/finger surgery recovery). Set fare, pickup distance, trip distance and area preferences.",
-  download:"⬇ Download APK v1.17.0", watch:"▶ Watch setup video", pill1:"🚗 Auto • Car • Bike", pill2:"🌐 5 languages", pill3:"🎁 24 Hours Free Trial", downloadNote:"Download the latest v1.17.0 APK directly. This ensures you always get the safest version with 100% working logic and speed.",
+  download:"⬇ Download APK v1.17.0", watch:"▶ Watch setup video", pill1:"🚗 Auto • Car • Bike", pill2:"🌐 5 languages", pill3:"🎁 24 Hours Free Trial", downloadNote:"Download the latest v1.17.0 APK directly. This ensures you always get the safest version.",
   cardTitle:"Your rides. Your filters.", tagline:"Drive Smart • Save Time • Ride Better!", join:"Join Telegram for Support",
   featuresEyebrow:"BUILT FOR DRIVERS", featuresTitle:"Useful controls in one place", featuresDesc:"Behavior depends on app version, permissions, phone and each ride platform's rules.",
   f1t:"Fare & distance filters", f1d:"Set minimum fare and maximum pickup/trip distance. The app automatically filters incoming ride requests against your limits, so you do not have to look at the phone screen while driving — directly ensuring ROAD SAFETY. Blank conditions are ignored.",
