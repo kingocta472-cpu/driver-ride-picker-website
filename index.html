@@ -44,6 +44,45 @@
 .shield-box { background: #0f2a1a; border: 2px solid #00c853; border-radius: 16px; padding: 24px; margin: 20px 0; }
 .shield-box h3 { color: #00c853; margin-top: 0; }
 
+/* ✅ JOIN POPUP */
+.joinPopup{position:fixed;inset:0;z-index:200;display:flex;align-items:flex-start;justify-content:center;padding:20px 14px 40px;background:rgba(0,0,0,.75);backdrop-filter:blur(3px);overflow-y:auto}
+.joinPopup.hidden{display:none}
+.joinCard{position:relative;width:min(560px,100%);margin:40px auto 0;background:linear-gradient(145deg,#2b100b,#1d0906);border:2px solid var(--green);border-radius:18px;padding:26px 22px 22px;box-shadow:0 20px 60px rgba(0,0,0,.65)}
+.joinCard h2{margin:0 0 12px;font-size:22px;line-height:1.3;color:#ffd166;padding-right:26px}
+.joinCard p{margin:0 0 18px;color:var(--muted);font-size:16px;line-height:1.6}
+.joinActions{display:flex;flex-direction:column;gap:10px}
+.joinActions .btn{width:100%;margin:0;font-size:16px;padding:14px 16px}
+.joinActions .whatsapp{background:#25d366;color:#062b15;border-color:#1ea855}
+.joinClose{position:absolute;top:8px;right:10px;background:transparent;border:0;color:#ffd166;font-size:24px;line-height:1;cursor:pointer;padding:4px 8px;border-radius:8px}
+.joinClose:hover{background:#3a150c}
+
+/* ✅ POPUP LANGUAGE BUTTONS */
+.popup-lang-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+    justify-content: center;
+}
+.popup-lang-btns button {
+    background: #35120b;
+    color: #fff;
+    border: 1px solid #914027;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.2s;
+}
+.popup-lang-btns button[aria-pressed="true"] {
+    background: #651900;
+    border-color: var(--green);
+    box-shadow: 0 0 0 1px var(--green) inset;
+}
+
+@media(max-width:520px){.joinCard{margin-top:16px;padding:22px 16px 18px}.joinCard h2{font-size:19px}.joinCard p{font-size:15px}}
+
 @media (max-width: 850px){.nav{align-items:flex-start;flex-wrap:wrap}.languageButtons{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.languageButtons button:last-child{grid-column:1/-1}.heroGrid,.row{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.prices{grid-template-columns:repeat(2,1fr)}.links a{display:none}.band{display:block}.foot{grid-template-columns:1fr 1fr}}
 @media(max-width: 600px){
   .pp-step { flex-direction: column; align-items: flex-start; padding: 16px; }
@@ -55,6 +94,30 @@
 </style>
 </head>
 <body>
+
+<!-- ✅ JOIN POPUP -->
+<div class="joinPopup hidden" id="joinPopup" role="dialog" aria-modal="true" aria-labelledby="joinPopupTitle">
+  <div class="joinCard">
+    <button type="button" class="joinClose" id="joinPopupClose" aria-label="Close">✕</button>
+    
+    <!-- ✅ LANGUAGE BUTTONS IN POPUP -->
+    <div class="popup-lang-btns" aria-label="Popup language">
+        <button type="button" data-lang="kn" aria-pressed="true">ಕನ್ನಡ</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+        <button type="button" data-lang="hi" aria-pressed="false">हिन्दी</button>
+        <button type="button" data-lang="te" aria-pressed="false">తెలుగు</button>
+        <button type="button" data-lang="ta" aria-pressed="false">தமிழ்</button>
+    </div>
+
+    <h2 id="joinPopupTitle" data-k="joinTitle">📢 ಮುಖ್ಯ ಸೂಚನೆ — ದಯವಿಟ್ಟು ಸೇರಿ</h2>
+    <p data-k="joinMsg">ನಮ್ಮ WhatsApp ಚಾನೆಲ್ ಅಥವಾ Telegram ಗುಂಪಿನಲ್ಲಿ ಒಂದನ್ನು ಸೇರುವುದು ಅವಶ್ಯಕ. ಏಕೆಂದರೆ ಮುಂದೆ ನಿಮಗೆ ಯಾವುದೇ ಸಮಸ್ಯೆ ಅಥವಾ ಬೇರೆ ತೊಂದರೆ ಉಂಟಾದರೆ, ನೀವು ನಮ್ಮೊಂದಿಗೆ ಜೊತೆಯಾಗಿದ್ದರೆ — ಹೊಸ ಆಪ್ ನೀಡುವುದು ಅಥವಾ ಯಾವುದೇ ಸಹಾಯ ಮಾಡುವುದರಲ್ಲಿ ನಾವು ಸಂಪೂರ್ಣವಾಗಿ ನಿಮ್ಮ ಸಹಾಯಕ್ಕೆ ಸಿದ್ಧರಿದ್ದೇವೆ. ಆದ್ದರಿಂದ ದಯವಿಟ್ಟು ನಮ್ಮ ಎರಡರಲ್ಲಿ ಒಂದನ್ನು ಖಂಡಿತವಾಗಿ ಸೇರಿ.</p>
+    <div class="joinActions">
+      <a class="btn whatsapp" href="https://whatsapp.com/channel/0029VbE9wFnGU3BDB4prn336" target="_blank" rel="noopener noreferrer" data-k="joinWaBtn">🟢 WhatsApp ಚಾನೆಲ್ ಸೇರಿ</a>
+      <a class="btn telegram" href="https://t.me/+drVIKX1dsY0yZWNl" target="_blank" rel="noopener noreferrer" data-k="joinTgBtn">✈️ Telegram ಗುಂಪು ಸೇರಿ</a>
+    </div>
+  </div>
+</div>
+
 <header class="top"><div class="wrap nav"><a class="brand" href="#home"><img src="https://i.ibb.co/23wYg7YM/file-0000000085b08211ae79c66db3f79e9d.png" alt="Driver Ride Picker logo" referrerpolicy="no-referrer"><span>DRIVER RIDE PICKER<small>Made for Indian Drivers</small></span></a><nav class="links"><a href="#features" data-k="navFeatures">ವೈಶಿಷ್ಟ್ಯಗಳು</a><a href="#plans" data-k="navPlans">ಯೋಜನೆಗಳು</a><a href="#guide" data-k="navGuide">ಮಾರ್ಗದರ್ಶಿ</a><a href="#support" data-k="navSupport">ಸಹಾಯ</a></nav><div class="langChoices" id="langChoices" aria-label="Choose language">
 <button type="button" data-lang="kn" aria-pressed="true">ಕನ್ನಡ</button>
 <button type="button" data-lang="en" aria-pressed="false">English</button>
@@ -137,14 +200,16 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       <div class="pp-video-wrap">
         <h3 class="pp-video-title">▶ Setup Video (Full Screen)</h3>
         <div class="pp-video-frame">
-          <iframe src="https://www.youtube.com/embed/cqFL7a6zC0c?rel=0" title="Driver Ride Picker Setup Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="no-referrer" loading="lazy"></iframe>
+          <!-- ✅ VIDEO LINK FIXED HERE -->
+          <iframe src="https://www.youtube.com/embed/cqFL7a6zC0c" title="Driver Ride Picker Setup Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="no-referrer" loading="lazy"></iframe>
         </div>
         <div style="text-align:center;margin:14px 0;">
           <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.18.0/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="download">⬇ Download APK v1.18.0</a>
         </div>
         <p class="pp-video-tip">💡 <b>Full screen mein dekhne ke liye</b> — video ke bottom-right corner mein ⛶ (fullscreen) icon tap karo, ya neeche wala button dabao.</p>
         <div class="pp-video-actions">
-          <a class="btn primary" href="https://youtu.be/cqFL7a6zC0c" target="_blank" rel="noopener noreferrer">▶ Watch in Full Screen (YouTube)</a>
+          <!-- ✅ YOUTUBE DIRECT LINK FIXED HERE -->
+          <a class="btn primary" href="https://youtu.be/cqFL7a6zC0c?si=IQraCmJtiffBpQBK" target="_blank" rel="noopener noreferrer">▶ Watch in Full Screen (YouTube)</a>
         </div>
       </div>
     </div>
@@ -662,10 +727,49 @@ tcContent:`Driver Ride Picker - ನಿಯಮ ಮತ್ತು ಷರತ್ತು�
 rpContent:`Driver Ride Picker - ಮರುಪಾವತಿ ಮತ್ತು ರದ್ದತಿ\nಕೊನೆಯ ನವೀಕರಣ: ಅಕ್ಟೋಬರ್ 2026\n\n1. ಡಿಜಿಟಲ್ ಯೋಜನೆಗಳು\nಒಮ್ಮೆ ಯೋಜನೆ ಸಕ್ರಿಯಗೊಂಡ ನಂತರ, ಸಾಮಾನ್ಯವಾಗಿ ಅದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ.\n\n2. ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಖಾತೆ ಕ್ರಿಯೆಗಳಿಗೆ ಮರುಪಾವತಿ ಇಲ್ಲ\nಯಾವುದೇ ರೈಡ್-ಹೇಲಿಂಗ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ನಲ್ಲಿ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಎಚ್ಚರಿಸಿದರೆ, ನಿರ್ಬಂಧಿಸಿದರೆ, ತಾತ್ಕಾಲಿಕವಾಗಿ ಅಮಾನತುಗೊಳಿಸಿದರೆ, ಶಾಶ್ವತವಾಗಿ ನಿಷೇಧಿಸಿದರೆ, ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿದರೆ, ಅಳಿಸಿದರೆ, ಮುಕ್ತಾಯಗೊಳಿಸಿದರೆ ಅಥವಾ ಇನ್ನೊಂದು ರೀತಿಯಲ್ಲಿ ಕ್ರಮ ತೆಗೆದುಕೊಂಡರೆ ಯಾವುದೇ ಮರುಪಾವತಿಯನ್ನು ನೀಡಲಾಗುವುದಿಲ್ಲ. ಅಂತಹ ಯಾವುದೇ ಕ್ರಮಕ್ಕೆ ಡೆವಲಪರ್‌ಗಳು ಜವಾಬ್ದಾರರಲ್ಲ.\n\n3. ವಿಫಲ/ನಕಲಿ ಪಾವತಿಗಳು\nವಹಿವಾಟು ದಾಖಲೆಗಳ ಆಧಾರದ ಮೇಲೆ ಪ್ರತ್ಯೇಕವಾಗಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ.\n\nಸಂಪರ್ಕ: driverridepicker@gmail.com`,
 discContent:`Driver Ride Picker - ಹಕ್ಕುತ್ಯಾಗ\nಕೊನೆಯ ನವೀಕರಣ: ಅಕ್ಟೋಬರ್ 2026\n\n1. ಸಹಾಯಕ ಸ್ವಭಾವ ಮತ್ತು ರಸ್ತೆ ಸುರಕ್ಷತೆ\nಅಪ್ಲಿಕೇಶನ್ ಸ್ಕ್ರೀನ್ ಗಮನವನ್ನು ಕಡಿಮೆ ಮಾಡುವ ಮತ್ತು ರಸ್ತೆ ಸುರಕ್ಷತೆಯನ್ನು ಸುಧಾರಿಸುವ ಗುರಿಯನ್ನು ಹೊಂದಿದೆ. ಸುರಕ್ಷಿತ ಚಾಲನೆ ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಜವಾಬ್ದಾರಿಯಾಗಿದೆ.\n\n2. ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಖಾತೆ ಕ್ರಿಯೆಗಳಿಗೆ ಯಾವುದೇ ಜವಾಬ್ದಾರಿಯಿಲ್ಲ\nಯಾವುದೇ ಮೂರನೇ ವ್ಯಕ್ತಿಯ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ನಿಮ್ಮ ಖಾತೆಯ ವಿರುದ್ಧ ತೆಗೆದುಕೊಂಡ ಯಾವುದೇ ಕ್ರಮಕ್ಕೆ ಡೆವಲಪರ್‌ಗಳು ಯಾವುದೇ ಜವಾಬ್ದಾರಿಯನ್ನು ಸ್ವೀಕರಿಸುವುದಿಲ್ಲ. ಇದರಲ್ಲಿ ಈ ಕೆಳಗಿನವು ಸೇರಿವೆ, ಆದರೆ ಇವುಗಳಿಗೆ ಸೀಮಿತವಾಗಿಲ್ಲ:\n• ಎಚ್ಚರಿಕೆಗಳು, ನಿರ್ಬಂಧಗಳು, ತಾತ್ಕಾಲಿಕ ಅಮಾನತು, ಶಾಶ್ವತ ನಿಷೇಧ, ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವಿಕೆ, ಅಳಿಸುವಿಕೆ ಅಥವಾ ಮುಕ್ತಾಯ.\n• ಗಳಿಕೆಯ ನಷ್ಟ ಅಥವಾ ಕಾನೂನು ಕ್ರಮ.\n\n3. ಹೊಣೆಗಾರಿಕೆಯ ಮಿತಿ\nಕಾನೂನಿನಿಂದ ಅನುಮತಿಸಲಾದ ಗರಿಷ್ಠ ಮಟ್ಟಿಗೆ, ಅಪ್ಲಿಕೇಶನ್ ಬಳಕೆ ಅಥವಾ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ನಿಂದ ನಿಮ್ಮ ಖಾತೆಯ ಅಮಾನತು, ನಿಷೇಧ, ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವಿಕೆ, ಅಳಿಸುವಿಕೆ ಅಥವಾ ಮುಕ್ತಾಯದಿಂದ ಉಂಟಾಗುವ ಯಾವುದೇ ಪರೋಕ್ಷ, ಆಕಸ್ಮಿಕ, ವಿಶೇಷ, ಅನುಷಂಗಿಕ ಅಥವಾ ದಂಡನಾತ್ಮಕ ಹಾನಿಗಳಿಗೆ DRIVER RIDE PICKER ಅಥವಾ ಅದರ ಡೆವಲಪರ್‌ಗಳು ಯಾವುದೇ ಸಂದರ್ಭದಲ್ಲಿ ಜವಾಬ್ದಾರರಾಗಿರುವುದಿಲ್ಲ.\n\nಸಂಪರ್ಕ: driverridepicker@gmail.com`
 };
-function setLang(code){let t=({kn:kn,en:common.en,hi:common.hi,te:common.te,ta:common.ta})[code]||kn;document.documentElement.lang=code;document.querySelectorAll("[data-k]").forEach(e=>{let k=e.dataset.k;if(t[k]!==undefined)e.innerHTML=t[k]});renderFullGuide(code);try{localStorage.setItem("drpLang",code)}catch(e){}document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===code)))}
+const popupT={
+kn:{joinTitle:"📢 ಮುಖ್ಯ ಸೂಚನೆ — ದಯವಿಟ್ಟು ಸೇರಿ",joinMsg:"ನಮ್ಮ WhatsApp ಚಾನೆಲ್ ಅಥವಾ Telegram ಗುಂಪಿನಲ್ಲಿ ಒಂದನ್ನು ಸೇರುವುದು ಅವಶ್ಯಕ. ಏಕೆಂದರೆ ಮುಂದೆ ನಿಮಗೆ ಯಾವುದೇ ಸಮಸ್ಯೆ ಅಥವಾ ಬೇರೆ ತೊಂದರೆ ಉಂಟಾದರೆ, ನೀವು ನಮ್ಮೊಂದಿಗೆ ಜೊತೆಯಾಗಿದ್ದರೆ — ಹೊಸ ಆಪ್ ನೀಡುವುದು ಅಥವಾ ಯಾವುದೇ ಸಹಾಯ ಮಾಡುವುದರಲ್ಲಿ ನಾವು ಸಂಪೂರ್ಣವಾಗಿ ನಿಮ್ಮ ಸಹಾಯಕ್ಕೆ ಸಿದ್ಧರಿದ್ದೇವೆ. ಆದ್ದರಿಂದ ದಯವಿಟ್ಟು ನಮ್ಮ ಎರಡರಲ್ಲಿ ಒಂದನ್ನು ಖಂಡಿತವಾಗಿ ಸೇರಿ.",joinWaBtn:"🟢 WhatsApp ಚಾನೆಲ್ ಸೇರಿ",joinTgBtn:"✈️ Telegram ಗುಂಪು ಸೇರಿ"},
+en:{joinTitle:"📢 Important — Please Join",joinMsg:"It is necessary to join either our WhatsApp channel or our Telegram group. Because in the future, if you face any problem or any other issue, staying connected with us means we are fully ready to help you — including giving you a new app or any other assistance. So please make sure to join at least one of them.",joinWaBtn:"🟢 Join WhatsApp Channel",joinTgBtn:"✈️ Join Telegram Group"},
+hi:{joinTitle:"📢 ज़रूरी सूचना — कृपया जुड़ें",joinMsg:"हमारे WhatsApp चैनल या Telegram ग्रुप में से किसी एक से जुड़ना जरूरी है। क्योंकि आगे जाकर अगर आपको कोई समस्या या कोई और परेशानी होती है, तो आप हमारे साथ जुड़े रहेंगे — नया ऐप देने में या किसी भी तरह की मदद में हम पूरी तरह से आपकी मदद के लिए हाजिर रहेंगे। इसलिए कृपया करके हमारे दोनों में से किसी एक को जरूर जॉइन करें।",joinWaBtn:"🟢 WhatsApp चैनल जॉइन करें",joinTgBtn:"✈️ Telegram ग्रुप जॉइन करें"},
+te:{joinTitle:"📢 ముఖ్యమైన సూచన — దయచేసి చేరండి",joinMsg:"మా WhatsApp ఛానెల్ లేదా Telegram గ్రూప్‌లో ఒకదానిలో చేరడం అవసరం. ఎందుకంటే ముందు మీకు ఏదైనా సమస్య లేదా ఇతర ఇబ్బంది వస్తే, మీరు మాతో కనెక్ట్‌గా ఉంటే — కొత్త యాప్ ఇవ్వడంలో లేదా ఏదైనా సహాయం చేయడంలో మేము పూర్తిగా మీకు సహాయం చేయడానికి సిద్ధంగా ఉన్నాము. కాబట్టి దయచేసి మా రెండింటిలో ఒకదాన్ని తప్పకుండా చేరండి.",joinWaBtn:"🟢 WhatsApp ఛానెల్‌లో చేరండి",joinTgBtn:"✈️ Telegram గ్రూప్‌లో చేరండి"},
+ta:{joinTitle:"📢 முக்கிய அறிவிப்பு — தயவுசெய்து சேருங்கள்",joinMsg:"எங்கள் WhatsApp சேனல் அல்லது Telegram குழுவில் ஒன்றில் சேர்வது அவசியம். ஏனெனில் எதிர்காலத்தில் உங்களுக்கு ஏதேனும் பிரச்சனை அல்லது வேறு சிக்கல் ஏற்பட்டால், நீங்கள் எங்களுடன் இணைந்திருந்தால் — புதிய ஆப்பை வழங்குவதில் அல்லது எந்த உதவியையும் செய்வதில் நாங்கள் முழுமையாக உங்களுக்கு உதவ தயாராக இருக்கிறோம். எனவே தயவுசெய்து எங்கள் இரண்டில் ஒன்றை கட்டாயம் சேருங்கள்.",joinWaBtn:"🟢 WhatsApp சேனலில் சேருங்கள்",joinTgBtn:"✈️ Telegram குழுவில் சேருங்கள்"}
+};
+function setLang(code){let t=({kn:kn,en:common.en,hi:common.hi,te:common.te,ta:common.ta})[code]||kn;t=Object.assign({},t,popupT[code]||popupT.kn);document.documentElement.lang=code;document.querySelectorAll("[data-k]").forEach(e=>{let k=e.dataset.k;if(t[k]!==undefined)e.innerHTML=t[k]});renderFullGuide(code);try{localStorage.setItem("drpLang",code)}catch(e){}document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===code)))}
 document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 document.getElementById("year").textContent=new Date().getFullYear();
 try{setLang(localStorage.getItem("drpLang")||"kn")}catch(e){setLang("kn")}
+
+// ✅ POPUP LOGIC (Hide permanently after click)
+(function(){
+  var popup = document.getElementById("joinPopup");
+  var closeBtn = document.getElementById("joinPopupClose");
+  var joinBtns = document.querySelectorAll(".joinActions .btn");
+
+  // Check if user already closed it
+  if (localStorage.getItem("drpPopupClosed") === "true") {
+    popup.classList.add("hidden");
+  } else {
+    popup.classList.remove("hidden");
+  }
+
+  // Function to close popup and save state
+  function closePopup() {
+    popup.classList.add("hidden");
+    localStorage.setItem("drpPopupClosed", "true");
+  }
+
+  // Close on 'X' button click
+  if(closeBtn && popup){
+    closeBtn.addEventListener("click", closePopup);
+  }
+
+  // Close on Join button click
+  if(joinBtns.length > 0 && popup){
+    joinBtns.forEach(function(btn){
+      btn.addEventListener("click", closePopup);
+    });
+  }
+})();
 </script>
 </body>
 </html>
