@@ -28,6 +28,13 @@
 .nvPriceBox li { margin-bottom: 6px; }
 .nvPriceBox strong { color: #fff; }
 
+/* ✅ VERSION SELECTOR CSS */
+.version-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+.version-card { display: flex; flex-direction: column; justify-content: space-between; }
+.version-card .btn { margin: 8px 0 0 0; width: 100%; }
+.version-card h3 { margin: 10px 0; font-size: 22px; }
+.version-card p { font-size: 15px; margin-bottom: 15px; }
+
 /* ✅ PLAY PROTECT CSS */
 .pp-step { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; background: #2b100b; padding: 20px; border-radius: 12px; border: 1px solid var(--line); }
 .pp-step-num { background: var(--green); color: white; width: 40px; height: 40px; font-size: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; box-shadow: 0 4px 10px rgba(255,75,0,0.4); }
@@ -139,7 +146,7 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
 
 </div>
 
-<!-- ✅ NEW VERSION INFO — STRATEGY TEST + IMAGE + PLANS -->
+<!-- ✅ NEW VERSION INFO — STRATEGY TEST + VERSION SELECTOR + PLANS -->
 <section id="new-version-info" style="padding-top: 0;">
   <div class="wrap">
     <div class="head">
@@ -147,10 +154,46 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       <h2 data-k="nvTitle">Driver Ride Picker v1.19.6</h2>
     </div>
     <div class="card nvCard">
-      <p class="nvStrategy" data-k="nvStrategyInfo">⚙️ <b>Strategy Testing:</b> Test all strategies one by one on your phone. Test each strategy and continue with the one that best suits your device.</p>
-      <a href="https://ibb.co/RGFDdhx5" target="_blank" rel="noopener noreferrer">
-        <img src="https://i.ibb.co/xKk7dmp4/Screenshot-20261106-204437.jpg" alt="New version strategy testing info" class="nvImg" referrerpolicy="no-referrer" loading="lazy">
-      </a>
+      
+      <!-- ✅ NEW: VERSION SELECTOR BLOCK -->
+      <p class="nvStrategy" style="font-size: 20px; text-align: center; margin-bottom: 25px; background: #4b1608; border-color: #ff4b00;">
+        <span data-k="vTestTitle">Try all versions! One will definitely fit your phone.</span>
+      </p>
+
+      <div class="version-grid">
+        <!-- NEW PHONE -->
+        <div class="card version-card best" style="border: 2px solid #00c853; background: #0f2a1a;">
+          <span class="tag" style="background: #00c853; color: #000;" data-k="vNewTag">NEW PHONES - BEST</span>
+          <h3 style="color: #fff;" data-k="vNewTitle">v1.19.6 (Best Option)</h3>
+          <p style="color: #e7f6ec;" data-k="vNewDesc">Fast, smooth, and highly optimized for new phones.</p>
+          <a class="btn primary" style="background: #00c853; color: #000; width: 100%; font-size: 16px; font-weight: bold;" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.6/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="vNewBtn">⬇ Download v1.19.6</a>
+        </div>
+
+        <!-- MEDIUM -->
+        <div class="card version-card" style="border: 1px solid #ffd166; background: #2b100b;">
+          <span class="tag" style="background: #ffd166; color: #000;" data-k="vMedTag">MEDIUM - TEST</span>
+          <h3 style="color: #fff;" data-k="vMedTitle">v1.19.7 & v1.19.8</h3>
+          <p style="color: #e7b6a4;" data-k="vMedDesc">Try these if v1.19.6 doesn't work or you have an older phone.</p>
+          <a class="btn secondary" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.7/app-release.apk" target="_blank" rel="noopener noreferrer" style="width: 100%; margin-bottom: 8px;" data-k="vMedBtn1">⬇ Download v1.19.7</a>
+          <a class="btn secondary" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.8/app-release.apk" target="_blank" rel="noopener noreferrer" style="width: 100%;" data-k="vMedBtn2">⬇ Download v1.19.8</a>
+        </div>
+
+        <!-- OLD PHONE -->
+        <div class="card version-card" style="border: 1px solid #ff4b00; background: #2b100b;">
+          <span class="tag" style="background: #ff4b00; color: #fff;" data-k="vOldTag">OLD PHONES</span>
+          <h3 style="color: #fff;" data-k="vOldTitle">v1.18.0</h3>
+          <p style="color: #e7b6a4;" data-k="vOldDesc">If you have an old phone and rides are missing, try this stable version.</p>
+          <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-ride-picker-website/releases/download/v1.18.0/app-release.apk" target="_blank" rel="noopener noreferrer" style="width: 100%;" data-k="vOldBtn">⬇ Download v1.18.0</a>
+        </div>
+      </div>
+      <!-- ✅ END VERSION SELECTOR -->
+
+      <div style="margin-top: 30px;">
+        <a href="https://ibb.co/RGFDdhx5" target="_blank" rel="noopener noreferrer">
+          <img src="https://i.ibb.co/xKk7dmp4/Screenshot-20261106-204437.jpg" alt="New version strategy testing info" class="nvImg" referrerpolicy="no-referrer" loading="lazy">
+        </a>
+      </div>
+
       <div class="nvPriceBox">
         <h3 data-k="nvPriceTitle">💰 Plans & Pricing</h3>
         <ul>
@@ -221,9 +264,6 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
           </div>
         </a>
 
-        <div style="text-align:center;margin:14px 0;">
-          <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.6/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="download">⬇ Download APK v1.19.6</a>
-        </div>
         <p class="pp-video-tip">💡 <b>Full screen mein dekhne ke liye</b> — video ke bottom-right corner mein ⛶ (fullscreen) icon tap karo, ya neeche wala button dabao.</p>
         <div class="pp-video-actions">
           <a class="btn primary" href="https://youtu.be/cqFL7a6zC0c?si=IQraCmJtiffBpQBK" target="_blank" rel="noopener noreferrer">▶ Watch in Full Screen (YouTube)</a>
@@ -509,7 +549,7 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
 </footer>
 
 <div class="wrap" style="text-align:center;padding:16px 0 30px;">
-  <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.6/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="download">⬇ Download APK v1.19.6</a>
+  <a class="btn primary" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.6/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="vNewBtn">⬇ Download APK v1.19.6</a>
 </div>
 
 <!-- Scripts section starts here -->
@@ -554,7 +594,7 @@ en: {
   permissions:"Phone setup checklist", perm1:"Enable Accessibility only if required and you understand the permission.", perm2:"Allow display-over-other-apps only when needed.", perm3:"Review battery and background settings.", perm4:"Never share OTPs, passwords or payment PINs.", permNote:"Use automation only where the ride platform permits it; platform rules may restrict it.",
   videoEyebrow:"WATCH & LEARN", videoTitle:"Driver Ride Picker setup video", videoDesc:"Watch the short and review the phone settings.", youtubeTitle:"Want to watch on YouTube?", youtubeDesc:"Open the original Short on YouTube.", openYoutube:"▶ Open YouTube Short",
   ready:"READY TO START?", readyTitle:"Get Driver Ride Picker v1.19.6", readyDesc:"Download the latest APK directly. (v1.19.6)", whatsapp:"WhatsApp Channel",
-  faqEyebrow:"QUICK ANSWERS", faqTitle:"Frequently asked questions", q1:"Are plans unlimited?", a1:"The guide describes unlimited use during plan validity. Confirm activation and current terms in the app/support channel.", q2:"When does the plan expire?", a2:"The plan expires exactly when the purchased time ends. You must recharge to continue.", q3:"Will it work on every platform?", a3:"Not guaranteed. Device, permissions, app version and platform rules vary. Use permitted features only.", q4:"Where do I get the APK and help?", a4:"Use the Download APK v1.19.6 button above. Verify v1.19.6 before installing.",
+  faqEyebrow:"QUICK ANSWERS", faqTitle:"Frequently asked questions", q1:"Are plans unlimited?", a1:"The guide describes unlimited use during plan validity. Confirm activation and current terms in the app/support channel.", q2:"When does the plan expire?", a2:"The plan expires exactly when the purchased time ends. You must recharge to continue.", q3:"Will it work on every platform?", a3:"Not guaranteed. Device, permissions, app version and platform rules vary. Use permitted features only.", q4:"Where do I get the APK and help?", a4:"Use the Download APK button above. Verify the version before installing.",
   supportEyebrow:"WE'RE HERE TO HELP", supportTitle:"Official support channels", supportDesc:"Release updates, setup help, plan questions and announcements.", telegramDesc:"APK releases and support notices.", whatsappDesc:"App updates and release notes.", follow:"Follow WhatsApp", email:"Email support",
   disclaimer:"Driver Ride Picker is an independent Assistive Technology project designed for drivers with physical limitations (e.g., hand/finger surgeries) and is not affiliated with any third-party ride-hailing platform. By using this app, you agree to INDEMNIFY AND HOLD HARMLESS the developers from any claims, losses, or damages (including account bans, restrictions, temporary suspension, permanent disablement, deletion, or termination of accounts, or accidents). Under no circumstances shall the developers be liable for any direct, indirect, or consequential damages arising from the use of this app. You are solely responsible for following platform terms and local traffic laws.",
   quick:"Quick links", contact:"Contact",
@@ -563,8 +603,22 @@ en: {
   
   // ✅ NEW VERSION SECTION
   nvEyebrow: "NEW VERSION",
-  nvTitle: "Driver Ride Picker v1.19.6",
-  nvStrategyInfo: "⚙️ <b>Strategy Testing:</b> Test all strategies one by one on your phone. Test each strategy carefully and continue with the one that best suits your device.",
+  nvTitle: "Driver Ride Picker Versions",
+  vTestTitle: "Try all versions! One will definitely fit your phone.",
+  vNewTag: "NEW PHONES - BEST",
+  vNewTitle: "v1.19.6 (Best Option)",
+  vNewDesc: "Fast, smooth, and highly optimized for new phones.",
+  vNewBtn: "⬇ Download v1.19.6",
+  vMedTag: "MEDIUM - TEST",
+  vMedTitle: "v1.19.7 & v1.19.8",
+  vMedDesc: "Try these if v1.19.6 doesn't work or you have an older phone.",
+  vMedBtn1: "⬇ Download v1.19.7",
+  vMedBtn2: "⬇ Download v1.19.8",
+  vOldTag: "OLD PHONES",
+  vOldTitle: "v1.18.0",
+  vOldDesc: "If you have an old phone and rides are missing, try this stable version.",
+  vOldBtn: "⬇ Download v1.18.0",
+
   nvPriceTitle: "💰 Plans & Pricing",
   nvPrice1: "Daily: ₹15 / 24 hours",
   nvPrice2: "3 Days: ₹39 / 72 hours",
@@ -616,7 +670,7 @@ hi: {
   permissions:"फोन सेटअप चेकलिस्ट", perm1:"Accessibility तभी चालू करें जब जरूरी हो और अनुमति समझें।", perm2:"दूसरे ऐप के ऊपर दिखाने की अनुमति जरूरत पर ही दें।", perm3:"बैटरी और बैकग्राउंड सेटिंग जांचें।", perm4:"OTP, पासवर्ड या पेमेंट PIN साझा न करें।", permNote:"ऑटोमेशन वहीं इस्तेमाल करें जहां प्लेटफॉर्म अनुमति देता हो।",
   videoEyebrow:"देखें और सीखें", videoTitle:"Driver Ride Picker सेटअप वीडियो", videoDesc:"वीडियो देखें और फोन सेटिंग जांचें।", youtubeTitle:"YouTube पर देखना है?", youtubeDesc:"मूल Short YouTube पर खोलें।", openYoutube:"▶ YouTube Short खोलें",
   ready:"शुरू करने के लिए तैयार?", readyTitle:"Driver Ride Picker v1.19.6 पाएं", readyDesc:"सीधे नवीनतम APK डाउनलोड करें। (v1.19.6)", whatsapp:"WhatsApp चैनल",
-  faqEyebrow:"त्वरित जवाब", faqTitle:"अक्सर पूछे जाने वाले सवाल", q1:"क्या प्लान अनलिमिटेड हैं?", a1:"गाइड के अनुसार वैधता अवधि में अनलिमिटेड। एक्टिवेशन और शर्तें जांचें।", q2:"प्लान कब खत्म होगा?", a2:"खरीदा गया समय खत्म होते ही प्लान खत्म हो जाएगा। जारी रखने के लिए रिचार्ज करें।", q3:"क्या हर प्लेटफॉर्म पर चलेगा?", a3:"गारंटी नहीं। डिवाइस, परमिशन और प्लेटफॉर्म नियम अलग हैं। अनुमत फीचर ही इस्तेमाल करें।", q4:"APK और मदद कहां मिलेगी?", a4:"ऊपर दिए गए Download APK v1.19.6 बटन का उपयोग करें। इंस्टॉल से पहले v1.19.6 जांचें।",
+  faqEyebrow:"त्वरित जवाब", faqTitle:"अक्सर पूछे जाने वाले सवाल", q1:"क्या प्लान अनलिमिटेड हैं?", a1:"गाइड के अनुसार वैधता अवधि में अनलिमिटेड। एक्टिवेशन और शर्तें जांचें।", q2:"प्लान कब खत्म होगा?", a2:"खरीदा गया समय खत्म होते ही प्लान खत्म हो जाएगा। जारी रखने के लिए रिचार्ज करें।", q3:"क्या हर प्लेटफॉर्म पर चलेगा?", a3:"गारंटी नहीं। डिवाइस, परमिशन और प्लेटफॉर्म नियम अलग हैं। अनुमत फीचर ही इस्तेमाल करें।", q4:"APK और मदद कहां मिलेगी?", a4:"ऊपर दिए गए Download APK बटन का उपयोग करें। इंस्टॉल से पहले वर्जन जांचें।",
   supportEyebrow:"हम मदद के लिए हैं", supportTitle:"आधिकारिक सहायता चैनल", supportDesc:"रिलीज अपडेट, सेटअप गाइड और प्लान सवालों के लिए।", telegramDesc:"APK रिलीज और सहायता सूचना।", whatsappDesc:"ऐप अपडेट और रिलीज नोट्स।", follow:"WhatsApp फॉलो करें", email:"ईमेल सहायता",
   disclaimer:"Driver Ride Picker एक स्वतंत्र सहायक तकनीक (Assistive Technology) प्रोजेक्ट है, जो शारीरिक रूप से अक्षम ड्राइवरों के लिए बनाया गया है। यह किसी भी तृतीय-पक्ष राइड-हेलिंग प्लेटफॉर्म से संबद्ध नहीं है। इस ऐप का उपयोग करके, आप किसी भी दावे, नुकसान या क्षति (खाता प्रतिबंध, निलंबन, स्थायी बैन, अक्षमता, विलोपन, या खाता समाप्ति, या दुर्घटनाओं सहित) से डेवलपर्स को बचाने (INDEMNIFY AND HOLD HARMLESS) के लिए सहमत हैं। किसी भी परिस्थिति में डेवलपर्स इस ऐप के उपयोग से होने वाले प्रत्यक्ष, अप्रत्यक्ष या परिणामी नुकसान के लिए उत्तरदायी नहीं होंगे। प्लेटफॉर्म नियम और स्थानीय कानूनों का पालन करना आपकी जिम्मेदारी है।",
   quick:"त्वरित लिंक", contact:"संपर्क",
@@ -624,8 +678,22 @@ hi: {
   ppTitleLegal: "गोपनीयता नीति", tcTitle: "नियम और शर्तें", rpTitle: "रिफंड और रद्दीकरण", discTitle: "अस्वीकरण",
   
   nvEyebrow: "नया संस्करण",
-  nvTitle: "Driver Ride Picker v1.19.6",
-  nvStrategyInfo: "⚙️ <b>स्ट्रैटेजी टेस्टिंग:</b> सभी स्ट्रैटेजी को एक-एक करके अपने फोन पर टेस्ट करें। हर स्ट्रैटेजी को ध्यान से टेस्ट करें और आपके फोन के लिए जो सबसे अच्छा सूट करे उस पर आगे बढ़ें।",
+  nvTitle: "Driver Ride Picker Versions",
+  vTestTitle: "सभी संस्करणों को आजमाएं! आपके फोन के लिए जरूर कोई न कोई फिट होगा।",
+  vNewTag: "नया फोन - सबसे अच्छा",
+  vNewTitle: "v1.19.6 (सबसे अच्छा विकल्प)",
+  vNewDesc: "नए फोन के लिए तेज़, स्मूथ और बेहतरीन।",
+  vNewBtn: "⬇ v1.19.6 डाउनलोड करें",
+  vMedTag: "मीडियम - टेस्ट करें",
+  vMedTitle: "v1.19.7 और v1.19.8",
+  vMedDesc: "अगर v1.19.6 काम न करे या आपके पास पुराना फोन है तो इन्हें टेस्ट करें।",
+  vMedBtn1: "⬇ v1.19.7 डाउनलोड करें",
+  vMedBtn2: "⬇ v1.19.8 डाउनलोड करें",
+  vOldTag: "पुराना फोन",
+  vOldTitle: "v1.18.0",
+  vOldDesc: "अगर पुराने फोन में राइड मिस हो रही है, तो इस स्टेबल वर्जन को ट्राई करें।",
+  vOldBtn: "⬇ v1.18.0 डाउनलोड करें",
+
   nvPriceTitle: "💰 प्लान और कीमत",
   nvPrice1: "डेली: ₹15 / 24 घंटे",
   nvPrice2: "3 दिन: ₹39 / 72 घंटे",
@@ -677,7 +745,7 @@ te: {
   permissions:"ఫోన్ సెటప్ చెక్‌లిస్ట్", perm1:"అవసరమై అనుమతి అర్థమైతేనే Accessibility ఆన్ చేయండి.", perm2:"ఇతర యాప్‌లపై చూపే అనుమతి అవసరమైనప్పుడే ఇవ్వండి.", perm3:"బ్యాటరీ, బ్యాక్‌గ్రౌండ్ సెట్టింగులు చూడండి.", perm4:"OTP, పాస్‌వర్డ్, చెల్లింపు PIN పంచవద్దు.", permNote:"ప్లాట్‌ఫారమ్ అనుమతించినప్పుడే ఆటోమేషన్ వాడండి.",
   videoEyebrow:"చూడండి, నేర్చుకోండి", videoTitle:"Driver Ride Picker సెటప్ వీడియో", videoDesc:"వీడియో చూసి ఫోన్ సెట్టింగులు పరిశీలించండి.", youtubeTitle:"YouTubeలో చూడాలా?", youtubeDesc:"అసలు Shortను YouTubeలో తెరవండి.", openYoutube:"▶ YouTube Short తెరవండి",
   ready:"ప్రారంభించడానికి సిద్ధమా?", readyTitle:"Driver Ride Picker v1.19.6 పొందండి", readyDesc:"నేరుగా తాజా APKని డౌన్‌లోడ్ చేయండి. (v1.19.6)", whatsapp:"WhatsApp ఛానెల్",
-  faqEyebrow:"త్వరిత సమాధానాలు", faqTitle:"తరచుగా అడిగే ప్రశ్నలు", q1:"ప్లాన్లు అన్‌లిమిటెడ్‌గా ఉంటాయా?", a1:"గైడ్ ప్రకారం కొనుగోలు చేసిన వ్యవధిలో అన్‌లిమిటెడ్. యాక్టివేషన్ నిర్ధారించండి.", q2:"ప్లాన్ ఎప్పుడు ముగుస్తుంది?", a2:"కొనుగోలు చేసిన సమయం ముగిసిన వెంటనే ప్లాన్ ముగుస్తుంది. కొనసాగించడానికి రీఛార్జ్ చేయండి.", q3:"ప్రతి ప్లాట్‌ఫారమ్‌లో పనిచేస్తుందా?", a3:"హామీ లేదు. ఫోన్, అనుమతులు, యాప్ వెర్షన్, నియమాలు మారుతాయి.", q4:"APK ఎక్కడ దొరుకుతుంది?", a4:"పైన ఉన్న Download APK v1.19.6 బటన్ వాడండి. ఇన్‌స్టాల్ ముందు v1.19.6 నిర్ధారించండి.",
+  faqEyebrow:"త్వరిత సమాధానాలు", faqTitle:"తరచుగా అడిగే ప్రశ్నలు", q1:"ప్లాన్లు అన్‌లిమిటెడ్‌గా ఉంటాయా?", a1:"గైడ్ ప్రకారం కొనుగోలు చేసిన వ్యవధిలో అన్‌లిమిటెడ్. యాక్టివేషన్ నిర్ధారించండి.", q2:"ప్లాన్ ఎప్పుడు ముగుస్తుంది?", a2:"కొనుగోలు చేసిన సమయం ముగిసిన వెంటనే ప్లాన్ ముగుస్తుంది. కొనసాగించడానికి రీఛార్జ్ చేయండి.", q3:"ప్రతి ప్లాట్‌ఫారమ్‌లో పనిచేస్తుందా?", a3:"హామీ లేదు. ఫోన్, అనుమతులు, యాప్ వెర్షన్, నియమాలు మారుతాయి.", q4:"APK ఎక్కడ దొరుకుతుంది?", a4:"పైన ఉన్న Download APK బటన్ వాడండి. ఇన్‌స్టాల్ ముందు వెర్షన్ నిర్ధారించండి.",
   supportEyebrow:"సహాయం కోసం మేమున్నాం", supportTitle:"అధికారిక సహాయ ఛానెల్లు", supportDesc:"విడుదలలు, సెటప్ సహాయం, ప్లాన్ ప్రశ్నల కోసం.", telegramDesc:"APK విడుదలలు, సహాయ ప్రకటనలు.", whatsappDesc:"యాప్ అప్‌డేట్లు, విడుదల నోట్స్.", follow:"WhatsApp ఫాలో అవ్వండి", email:"ఈమెయిల్ సహాయం",
   disclaimer:"Driver Ride Picker అనేది శారీరక పరిమితులు ఉన్న డ్రైవర్ల కోసం రూపొందించిన స్వతంత్ర సహాయక సాంకేతికత (Assistive Technology) ప్రాజెక్ట్; ఏదైనా మూడవ పక్ష రైడ్-హెయిలింగ్ ప్లాట్‌ఫారమ్‌తో అనుబంధం లేదు. ఈ యాప్‌ను ఉపయోగించడం ద్వారా, మీరు ఏవైనా క్లెయిమ్‌లు, నష్టాలు లేదా నష్టపరిహారాల నుండి (ఖాతా నిషేధాలు, పరిమితులు, తాత్కాలిక సస్పెన్షన్, శాశ్వత నిషేధం, వికలాంగత, తొలగింపు, లేదా ఖాతా రద్దు, లేదా ప్రమాదాలు సహా) డెవలపర్‌లను రక్షించడానికి (INDEMNIFY AND HOLD HARMLESS) అంగీకరిస్తున్నారు. ఏ సందర్భంలోనూ డెవలపర్‌లు ఈ యాప్ వినియోగం వల్ల కలిగే ప్రత్యక్ష, పరోక్ష లేదా పరిణామ నష్టాలకు బాధ్యత వహించరు. ప్లాట్‌ఫారమ్ నియమాలు, స్థానిక చట్టాలను పాటించడం మీ బాధ్యత.",
   quick:"త్వరిత లింకులు", contact:"సంప్రదింపు",
@@ -685,8 +753,22 @@ te: {
   ppTitleLegal: "గోప్యతా విధానం", tcTitle: "నిబంధనలు & షరతులు", rpTitle: "రీఫండ్ & రద్దు", discTitle: "నిరాకరణ",
   
   nvEyebrow: "కొత్త వెర్షన్",
-  nvTitle: "Driver Ride Picker v1.19.6",
-  nvStrategyInfo: "⚙️ <b>స్ట్రాటజీ టెస్టింగ్:</b> అన్ని స్ట్రాటజీలను ఒక్కొక్కటిగా మీ ఫోన్‌లో టెస్ట్ చేయండి. ప్రతి స్ట్రాటజీని జాగ్రత్తగా టెస్ట్ చేసి, మీ ఫోన్‌కు ఏది బాగా సరిపోతుందో దానితో కొనసాగించండి.",
+  nvTitle: "Driver Ride Picker Versions",
+  vTestTitle: "అన్ని వెర్షన్లను ప్రయత్నించండి! మీ ఫోన్‌కు ఖచ్చితంగా ఏదో ఒకటి సరిపోతుంది.",
+  vNewTag: "కొత్త ఫోన్లు - ఉత్తమ",
+  vNewTitle: "v1.19.6 (ఉత్తమ ఎంపిక)",
+  vNewDesc: "కొత్త ఫోన్ల కోసం వేగవంతమైన, మృదువైన మరియు అత్యుత్తమ ఆప్టిమైజేషన్.",
+  vNewBtn: "⬇ v1.19.6 డౌన్‌లోడ్ చేయండి",
+  vMedTag: "మీడియం - పరీక్షించండి",
+  vMedTitle: "v1.19.7 & v1.19.8",
+  vMedDesc: "v1.19.6 పనిచేయకపోతే లేదా మీకు పాత ఫోన్ ఉంటే వీటిని ప్రయత్నించండి.",
+  vMedBtn1: "⬇ v1.19.7 డౌన్‌లోడ్ చేయండి",
+  vMedBtn2: "⬇ v1.19.8 డౌన్‌లోడ్ చేయండి",
+  vOldTag: "పాత ఫోన్లు",
+  vOldTitle: "v1.18.0",
+  vOldDesc: "పాత ఫోన్‌లో రైడ్లు మిస్ అవుతుంటే, ఈ స్థిరమైన వెర్షన్‌ను ప్రయత్నించండి.",
+  vOldBtn: "⬇ v1.18.0 డౌన్‌లోడ్ చేయండి",
+
   nvPriceTitle: "💰 ప్లాన్లు & ధరలు",
   nvPrice1: "రోజువారీ: ₹15 / 24 గంటలు",
   nvPrice2: "3 రోజులు: ₹39 / 72 గంటలు",
@@ -738,7 +820,7 @@ ta: {
   permissions:"போன் அமைப்பு சரிபார்ப்பு", perm1:"தேவைப்பட்டு அனுமதி புரிந்தால் மட்டுமே Accessibility இயக்கவும்.", perm2:"தேவைப்பட்டால் மட்டுமே பிற ஆப்களின் மேல் காட்டும் அனுமதி வழங்கவும்.", perm3:"பேட்டரி மற்றும் பின்னணி அமைப்புகளைச் சரிபார்க்கவும்.", perm4:"OTP, கடவுச்சொல் அல்லது பண PINஐ பகிர வேண்டாம்.", permNote:"தளம் அனுமதிக்கும் இடங்களில் மட்டுமே தானியக்கத்தைப் பயன்படுத்தவும்.",
   videoEyebrow:"பார்த்து கற்றுக்கொள்ளுங்கள்", videoTitle:"Driver Ride Picker அமைப்பு வீடியோ", videoDesc:"வீடியோ பார்த்து போன் அமைப்புகளைச் சரிபார்க்கவும்.", youtubeTitle:"YouTubeல் பார்க்க வேண்டுமா?", youtubeDesc:"அசல் Shortஐ YouTubeல் திறக்கவும்.", openYoutube:"▶ YouTube Short திறக்கவும்",
   ready:"தொடங்கத் தயாரா?", readyTitle:"Driver Ride Picker v1.19.6 பெறுங்கள்", readyDesc:"சமீபத்திய APKஐ நேரடியாகப் பதிவிறக்கவும். (v1.19.6)", whatsapp:"WhatsApp சேனல்",
-  faqEyebrow:"விரைவான பதில்கள்", faqTitle:"அடிக்கடி கேட்கப்படும் கேள்விகள்", q1:"திட்டங்கள் அன்லிமிடெடா?", a1:"வழிகாட்டியின்படி வாங்கிய காலத்தில் அன்லிமிடெட். செயல்பாட்டை உறுதிசெய்யவும்.", q2:"திட்டம் எப்போது முடிவடையும்?", a2:"வாங்கிய நேரம் முடிந்தவுடன் திட்டம் முடிவடையும். தொடர ரீசார்ஜ் செய்யவும்.", q3:"எல்லா தளங்களிலும் வேலை செய்யுமா?", a3:"உத்தரவாதம் இல்லை. சாதனம், அனுமதிகள் மற்றும் விதிகள் மாறுபடும்.", q4:"APK எங்கே கிடைக்கும்?", a4:"மேலே உள்ள Download APK v1.19.6 பொத்தானைப் பயன்படுத்தவும். நிறுவும் முன் v1.19.6 சரிபார்க்கவும்.",
+  faqEyebrow:"விரைவான பதில்கள்", faqTitle:"அடிக்கடி கேட்கப்படும் கேள்விகள்", q1:"திட்டங்கள் அன்லிமிடெடா?", a1:"வழிகாட்டியின்படி வாங்கிய காலத்தில் அன்லிமிடெட். செயல்பாட்டை உறுதிசெய்யவும்.", q2:"திட்டம் எப்போது முடிவடையும்?", a2:"வாங்கிய நேரம் முடிந்தவுடன் திட்டம் முடிவடையும். தொடர ரீசார்ஜ் செய்யவும்.", q3:"எல்லா தளங்களிலும் வேலை செய்யுமா?", a3:"உத்தரவாதம் இல்லை. சாதனம், அனுமதிகள் மற்றும் விதிகள் மாறுபடும்.", q4:"APK எங்கே கிடைக்கும்?", a4:"மேலே உள்ள Download APK பொத்தானைப் பயன்படுத்தவும். நிறுவும் முன் பதிப்பை சரிபார்க்கவும்.",
   supportEyebrow:"உதவ நாங்கள் இருக்கிறோம்", supportTitle:"அதிகாரப்பூர்வ உதவி சேனல்கள்", supportDesc:"வெளியீடு, அமைப்பு உதவி மற்றும் திட்டக் கேள்விகளுக்கு.", telegramDesc:"APK வெளியீடுகள் மற்றும் உதவி அறிவிப்புகள்.", whatsappDesc:"ஆப் புதுப்பிப்புகள் மற்றும் வெளியீட்டு குறிப்புகள்.", follow:"WhatsApp பின்தொடரவும்", email:"மின்னஞ்சல் உதவி",
   disclaimer:"Driver Ride Picker என்பது உடல் குறைபாடு உள்ள ஓட்டுநர்களுக்காக வடிவமைக்கப்பட்ட ஒரு சுயாதீன உதவி தொழில்நுட்ப (Assistive Technology) திட்டமாகும்; இது எந்தவொரு மூன்றாம் தரப்பு ரைடு-ஹெய்லிங் தளத்துடனும் தொடர்புடையது அல்ல. இந்தச் செயலியைப் பயன்படுத்துவதன் மூலம், ஏதேனும் உரிமைகோரல்கள், இழப்புகள் அல்லது சேதங்களிலிருந்து (கணக்கு தடைகள், கட்டுப்பாடுகள், தற்காலிக இடைநீக்கம், நிரந்தர தடை, முடக்கப்பட்ட நிலை, நீக்கம் அல்லது கணக்கு முடித்தல் அல்லது விபத்துக்கள் உட்பட) உருவாக்குநர்களைப் பாதுகாக்க (INDEMNIFY AND HOLD HARMLESS) ஒப்புக்கொள்கிறீர்கள். எந்தவொரு சூழ்நிலையிலும் உருவாக்குநர்கள் இந்தச் செயலியைப் பயன்படுத்துவதால் ஏற்படும் நேரடி, மறைமுக அல்லது விளைவுகளுக்கு பொறுப்பேற்க மாட்டார்கள். தள விதிகள் மற்றும் உள்ளூர் சட்டங்களைப் பின்பற்றுவது உங்கள் பொறுப்பாகும்.",
   quick:"விரைவு இணைப்புகள்", contact:"தொடர்பு",
@@ -746,8 +828,22 @@ ta: {
   ppTitleLegal: "தனியுரிமைக் கொள்கை", tcTitle: "விதிமுறைகள் & நிபந்தனைகள்", rpTitle: "பணத்திருப்பம் & ரத்து", discTitle: "மறுப்பு",
   
   nvEyebrow: "புதிய பதிப்பு",
-  nvTitle: "Driver Ride Picker v1.19.6",
-  nvStrategyInfo: "⚙️ <b>ஸ்ட்ராடஜி சோதனை:</b> அனைத்து ஸ்ட்ராடஜிகளையும் ஒவ்வொன்றாக உங்கள் போனில் சோதிக்கவும். ஒவ்வொரு ஸ்ட்ராடஜியையும் கவனமாக சோதித்து, உங்கள் போனுக்கு எது சிறந்தது என்று பொருந்துகிறதோ அதைத் தொடர்ந்து செல்லுங்கள்.",
+  nvTitle: "Driver Ride Picker Versions",
+  vTestTitle: "அனைத்து பதிப்புகளையும் முயற்சிக்கவும்! உங்கள் ஃபோனுக்கு நிச்சயமாக ஏதாவது ஒன்று பொருந்தும்.",
+  vNewTag: "புதிய போன்கள் - சிறந்தது",
+  vNewTitle: "v1.19.6 (சிறந்த விருப்பம்)",
+  vNewDesc: "புதிய ஃபோன்களுக்கு வேகமான, மென்மையான மற்றும் சிறந்த மேம்படுத்தல்.",
+  vNewBtn: "⬇ v1.19.6 பதிவிறக்கவும்",
+  vMedTag: "நடுத்தர - சோதனை",
+  vMedTitle: "v1.19.7 & v1.19.8",
+  vMedDesc: "v1.19.6 வேலை செய்யவில்லை என்றால் அல்லது பழைய ஃபோன் இருந்தால் இவற்றை முயற்சிக்கவும்.",
+  vMedBtn1: "⬇ v1.19.7 பதிவிறக்கவும்",
+  vMedBtn2: "⬇ v1.19.8 பதிவிறக்கவும்",
+  vOldTag: "பழைய போன்கள்",
+  vOldTitle: "v1.18.0",
+  vOldDesc: "பழைய ஃபோனில் ரைடுகள் தவறினால், இந்த நிலையான பதிப்பை முயற்சிக்கவும்.",
+  vOldBtn: "⬇ v1.18.0 பதிவிறக்கவும்",
+
   nvPriceTitle: "💰 திட்டங்கள் & விலை",
   nvPrice1: "தினசரி: ₹15 / 24 மணி",
   nvPrice2: "3 நாட்கள்: ₹39 / 72 மணி",
@@ -775,12 +871,25 @@ ta: {
 }
 };
 const kn={
-navFeatures:"ವೈಶಿಷ್ಟ್ಯಗಳು",navPlans:"ಯೋಜನೆಗಳು",navGuide:"ಮಾರ್ಗದರ್ಶಿ",navSupport:"ಸಹಾಯ",version:"● ಆವೃತ್ತಿ 1.19.6",title:'ಇನ್ನಷ್ಟು ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ರೈಡ್ ಆಯ್ಕೆಮಾಡಿ.<br><span class="gradient">ನಿಮ್ಮ ನಿಯಮಗಳಂತೆ ಚಾಲನೆ ಮಾಡಿ.</span>',intro:"ಆಟೋ, ಕಾರು ಮತ್ತು ಬೈಕ್ ಚಾಲಕರಿಗಾಗಿ ಸಹಾಯಕ ರೈಡ್ ಆಯ್ಕೆ ಸಾಧನ (ವಿಶೇಷವಾಗಿ ಕೈ/ಬೆರಳಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ ಅಥವಾ ದೈಹಿಕ ಮಿತಿಗಳಿರುವವರಿಗೆ). ಕನಿಷ್ಠ ದರ, ಪಿಕಪ್ ದೂರ, ಪ್ರಯಾಣದ ದೂರ ಮತ್ತು ಪ್ರದೇಶದ ಆದ್ಯಂತಗಳನ್ನು ಹೊಂದಿಸಿ.",download:"⬇ APK v1.19.6 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",watch:"▶ ಸೆಟಪ್ ವೀಡಿಯೊ ನೋಡಿ",pill1:"🚗 ಆಟೋ • ಕಾರು • ಬೈಕ್",pill2:"🌐 5 ಭಾಷೆಗಳು",pill3:"🎁 48 ಗಂಟೆ ಉಚಿತ ಟ್ರಯಲ್",downloadNote:"ನೇರವಾಗಿ ಇತ್ತೀಚಿನ v1.19.6 APK ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. ಇದು ನಿಮಗೆ 100% ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಲಾಜಿಕ್ ಮತ್ತು ವೇಗದೊಂದಿಗೆ ಸುರಕ್ಷಿತ ಆವೃತ್ತಿಯನ್ನು ಪಡೆಯುತ್ತದೆ ಎಂದು ಖಚಿತಪಡಿಸುತ್ತದೆ.",cardTitle:"ನಿಮ್ಮ ರೈಡ್‌ಗಳು. ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳು.",tagline:"ಬುದ್ಧಿವಂತ ಚಾಲನೆ • ಸಮಯ ಉಳಿಸಿ • ಉತ್ತಮ ರೈಡ್!",join:"ಬೆಂಬಲಕ್ಕಾಗಿ Telegram ಸೇರಿ",featuresEyebrow:"ಚಾಲಕರಿಗಾಗಿ",featuresTitle:"ಅಗತ್ಯ ನಿಯಂತ್ರಣಗಳು ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ",featuresDesc:"ಕಾರ್ಯವಿಧಾನವು ಆಪ್ ಆವೃತ್ತಿ, ಅನುಮತಿಗಳು, ಫೋನ್ ಮತ್ತು ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ನಿಯಮಗಳ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿರುತ್ತದೆ.",f1t:"ದರ ಮತ್ತು ದೂರದ ಫಿಲ್ಟರ್",f1d:"ಕನಿಷ್ಠ ದರ, ಗರಿಷ್ಠ ಪಿಕಪ್ ಮತ್ತು ಗರಿಷ್ಠ ಪ್ರಯಾಣದ ದೂರ ಹೊಂದಿಸಿ. ಆಪ್ ನಿಮ್ಮ ಮಿತಿಗಳಿಗೆ ಅನುಗುಣವಾಗಿ ಬರುವ ರೈಡ್ ವಿನಂತಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಫಿಲ್ಟರ್ ಮಾಡುತ್ತದೆ; ಹಾಗಾಗಿ ಚಾಲನೆ ಮಾಡುವಾಗ ನೀವು ಫೋನ್ ಸ್ಕ್ರೀನ್ ನೋಡುವ ಅಗತ್ಯವೇ ಇಲ್ಲ — ಇದು ನೇರವಾಗಿ ROAD SAFETY (ರಸ್ತೆ ಸುರಕ್ಷತೆ) ಖಚಿತಪಡಿಸುತ್ತದೆ. ಖಾಲಿ ಬಿಟ್ಟ ಷರತ್ತು ಪರಿಗಣಿಸಲಾಗುವುದಿಲ್ಲ.",f2t:"ಪ್ರದೇಶದ ಆದ್ಯತೆಗಳು",f2d:"ಲಭ್ಯವಿದ್ದರೆ ಗುರಿ/ನಿರ್ಬಂಧಿತ ಪ್ರದೇಶಗಳು ಮತ್ತು ಕೀವರ್ಡ್ ಬಳಸಿ.",f3t:"ವಾಹನ ಆಯ್ಕೆ",f3d:"ಬೆಂಬಲವಿದ್ದರೆ ಆಟೋ, ಕಾರು ಅಥವಾ ಬೈಕ್ ಸೆಟ್ಟಿಂಗ್ ಆಯ್ಕೆಮಾಡಿ.",f4t:"48 ಗಂಟೆ ಉಚಿತ ಟ್ರಯಲ್",f4d:"ಅರ್ಹ ಹೊಸ ಬಳಕೆದಾರರಿಗೆ 48 ಗಂಟೆಗಳ ಉಚಿತ ಅನ್ಲಿಮಿಟೆಡ್ ರೈಡ್. ಸಮಯ ಮುಗಿದ ನಂತರ ರೀಚಾರ್ಜ್ ಅಗತ್ಯ.",f5t:"ರೆಫರಲ್ ಬಹುಮಾನ",f5d:"ಯಶಸ್ವಿ ರೆಫರಲ್‌ಗೆ +3 ಗಂಟೆಗಳ ಉಚಿತ ಸಮಯ ಸಿಗುತ್ತದೆ. ಸ್ವಯಂ-ರೆಫರಲ್ ತಿರಸ್ಕರಿಸಬಹುದು.",f6t:"ಹೈ-ಸ್ಪೀಡ್ ಕಾರ್ಯಕ್ಷಮತೆ",f6d:"ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗುವ ರೈಡ್‌ಗಳನ್ನು ತಕ್ಷಣವೇ ಸ್ವೀಕರಿಸಲು ಆಪ್ ಗರಿಷ್ಠ ವೇಗದಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.",plansEyebrow:"ಸರಳ ಯೋಜನೆಗಳು",plansTitle:"ನಿಮಗೆ ಹೊಂದುವ ಯೋಜನೆ ಆಯ್ಕೆಮಾಡಿ",plansDesc:"ಇವು ಯೋಜನೆಯ ವಿವರಣೆಯಲ್ಲಿರುವ ಬೆಲೆಗಳು. ಪಾವತಿಸುವ ಮೊದಲು ಪ್ರಸ್ತುತ ಬೆಲೆ ಮತ್ತು ಸಕ್ರಿಯತೆಯನ್ನು ದೃಢಪಡಿಸಿ.",daily:"ದೈನಂದಿನ ಅನ್ಲಿಮಿಟೆಡ್",h24:"/ 24 ಗಂಟೆ",dailyD:"ಒಂದು ದಿನದ ಕೆಲಸ ಅಥವಾ ಪರೀಕ್ಷೆಗೆ.",three:"3 ದಿನಗಳ ಅನ್ಲಿಮಿಟೆಡ್",h72:"/ 72 ಗಂಟೆ",threeD:"ವಾರಾಂತ್ಯ ಅಥವಾ ಕೆಲವು ದಿನಗಳಿಗೆ.",weekly:"ವಾರದ ಅನ್ಲಿಮಿಟೆಡ್",d7:"/ 7 ದಿನ",weeklyD:"ಪೂರ್ಣ ವಾರ ಚಾಲನೆ ಮಾಡುವವರಿಗೆ.",half:"15 ದಿನಗಳ ಅನ್ಲಿಮಿಟೆಡ್",d15:"/ 15 ದಿನ",halfD:"ಅರ್ಧ ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿಗೆ.",monthly:"ಮಾಸಿಕ ಅನ್ಲಿಮಿಟೆಡ್",d30:"/ 30 ದಿನ",monthlyD:"ದಿನಕ್ಕೆ ಸುಮಾರು ₹9.97.",best:"ಅತ್ಯುತ್ತಮ ಮೌಲ್ಯ",planInfo:"ಯೋಜನೆ ವಿವರ",thPlan:"ಯೋಜನೆ",thPrice:"ಬೆಲೆ",thDuration:"ಅವಧಿ",thDay:"ದಿನಕ್ಕೆ ಅಂದಾಜು",one:"1 ದಿನ",threeDays:"3 ದಿನ",seven:"7 ದಿನ",fifteen:"15 ದಿನ",thirty:"30 ದಿನ",stack:"ವಿವರಣೆಯ ಪ್ರಕಾರ ಹೊಸ ಯೋಜನೆಯ ಅವಧಿ ಹಳೆಯ ಯೋಜನೆ ಮುಗಿದ ನಂತರ ಸೇರಿಕೊಳ್ಳುತ್ತದೆ. ಖರೀದಿಸುವ ಮೊದಲು ದೃಢಪಡಿಸಿ.",guideEyebrow:"ಸಂಪೂರ್ಣ ಮಾರ್ಗದರ್ಶಿ",guideTitle:"ಫಿಲ್ಟರ್ ನಿಯಮಗಳು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ",guideDesc:"ಉದಾಹರಣೆಗಳು ಉತ್ಪನ್ನ ಮಾರ್ಗದರ್ಶಿಯ ತರ್ಕವನ್ನು ವಿವರಿಸುತ್ತವೆ.",case1t:"1. ದರ ಮಾತ್ರ",case1d:"ಕನಿಷ್ಠ ದರ ₹50: ₹50 ಅಥವಾ ಹೆಚ್ಚಿನ ರೈಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತವೆ. ದೂರದ ಷರತ್ತು ಇಲ್ಲದಿದ್ದರೆ ದೂರ ಪರಿಶೀಲಿಸುವುದಿಲ್ಲ.",case2t:"2. ದೂರ ಮಾತ್ರ",case2d:"ಪಿಕಪ್ ಗರಿಷ್ಠ 3 ಕಿಮೀ, ಪ್ರಯಾಣ ಗರಿಷ್ಠ 10 ಕಿಮೀ. ಎರಡೂ ಮಿತಿಗಳನ್ನು ಪೂರೈಸಬೇಕು.",case3t:"3. ದರ + ದೂರ",case3d:"ಕನಿಷ್ಠ ₹50 ಮತ್ತು ಪಿಕಪ್ 3 ಕಿಮೀ ಒಳಗೆ: ಎರಡೂ ಷರತ್ತು ಪೂರೈಸಬೇಕು.",speedTitle:"ಹೈ-ಸ್ಪೀಡ್ ಕಾರ್ಯಕ್ಷಮತೆ",speed1:"ಆಪ್ ಗರಿಷ್ಠ ವೇಗದಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.",speed2:"ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗುವ ರೈಡ್‌ಗಳನ್ನು ತಕ್ಷಣವೇ ಸ್ವೀಕರಿಸುತ್ತದೆ.",speed3:"ಯಾವುದೇ ರೀತಿಯ ವೇಗ ಕುಸಿತವಿಲ್ಲದೆ ನಿರಂತರವಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ.",speedNote:"ಈ ವೇಗವು ಆಪ್‌ನ ನಿಜವಾದ ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು ಫೋನ್ ಸಾಮರ್ಥ್ಯವನ್ನು ಅವಲಂಬಿಸಿರುತ್ತದೆ.",permissions:"ಫೋನ್ ಸೆಟಪ್ ಪರಿಶೀಲನೆ",perm1:"ಅಗತ್ಯವಿದ್ದರೆ ಮಾತ್ರ Accessibility ಸಕ್ರಿಯಗೊಳಿಸಿ.",perm2:"ಅಗತ್ಯವಿದ್ದಾಗ ಮಾತ್ರ ಇತರ ಆಪ್‌ಗಳ ಮೇಲೆ ತೋರಿಸುವ ಅನುಮತಿ ನೀಡಿ.",perm3:"ಬ್ಯಾಟರಿ ಮತ್ತು ಹಿನ್ನೆಲೆ ಸೆಟ್ಟಿಂಗ್ ಪರಿಶೀಲಿಸಿ.",perm4:"OTP, ಪಾಸ್‌ವರ್ಡ್ ಅಥವಾ ಪಾವತಿ PIN ಹಂಚಬೇಡಿ.",permNote:"ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಅನುಮತಿಸುವ ಸಂದರ್ಭದಲ್ಲೇ automation ಬಳಸಿ.",videoEyebrow:"ನೋಡಿ ಮತ್ತು ಕಲಿಯಿರಿ",videoTitle:"Driver Ride Picker ಸೆಟಪ್ ವೀಡಿಯೊ",videoDesc:"ವೀಡಿಯೊ ನೋಡಿ, ಫೋನ್ ಸೆಟ್ಟಿಂಗ್ ಪರಿಶೀಲಿಸಿ.",youtubeTitle:"YouTubeನಲ್ಲಿ ವೀಡಿಯೊ ಬೇಕೇ?",youtubeDesc:"ಮೂಲ Shorts ಅನ್ನು YouTubeನಲ್ಲಿ ತೆರೆಯಿರಿ.",openYoutube:"▶ YouTube Shorts ತೆರೆಯಿರಿ",ready:"ಪ್ರಾರಂಭಿಸಲು ಸಿದ್ಧವೇ?",readyTitle:"Driver Ride Picker v1.19.6 ಪಡೆಯಿರಿ",readyDesc:"ನೇರವಾಗಿ ಇತ್ತೀಚಿನ APK ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. (v1.19.6)",whatsapp:"WhatsApp ಚಾನೆಲ್",faqEyebrow:"ತ್ವರಿತ ಉತ್ತರಗಳು",faqTitle:"ಸಾಮಾನ್ಯ ಪ್ರಶ್ನೆಗಳು",q1:"ಯೋಜನೆಗಳು ಅನ್ಲಿಮಿಟೆಡ್ ಆಗಿವೆಯೇ?",a1:"ವಿವರಣೆಯ ಪ್ರಕಾರ ಖರೀದಿಸಿದ ಅವಧಿಯಲ್ಲಿ ಅನ್ಲಿಮಿಟೆಡ್. ಸಕ್ರಿಯತೆ ಪರಿಶೀಲಿಸಿ.",q2:"ಪ್ಲಾನ್ ಯಾವಾಗ ಮುಗಿಯುತ್ತದೆ?",a2:"ಖರೀದಿಸಿದ ಸಮಯ ಮುಗಿದ ತಕ್ಷಣ ಪ್ಲಾನ್ ಮುಗಿಯುತ್ತದೆ. ನಂತರ ರೀಚಾರ್ಜ್ ಮಾಡಬೇಕು.",q3:"ಎಲ್ಲಾ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತದೆಯೇ?",a3:"ಖಚಿತವಲ್ಲ. ಫೋನ್, ಅನುಮತಿ ಮತ್ತು ನಿಯಮಗಳು ಬದಲಾಗುತ್ತವೆ.",q4:"APK ಎಲ್ಲಿ ಸಿಗುತ್ತದೆ?",a4:"ಮೇಲಿನ Download APK v1.19.6 ಬಟನ್ ಬಳಸಿ. ಇನ್‌ಸ್ಟಾಲ್ ಮೊದಲು v1.19.6 ಪರಿಶೀಲಿಸಿ.",supportEyebrow:"ಸಹಾಯಕ್ಕೆ ನಾವು ಇದ್ದೇವೆ",supportTitle:"ಅಧಿಕೃತ ಸಹಾಯ ಚಾನೆಲ್‌ಗಳು",supportDesc:"ಬಿಡುಗಡೆ ಮಾಹಿತಿ, ಸೆಟಪ್ ಸಹಾಯ ಮತ್ತು ಯೋಜನೆ ಪ್ರಶ್ನೆಗಳಿಗಾಗಿ.",telegramDesc:"APK ಬಿಡುಗಡೆ ಮತ್ತು ಸಹಾಯ ಪ್ರಕಟಣೆಗಳು.",whatsappDesc:"ಆಪ್ ಅಪ್‌ಡೇಟ್ ಮತ್ತು ಬಿಡುಗಡೆ ಟಿಪ್ಪಣಿಗಳು.",follow:"WhatsApp ಅನುಸರಿಸಿ",email:"ಇಮೇಲ್ ಸಹಾಯ",disclaimer:"Driver Ride Picker ಸ್ವತಂತ್ರ ಸಹಾಯಕ ತಂತ್ರಜ್ಞಾನ (Assistive Technology) ಯೋಜನೆಯಾಗಿದ್ದು, ದೈಹಿಕ ಮಿತಿಗಳಿರುವ (ಉದಾ: ಕೈ/ಬೆರಳಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ) ಚಾಲಕರಿಗಾಗಿ ಉದ್ದೇಶಿಸಲಾಗಿದೆ. ಇದು ಯಾವುದೇ ಮೂರನೇ ವ್ಯಕ್ತಿಯ ರೈಡ್-ಹೇಲಿಂಗ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ನೊಂದಿಗೆ ಸಂಬಂಧ ಹೊಂದಿಲ್ಲ. ಈ ಅಪ್ಲಿಕೇಶನ್ ಬಳಸುವ ಮೂಲಕ, ನೀವು ಯಾವುದೇ ಹಕ್ಕುಗಳು, ನಷ್ಟಗಳು ಅಥವಾ ಹಾನಿಗಳಿಂದ (ಖಾತೆ ನಿಷೇಧಗಳು, ನಿರ್ಬಂಧಗಳು, ತಾತ್ಕಾಲಿಕ ಅಮಾನತು, ಶಾಶ್ವತ ನಿಷೇಧ, ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವಿಕೆ, ಅಳಿಸುವಿಕೆ ಅಥವಾ ಖಾತೆ ಮುಕ್ತಾಯ ಅಥವಾ ಅಪಘಾತಗಳು ಸೇರಿದಂತೆ) ಡೆವಲಪರ್ಗಳನ್ನು ಸಂರಕ್ಷಿಸಲು (INDEMNIFY AND HOLD HARMLESS) ಒಪ್ಪುತ್ತೀರಿ. ಯಾವುದೇ ಸಂದರ್ಭದಲ್ಲಿ ಡೆವಲಪರ್ಗಳು ನೇರ, ಪರೋಕ್ಷ ಅಥವಾ ಅನುಷಂಗಿಕ ಹಾನಿಗಳಿಗೆ ಜವಾಬ್ದಾರರಾಗಿರುವುದಿಲ್ಲ. ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ನಿಯಮ ಮತ್ತು ಸ್ಥಳೀಯ ಕಾನೂನು ಪಾಲಿಸುವ ಜವಾಬ್ದಾರಿ ನಿಮ್ಮದಾಗಿದೆ.",quick:"ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",contact:"ಸಂಪರ್ಕ",
+navFeatures:"ವೈಶಿಷ್ಟ್ಯಗಳು",navPlans:"ಯೋಜನೆಗಳು",navGuide:"ಮಾರ್ಗದರ್ಶಿ",navSupport:"ಸಹಾಯ",version:"● ಆವೃತ್ತಿ 1.19.6",title:'ಇನ್ನಷ್ಟು ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ರೈಡ್ ಆಯ್ಕೆಮಾಡಿ.<br><span class="gradient">ನಿಮ್ಮ ನಿಯಮಗಳಂತೆ ಚಾಲನೆ ಮಾಡಿ.</span>',intro:"ಆಟೋ, ಕಾರು ಮತ್ತು ಬೈಕ್ ಚಾಲಕರಿಗಾಗಿ ಸಹಾಯಕ ರೈಡ್ ಆಯ್ಕೆ ಸಾಧನ (ವಿಶೇಷವಾಗಿ ಕೈ/ಬೆರಳಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ ಅಥವಾ ದೈಹಿಕ ಮಿತಿಗಳಿರುವವರಿಗೆ). ಕನಿಷ್ಠ ದರ, ಪಿಕಪ್ ದೂರ, ಪ್ರಯಾಣದ ದೂರ ಮತ್ತು ಪ್ರದೇಶದ ಆದ್ಯಂತಗಳನ್ನು ಹೊಂದಿಸಿ.",download:"⬇ APK v1.19.6 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",watch:"▶ ಸೆಟಪ್ ವೀಡಿಯೊ ನೋಡಿ",pill1:"🚗 ಆಟೋ • ಕಾರು • ಬೈಕ್",pill2:"🌐 5 ಭಾಷೆಗಳು",pill3:"🎁 48 ಗಂಟೆ ಉಚಿತ ಟ್ರಯಲ್",downloadNote:"ನೇರವಾಗಿ ಇತ್ತೀಚಿನ v1.19.6 APK ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. ಇದು ನಿಮಗೆ 100% ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಲಾಜಿಕ್ ಮತ್ತು ವೇಗದೊಂದಿಗೆ ಸುರಕ್ಷಿತ ಆವೃತ್ತಿಯನ್ನು ಪಡೆಯುತ್ತದೆ ಎಂದು ಖಚಿತಪಡಿಸುತ್ತದೆ.",cardTitle:"ನಿಮ್ಮ ರೈಡ್‌ಗಳು. ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳು.",tagline:"ಬುದ್ಧಿವಂತ ಚಾಲನೆ • ಸಮಯ ಉಳಿಸಿ • ಉತ್ತಮ ರೈಡ್!",join:"ಬೆಂಬಲಕ್ಕಾಗಿ Telegram ಸೇರಿ",featuresEyebrow:"ಚಾಲಕರಿಗಾಗಿ",featuresTitle:"ಅಗತ್ಯ ನಿಯಂತ್ರಣಗಳು ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ",featuresDesc:"ಕಾರ್ಯವಿಧಾನವು ಆಪ್ ಆವೃತ್ತಿ, ಅನುಮತಿಗಳು, ಫೋನ್ ಮತ್ತು ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ನಿಯಮಗಳ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿರುತ್ತದೆ.",f1t:"ದರ ಮತ್ತು ದೂರದ ಫಿಲ್ಟರ್",f1d:"ಕನಿಷ್ಠ ದರ, ಗರಿಷ್ಠ ಪಿಕಪ್ ಮತ್ತು ಗರಿಷ್ಠ ಪ್ರಯಾಣದ ದೂರ ಹೊಂದಿಸಿ. ಆಪ್ ನಿಮ್ಮ ಮಿತಿಗಳಿಗೆ ಅನುಗುಣವಾಗಿ ಬರುವ ರೈಡ್ ವಿನಂತಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಫಿಲ್ಟರ್ ಮಾಡುತ್ತದೆ; ಹಾಗಾಗಿ ಚಾಲನೆ ಮಾಡುವಾಗ ನೀವು ಫೋನ್ ಸ್ಕ್ರೀನ್ ನೋಡುವ ಅಗತ್ಯವೇ ಇಲ್ಲ — ಇದು ನೇರವಾಗಿ ROAD SAFETY (ರಸ್ತೆ ಸುರಕ್ಷತೆ) ಖಚಿತಪಡಿಸುತ್ತದೆ. ಖಾಲಿ ಬಿಟ್ಟ ಷರತ್ತು ಪರಿಗಣಿಸಲಾಗುವುದಿಲ್ಲ.",f2t:"ಪ್ರದೇಶದ ಆದ್ಯತೆಗಳು",f2d:"ಲಭ್ಯವಿದ್ದರೆ ಗುರಿ/ನಿರ್ಬಂಧಿತ ಪ್ರದೇಶಗಳು ಮತ್ತು ಕೀವರ್ಡ್ ಬಳಸಿ.",f3t:"ವಾಹನ ಆಯ್ಕೆ",f3d:"ಬೆಂಬಲವಿದ್ದರೆ ಆಟೋ, ಕಾರು ಅಥವಾ ಬೈಕ್ ಸೆಟ್ಟಿಂಗ್ ಆಯ್ಕೆಮಾಡಿ.",f4t:"48 ಗಂಟೆ ಉಚಿತ ಟ್ರಯಲ್",f4d:"ಅರ್ಹ ಹೊಸ ಬಳಕೆದಾರರಿಗೆ 48 ಗಂಟೆಗಳ ಉಚಿತ ಅನ್ಲಿಮಿಟೆಡ್ ರೈಡ್. ಸಮಯ ಮುಗಿದ ನಂತರ ರೀಚಾರ್ಜ್ ಅಗತ್ಯ.",f5t:"ರೆಫರಲ್ ಬಹುಮಾನ",f5d:"ಯಶಸ್ವಿ ರೆಫರಲ್‌ಗೆ +3 ಗಂಟೆಗಳ ಉಚಿತ ಸಮಯ ಸಿಗುತ್ತದೆ. ಸ್ವಯಂ-ರೆಫರಲ್ ತಿರಸ್ಕರಿಸಬಹುದು.",f6t:"ಹೈ-ಸ್ಪೀಡ್ ಕಾರ್ಯಕ್ಷಮತೆ",f6d:"ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗುವ ರೈಡ್‌ಗಳನ್ನು ತಕ್ಷಣವೇ ಸ್ವೀಕರಿಸಲು ಆಪ್ ಗರಿಷ್ಠ ವೇಗದಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.",plansEyebrow:"ಸರಳ ಯೋಜನೆಗಳು",plansTitle:"ನಿಮಗೆ ಹೊಂದುವ ಯೋಜನೆ ಆಯ್ಕೆಮಾಡಿ",plansDesc:"ಇವು ಯೋಜನೆಯ ವಿವರಣೆಯಲ್ಲಿರುವ ಬೆಲೆಗಳು. ಪಾವತಿಸುವ ಮೊದಲು ಪ್ರಸ್ತುತ ಬೆಲೆ ಮತ್ತು ಸಕ್ರಿಯತೆಯನ್ನು ದೃಢಪಡಿಸಿ.",daily:"ದೈನಂದಿನ ಅನ್ಲಿಮಿಟೆಡ್",h24:"/ 24 ಗಂಟೆ",dailyD:"ಒಂದು ದಿನದ ಕೆಲಸ ಅಥವಾ ಪರೀಕ್ಷೆಗೆ.",three:"3 ದಿನಗಳ ಅನ್ಲಿಮಿಟೆಡ್",h72:"/ 72 ಗಂಟೆ",threeD:"ವಾರಾಂತ್ಯ ಅಥವಾ ಕೆಲವು ದಿನಗಳಿಗೆ.",weekly:"ವಾರದ ಅನ್ಲಿಮಿಟೆಡ್",d7:"/ 7 ದಿನ",weeklyD:"ಪೂರ್ಣ ವಾರ ಚಾಲನೆ ಮಾಡುವವರಿಗೆ.",half:"15 ದಿನಗಳ ಅನ್ಲಿಮಿಟೆಡ್",d15:"/ 15 ದಿನ",halfD:"ಅರ್ಧ ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿಗೆ.",monthly:"ಮಾಸಿಕ ಅನ್ಲಿಮಿಟೆಡ್",d30:"/ 30 ದಿನ",monthlyD:"ದಿನಕ್ಕೆ ಸುಮಾರು ₹9.97.",best:"ಅತ್ಯುತ್ತಮ ಮೌಲ್ಯ",planInfo:"ಯೋಜನೆ ವಿವರ",thPlan:"ಯೋಜನೆ",thPrice:"ಬೆಲೆ",thDuration:"ಅವಧಿ",thDay:"ದಿನಕ್ಕೆ ಅಂದಾಜು",one:"1 ದಿನ",threeDays:"3 ದಿನ",seven:"7 ದಿನ",fifteen:"15 ದಿನ",thirty:"30 ದಿನ",stack:"ವಿವರಣೆಯ ಪ್ರಕಾರ ಹೊಸ ಯೋಜನೆಯ ಅವಧಿ ಹಳೆಯ ಯೋಜನೆ ಮುಗಿದ ನಂತರ ಸೇರಿಕೊಳ್ಳುತ್ತದೆ. ಖರೀದಿಸುವ ಮೊದಲು ದೃಢಪಡಿಸಿ.",guideEyebrow:"ಸಂಪೂರ್ಣ ಮಾರ್ಗದರ್ಶಿ",guideTitle:"ಫಿಲ್ಟರ್ ನಿಯಮಗಳು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ",guideDesc:"ಉದಾಹರಣೆಗಳು ಉತ್ಪನ್ನ ಮಾರ್ಗದರ್ಶಿಯ ತರ್ಕವನ್ನು ವಿವರಿಸುತ್ತವೆ.",case1t:"1. ದರ ಮಾತ್ರ",case1d:"ಕನಿಷ್ಠ ದರ ₹50: ₹50 ಅಥವಾ ಹೆಚ್ಚಿನ ರೈಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತವೆ. ದೂರದ ಷರತ್ತು ಇಲ್ಲದಿದ್ದರೆ ದೂರ ಪರಿಶೀಲಿಸುವುದಿಲ್ಲ.",case2t:"2. ದೂರ ಮಾತ್ರ",case2d:"ಪಿಕಪ್ ಗರಿಷ್ಠ 3 ಕಿಮೀ, ಪ್ರಯಾಣ ಗರಿಷ್ಠ 10 ಕಿಮೀ. ಎರಡೂ ಮಿತಿಗಳನ್ನು ಪೂರೈಸಬೇಕು.",case3t:"3. ದರ + ದೂರ",case3d:"ಕನಿಷ್ಠ ₹50 ಮತ್ತು ಪಿಕಪ್ 3 ಕಿಮೀ ಒಳಗೆ: ಎರಡೂ ಷರತ್ತು ಪೂರೈಸಬೇಕು.",speedTitle:"ಹೈ-ಸ್ಪೀಡ್ ಕಾರ್ಯಕ್ಷಮತೆ",speed1:"ಆಪ್ ಗರಿಷ್ಠ ವೇಗದಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.",speed2:"ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗುವ ರೈಡ್‌ಗಳನ್ನು ತಕ್ಷಣವೇ ಸ್ವೀಕರಿಸುತ್ತದೆ.",speed3:"ಯಾವುದೇ ರೀತಿಯ ವೇಗ ಕುಸಿತವಿಲ್ಲದೆ ನಿರಂತರವಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ.",speedNote:"ಈ ವೇಗವು ಆಪ್‌ನ ನಿಜವಾದ ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು ಫೋನ್ ಸಾಮರ್ಥ್ಯವನ್ನು ಅವಲಂಬಿಸಿರುತ್ತದೆ.",permissions:"ಫೋನ್ ಸೆಟಪ್ ಪರಿಶೀಲನೆ",perm1:"ಅಗತ್ಯವಿದ್ದರೆ ಮಾತ್ರ Accessibility ಸಕ್ರಿಯಗೊಳಿಸಿ.",perm2:"ಅಗತ್ಯವಿದ್ದಾಗ ಮಾತ್ರ ಇತರ ಆಪ್‌ಗಳ ಮೇಲೆ ತೋರಿಸುವ ಅನುಮತಿ ನೀಡಿ.",perm3:"ಬ್ಯಾಟರಿ ಮತ್ತು ಹಿನ್ನೆಲೆ ಸೆಟ್ಟಿಂಗ್ ಪರಿಶೀಲಿಸಿ.",perm4:"OTP, ಪಾಸ್‌ವರ್ಡ್ ಅಥವಾ ಪಾವತಿ PIN ಹಂಚಬೇಡಿ.",permNote:"ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಅನುಮತಿಸುವ ಸಂದರ್ಭದಲ್ಲೇ automation ಬಳಸಿ.",videoEyebrow:"ನೋಡಿ ಮತ್ತು ಕಲಿಯಿರಿ",videoTitle:"Driver Ride Picker ಸೆಟಪ್ ವೀಡಿಯೊ",videoDesc:"ವೀಡಿಯೊ ನೋಡಿ, ಫೋನ್ ಸೆಟ್ಟಿಂಗ್ ಪರಿಶೀಲಿಸಿ.",youtubeTitle:"YouTubeನಲ್ಲಿ ವೀಡಿಯೊ ಬೇಕೇ?",youtubeDesc:"ಮೂಲ Shorts ಅನ್ನು YouTubeನಲ್ಲಿ ತೆರೆಯಿರಿ.",openYoutube:"▶ YouTube Shorts ತೆರೆಯಿರಿ",ready:"ಪ್ರಾರಂಭಿಸಲು ಸಿದ್ಧವೇ?",readyTitle:"Driver Ride Picker v1.19.6 ಪಡೆಯಿರಿ",readyDesc:"ನೇರವಾಗಿ ಇತ್ತೀಚಿನ APK ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. (v1.19.6)",whatsapp:"WhatsApp ಚಾನೆಲ್",faqEyebrow:"ತ್ವರಿತ ಉತ್ತರಗಳು",faqTitle:"ಸಾಮಾನ್ಯ ಪ್ರಶ್ನೆಗಳು",q1:"ಯೋಜನೆಗಳು ಅನ್ಲಿಮಿಟೆಡ್ ಆಗಿವೆಯೇ?",a1:"ವಿವರಣೆಯ ಪ್ರಕಾರ ಖರೀದಿಸಿದ ಅವಧಿಯಲ್ಲಿ ಅನ್ಲಿಮಿಟೆಡ್. ಸಕ್ರಿಯತೆ ಪರಿಶೀಲಿಸಿ.",q2:"ಪ್ಲಾನ್ ಯಾವಾಗ ಮುಗಿಯುತ್ತದೆ?",a2:"ಖರೀದಿಸಿದ ಸಮಯ ಮುಗಿದ ತಕ್ಷಣ ಪ್ಲಾನ್ ಮುಗಿಯುತ್ತದೆ. ನಂತರ ರೀಚಾರ್ಜ್ ಮಾಡಬೇಕು.",q3:"ಎಲ್ಲಾ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತದೆಯೇ?",a3:"ಖಚಿತವಲ್ಲ. ಫೋನ್, ಅನುಮತಿ ಮತ್ತು ನಿಯಮಗಳು ಬದಲಾಗುತ್ತವೆ.",q4:"APK ಎಲ್ಲಿ ಸಿಗುತ್ತದೆ?",a4:"ಮೇಲಿನ Download APK ಬಟನ್ ಬಳಸಿ. ಇನ್‌ಸ್ಟಾಲ್ ಮೊದಲು ಆವೃತ್ತಿ ಪರಿಶೀಲಿಸಿ.",supportEyebrow:"ಸಹಾಯಕ್ಕೆ ನಾವು ಇದ್ದೇವೆ",supportTitle:"ಅಧಿಕೃತ ಸಹಾಯ ಚಾನೆಲ್‌ಗಳು",supportDesc:"ಬಿಡುಗಡೆ ಮಾಹಿತಿ, ಸೆಟಪ್ ಸಹಾಯ ಮತ್ತು ಯೋಜನೆ ಪ್ರಶ್ನೆಗಳಿಗಾಗಿ.",telegramDesc:"APK ಬಿಡುಗಡೆ ಮತ್ತು ಸಹಾಯ ಪ್ರಕಟಣೆಗಳು.",whatsappDesc:"ಆಪ್ ಅಪ್‌ಡೇಟ್ ಮತ್ತು ಬಿಡುಗಡೆ ಟಿಪ್ಪಣಿಗಳು.",follow:"WhatsApp ಅನುಸರಿಸಿ",email:"ಇಮೇಲ್ ಸಹಾಯ",disclaimer:"Driver Ride Picker ಸ್ವತಂತ್ರ ಸಹಾಯಕ ತಂತ್ರಜ್ಞಾನ (Assistive Technology) ಯೋಜನೆಯಾಗಿದ್ದು, ದೈಹಿಕ ಮಿತಿಗಳಿರುವ (ಉದಾ: ಕೈ/ಬೆರಳಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ) ಚಾಲಕರಿಗಾಗಿ ಉದ್ದೇಶಿಸಲಾಗಿದೆ. ಇದು ಯಾವುದೇ ಮೂರನೇ ವ್ಯಕ್ತಿಯ ರೈಡ್-ಹೇಲಿಂಗ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ನೊಂದಿಗೆ ಸಂಬಂಧ ಹೊಂದಿಲ್ಲ. ಈ ಅಪ್ಲಿಕೇಶನ್ ಬಳಸುವ ಮೂಲಕ, ನೀವು ಯಾವುದೇ ಹಕ್ಕುಗಳು, ನಷ್ಟಗಳು ಅಥವಾ ಹಾನಿಗಳಿಂದ (ಖಾತೆ ನಿಷೇಧಗಳು, ನಿರ್ಬಂಧಗಳು, ತಾತ್ಕಾಲಿಕ ಅಮಾನತು, ಶಾಶ್ವತ ನಿಷೇಧ, ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವಿಕೆ, ಅಳಿಸುವಿಕೆ ಅಥವಾ ಖಾತೆ ಮುಕ್ತಾಯ ಅಥವಾ ಅಪಘಾತಗಳು ಸೇರಿದಂತೆ) ಡೆವಲಪರ್ಗಳನ್ನು ಸಂರಕ್ಷಿಸಲು (INDEMNIFY AND HOLD HARMLESS) ಒಪ್ಪುತ್ತೀರಿ. ಯಾವುದೇ ಸಂದರ್ಭದಲ್ಲಿ ಡೆವಲಪರ್ಗಳು ನೇರ, ಪರೋಕ್ಷ ಅಥವಾ ಅನುಷಂಗಿಕ ಹಾನಿಗಳಿಗೆ ಜವಾಬ್ದಾರರಾಗಿರುವುದಿಲ್ಲ. ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ನಿಯಮ ಮತ್ತು ಸ್ಥಳೀಯ ಕಾನೂನು ಪಾಲಿಸುವ ಜವಾಬ್ದಾರಿ ನಿಮ್ಮದಾಗಿದೆ.",quick:"ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",contact:"ಸಂಪರ್ಕ",
 legalEyebrow:"ಕಾನೂನು ಮತ್ತು ನೀತಿಗಳು",legalTitle:"ಪ್ರಮುಖ ಕಾನೂನು ಮಾಹಿತಿ",legalDesc:"ಅಪ್ಲಿಕೇಶನ್ ಬಳಸುವ ಮೊದಲು ದಯವಿಟ್ಟು ನಮ್ಮ ನೀತಿಗಳನ್ನು ಎಚ್ಚರಿಕೆಯಿಂದ ಓದಿ.",
 ppTitleLegal:"ಗೌಪ್ಯತಾ ನೀತಿ",tcTitle:"ನಿಯಮ ಮತ್ತು ಷರತ್ತುಗಳು",rpTitle:"ಮರುಪಾವತಿ ಮತ್ತು ರದ್ದತಿ",discTitle:"ಹಕ್ಕುತ್ಯಾಗ",
 nvEyebrow:"ಹೊಸ ಆವೃತ್ತಿ",
-nvTitle:"Driver Ride Picker v1.19.6",
-nvStrategyInfo:"⚙️ <b>ಸ್ಟ್ರಾಟಜಿ ಪರೀಕ್ಷೆ:</b> ಎಲ್ಲಾ ಸ್ಟ್ರಾಟಜಿಗಳನ್ನು ಒಂದೊಂದಾಗಿ ನಿಮ್ಮ ಫೋನ್ನಲ್ಲಿ ಪರೀಕ್ಷಿಸಿ. ಪ್ರತಿಯೊಂದು ಸ್ಟ್ರಾಟಜಿಯನ್ನು ಎಚ್ಚರಿಕೆಯಿಂದ ಪರೀಕ್ಷಿಸಿ, ನಿಮ್ಮ ಫೋನ್ಗೆ ಯಾವುದು ಉತ್ತಮವಾಗಿ ಹೊಂದುತ್ತದೆಯೋ ಅದನ್ನು ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಅದರ ಮೇಲೆ ಮುಂದುವರಿಸಿ.",
+nvTitle:"Driver Ride Picker Versions",
+vTestTitle:"ಎಲ್ಲಾ ಆವೃತ್ತಿಗಳನ್ನು ಪ್ರಯತ್ನಿಸಿ! ನಿಮ್ಮ ಫೋನ್‌ಗೆ ಖಂಡಿತವಾಗಿಯೂ ಒಂದು ಹೊಂದುತ್ತದೆ.",
+vNewTag:"ಹೊಸ ಫೋನ್ - ಅತ್ಯುತ್ತಮ",
+vNewTitle:"v1.19.6 (ಅತ್ಯುತ್ತಮ ಆಯ್ಕೆ)",
+vNewDesc:"ಹೊಸ ಫೋನ್‌ಗಳಿಗೆ ವೇಗವಾದ, ನಯವಾದ ಮತ್ತು ಉತ್ತಮ ಕಾರ್ಯಕ್ಷಮತೆ.",
+vNewBtn:"⬇ v1.19.6 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+vMedTag:"ಮಧ್ಯಮ - ಪರೀಕ್ಷಿಸಿ",
+vMedTitle:"v1.19.7 ಮತ್ತು v1.19.8",
+vMedDesc:"v1.19.6 ಕೆಲಸ ಮಾಡದಿದ್ದರೆ ಅಥವಾ ಹಳೆಯ ಫೋನ್ ಇದ್ದರೆ ಇವುಗಳನ್ನು ಪ್ರಯತ್ನಿಸಿ.",
+vMedBtn1:"⬇ v1.19.7 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+vMedBtn2:"⬇ v1.19.8 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+vOldTag:"ಹಳೆಯ ಫೋನ್",
+vOldTitle:"v1.18.0",
+vOldDesc:"ಹಳೆಯ ಫೋನ್‌ನಲ್ಲಿ ರೈಡ್ ತಪ್ಪುತ್ತಿದ್ದರೆ, ಈ ಸ್ಥಿರ ಆವೃತ್ತಿಯನ್ನು ಪ್ರಯತ್ನಿಸಿ.",
+vOldBtn:"⬇ v1.18.0 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
 nvPriceTitle:"💰 ಯೋಜನೆಗಳು ಮತ್ತು ಬೆಲೆ",
 nvPrice1:"ದೈನಂದಿನ: ₹15 / 24 ಗಂಟೆ",
 nvPrice2:"3 ದಿನ: ₹39 / 72 ಗಂಟೆ",
