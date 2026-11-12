@@ -37,6 +37,76 @@
 .nvPriceBox li { margin-bottom: 6px; }
 .nvPriceBox strong { color: #fff; }
 
+
+/* 🌈 v1.19.9 ONLY — vivid colourful release cards (upper + bottom copy) */
+.latest-release-card{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  border:3px solid transparent !important;
+  border-radius:22px !important;
+  background:
+    linear-gradient(135deg,#071b45 0%,#4b087a 28%,#a31343 56%,#d84b08 78%,#7b4b00 100%) padding-box,
+    linear-gradient(115deg,#00e5ff,#7cff00,#fff000,#ff7a00,#ff2d95,#9b5cff,#00e5ff) border-box !important;
+  box-shadow:0 0 18px rgba(0,229,255,.42),0 0 34px rgba(255,45,149,.30),0 12px 30px rgba(0,0,0,.45) !important;
+  padding:26px !important;
+}
+.latest-release-card::before{
+  content:"";
+  position:absolute;
+  inset:-45% -20%;
+  z-index:-1;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.17) 45%,transparent 60%);
+  transform:rotate(-12deg);
+  pointer-events:none;
+}
+.latest-release-card .latest-release-tag{
+  display:block;
+  width:100%;
+  text-align:center;
+  white-space:normal;
+  background:linear-gradient(90deg,#00e5ff,#a6ff00,#fff000,#ff8a00,#ff3d9a) !important;
+  color:#111 !important;
+  border:1px solid rgba(255,255,255,.75);
+  border-radius:999px;
+  padding:10px 14px;
+  font-weight:950;
+  letter-spacing:.4px;
+  box-shadow:0 0 16px rgba(255,255,255,.22);
+}
+.latest-release-card h3{
+  color:#fff !important;
+  font-size:clamp(23px,3vw,30px) !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
+}
+.latest-release-card p{
+  color:#fff !important;
+  font-size:16px !important;
+  line-height:1.75 !important;
+  text-shadow:0 1px 5px rgba(0,0,0,.35);
+}
+.latest-release-card .latest-release-btn{
+  width:100% !important;
+  min-height:58px;
+  margin-top:12px !important;
+  border:2px solid #fff !important;
+  border-radius:14px !important;
+  background:linear-gradient(90deg,#00e5ff 0%,#8cff00 24%,#fff000 48%,#ff8a00 72%,#ff3296 100%) !important;
+  color:#101010 !important;
+  font-size:17px !important;
+  font-weight:950 !important;
+  box-shadow:0 0 18px rgba(0,229,255,.35),0 5px 16px rgba(0,0,0,.35);
+  transition:transform .18s ease,filter .18s ease;
+}
+.latest-release-card .latest-release-btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.08) saturate(1.15);
+}
+@media(max-width:600px){
+  .latest-release-card{padding:20px !important}
+  .latest-release-card .latest-release-tag{font-size:12px;padding:9px 10px}
+}
+
 /* ✅ VERSION SELECTOR CSS */
 .version-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
 .version-card { display: flex; flex-direction: column; justify-content: space-between; }
@@ -178,11 +248,11 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
 
       <div class="version-grid">
         <!-- LATEST RELEASE — shown before all older APK links -->
-      <div class="card version-card" style="border: 2px solid #00c853; background: linear-gradient(145deg,#0f2a1a,#123d25); box-shadow: 0 8px 24px rgba(0,200,83,.22);">
-        <span class="tag" style="background: #00c853; color: #000;">🚀 LATEST RELEASE • NOVEMBER 12, 2026</span>
-        <h3 style="color: #fff;">Driver Ride Picker v1.19.9</h3>
-        <p style="color: #e7f6ec;">Latest release. Install this version first. Older versions are listed below only for compatibility testing on phones where the latest version does not work correctly.</p>
-        <a class="btn primary" style="background: #00c853; color: #000; width: 100%; font-size: 16px; font-weight: bold;" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.9/app-release.apk" target="_blank" rel="noopener noreferrer">⬇ Download Latest v1.19.9</a>
+      <div class="card version-card latest-release-card">
+        <span class="tag latest-release-tag">🚀 LATEST RELEASE • NOVEMBER 12, 2026</span>
+        <h3>Driver Ride Picker v1.19.9</h3>
+        <p>Latest release. Install this version first. Older versions are listed below only for compatibility testing on phones where the latest version does not work correctly.</p>
+        <a class="btn primary latest-release-btn" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.9/app-release.apk" target="_blank" rel="noopener noreferrer">⬇ Download Latest v1.19.9</a>
       </div>
 
       <!-- NEW PHONE -->
@@ -577,11 +647,11 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
 
     <div class="version-grid">
       <!-- LATEST RELEASE — shown before all older APK links -->
-      <div class="card version-card" style="border: 2px solid #00c853; background: linear-gradient(145deg,#0f2a1a,#123d25); box-shadow: 0 8px 24px rgba(0,200,83,.22);">
-        <span class="tag" style="background: #00c853; color: #000;">🚀 LATEST RELEASE • NOVEMBER 12, 2026</span>
-        <h3 style="color: #fff;">Driver Ride Picker v1.19.9</h3>
-        <p style="color: #e7f6ec;">Latest release. Install this version first. Older versions are listed below only for compatibility testing on phones where the latest version does not work correctly.</p>
-        <a class="btn primary" style="background: #00c853; color: #000; width: 100%; font-size: 16px; font-weight: bold;" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.9/app-release.apk" target="_blank" rel="noopener noreferrer">⬇ Download Latest v1.19.9</a>
+      <div class="card version-card latest-release-card">
+        <span class="tag latest-release-tag">🚀 LATEST RELEASE • NOVEMBER 12, 2026</span>
+        <h3>Driver Ride Picker v1.19.9</h3>
+        <p>Latest release. Install this version first. Older versions are listed below only for compatibility testing on phones where the latest version does not work correctly.</p>
+        <a class="btn primary latest-release-btn" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.9/app-release.apk" target="_blank" rel="noopener noreferrer">⬇ Download Latest v1.19.9</a>
       </div>
 
       <!-- NEW PHONE -->
@@ -901,8 +971,4 @@ ta: {
   ppContent: `Driver Ride Picker - தனியுரிமைக் கொள்கை\nகடைசியாகப் புதுப்பிக்கப்பட்டது: அக்டோபர் 2026\n\n1. நாங்கள் சேகரிக்கும் தகவல்\nமொபைல் எண், சாதன ஐடிகள், ரைடு விருப்பங்கள் மற்றும் பரிவர்த்தனை தகவல்களைச் சேகரிக்கிறோம்.\n\n2. அணுகல்தன்மை சேவை & சாலை பாதுகாப்பு\nஉங்கள் வடிகட்டிகளின் அடிப்படையில் ரைடுகளை ஏற்க அணுகல்தன்மை சேவையைப் பயன்படுத்துகிறோம். இது தொலைபேசி கவனச்சிதறலைக் குறைப்பதன் மூலம் சாலை பாதுகாப்புக்கு உதவுகிறது. திரை உரையை நாங்கள் சேமிக்க மாட்டோம்.\n\n3. கணக்கு நடவடிக்கைகளுக்கான இழப்பீடு & பொறுப்பின்மை\nஇந்தச் செயலியைப் பயன்படுத்துவதால் எழும் எந்தவொரு உரிமைகோரல், இழப்பு அல்லது சேதத்திலிருந்தும் Driver Ride Picker மற்றும் அதன் உருவாக்குநர்களைப் பாதுகாக்க (INDEMNIFY AND HOLD HARMLESS) நீங்கள் ஒப்புக்கொள்கிறீர்கள். இதில் பின்வருவன அடங்கும், ஆனால் இவை மட்டுமல்ல:\n• எந்தவொரு ரைடு-ஹெய்லிங் தளத்தாலும் உங்கள் கணக்கின் மீது எந்தவொரு எச்சரிக்கை, கட்டுப்பாடு, தற்காலிக இடைநீக்கம், நிரந்தர தடை, முடக்கப்பட்ட நிலை, நீக்கம் அல்லது முடித்தல்.\n• வருவாய், ரைடுகள், மதிப்பீடுகள் அல்லது நல்லெண்ணம் இழப்பு.\n• ஒரு தளம் அல்லது அதிகாரத்தால் விதிக்கப்பட்ட எந்தவொரு சட்ட நடவடிக்கை, அபராதம்.\n• எந்தவொரு விபத்து, காயம் அல்லது போக்குவரத்து மீறல்.\n• தானியங்கி ஏற்றுக்கொள்ளலின் விளைவாக ஏற்படும் எதிர்பாராத முன்பதிவு, கட்டண இழப்பு அல்லது ரத்து.\n• எந்தவொரு நேரடி, மறைமுக, தற்செயலான அல்லது விளைவுகளுக்கான சேதங்கள்.\n\nஉங்கள் கணக்கு மற்றும் தள விதிமுறைகளுக்கு இணங்குவதற்கு நீங்கள் முழுப் பொறுப்பாளி என்பதை ஒப்புக்கொள்கிறீர்கள். உங்கள் மீது எடுக்கப்பட்ட கணக்கு நடவடிக்கைகளுக்கு உருவாக்குநர்கள் எந்தப் பொறுப்பையும் ஏற்க மாட்டார்கள்.\n\nதொடர்பு: driverridepicker@gmail.com`,
   tcContent: `Driver Ride Picker - விதிமுறைகள் & நிபந்தனைகள்\nகடைசியாகப் புதுப்பிக்கப்பட்டது: அக்டோபர் 2026\n\n1. உதவி நோக்கம்\nஉடல் குறைபாடு உள்ள ஓட்டுநர்களுக்காக வடிவமைக்கப்பட்டது. சட்டப்பூர்வமாகப் பயன்படுத்தவும்.\n\n2. திட்டங்கள் & இலவச சோதனை\nதினசரி (₹15), 3 நாட்கள் (₹39), வாராந்திரம் (₹99), 15 நாட்கள் (₹175), மாதாந்திரம் (₹299). புதிய தகுதியான கணக்குகளுக்கு 48 மணிநேர இலவச சோதனை கிடைக்கும்.\n\n3. ஏற்றுக்கொள்ளக்கூடிய பயன்பாடு\nதவறான பயன்பாடு, பாதுகாப்பை மீறுதல் அல்லது மோசடி கணக்குகள் இருக்கக்கூடாது.\n\n4. கணக்கு நடவடிக்கைகளுக்கான இழப்பீடு & பொறுப்பின்மை\nDriver Ride Picker, அதன் உருவாக்குநர்கள், உரிமையாளர்கள் மற்றும் துணை நிறுவனங்களைப் பின்வருவனவற்றிலிருந்து எழும் எந்தவொரு உரிமைகோரல், சேதம் அல்லது பொறுப்புகளிலிருந்தும் பாதுகாக்க (INDEMNIFY, DEFEND, AND HOLD HARMLESS) நீங்கள் ஒப்புக்கொள்கிறீர்கள்:\n• செயலியை நீங்கள் பயன்படுத்துவது.\n• மூன்றாம் தரப்பு தள விதிமுறைகளை நீங்கள் மீறுவது.\n• எந்தவொரு ரைடு-ஹெய்லிங் தளத்தாலும் உங்கள் கணக்கின் மீது எந்தவொரு எச்சரிக்கை, கட்டுப்பாடு, தற்காலிக இடைநீக்கம், நிரந்தர தடை, முடக்கப்பட்ட நிலை, நீக்கம் அல்லது முடித்தல்.\n• வருவாய், ரைடுகள், மதிப்பீடுகள் அல்லது நல்லெண்ணம் இழப்பு.\n• ஒரு தளம் அல்லது அதிகாரத்தால் விதிக்கப்பட்ட எந்தவொரு சட்ட நடவடிக்கை, அபராதம்.\n\nஉங்கள் கணக்கிற்கு நீங்கள் முழுப் பொறுப்பாளி என்பதை ஒப்புக்கொள்கிறீர்கள். கணக்கு முடக்கம், நீக்கம், இடைநீக்கம், முடித்தல் அல்லது உங்கள் மீது எடுக்கப்பட்ட வேறு எந்த நடவடிக்கைக்கும் உருவாக்குநர்கள் எந்தப் பொறுப்பையும் ஏற்க மாட்டார்கள்.\n\nதொடர்பு: driverridepicker@gmail.com`,
   rpContent: `Driver Ride Picker - பணத்திருப்பம் & ரத்து\nகடைசியாகப் புதுப்பிக்கப்பட்டது: அக்டோபர் 2026\n\n1. டிஜிட்டல் திட்டங்கள்\nஒரு திட்டம் செயல்படுத்தப்பட்டதும், பொதுவாக அதை ரத்து செய்ய முடியாது.\n\n2. தள கணக்கு நடவடிக்கைகளுக்கு பணத்திருப்பம் இல்லை\nஎந்தவொரு மூன்றாம் தரப்பு ரைடு-ஹெய்லிங் தளத்திலும் உங்கள் கணக்கு எச்சரிக்கப்பட்டால், கட்டுப்படுத்தப்பட்டால், தற்காலிகமாக இடைநிறுத்தப்பட்டால், நிரந்தரமாக தடை செய்யப்பட்டால், முடக்கப்பட்டால், நீக்கப்பட்டால், முடிக்கப்பட்டால் அல்லது வேறுவிதமாக நடவடிக்கை எடுக்கப்பட்டால் எந்தப் பணத்திருப்பமும் வழங்கப்படாது. அத்தகைய எந்தவொரு நடவடிக்கைக்கும் உருவாக்குநர்கள் பொறுப்பல்ல.\n\n3. தோல்வியடைந்த/நகல் கட்டணங்கள்\nபரிவர்த்தனைப் பதிவுகளின் அடிப்படையில் தனித்தனியாக மதிப்பாய்வு செய்யப்படுகிறது.\n\nதொடர்பு: driverridepicker@gmail.com`,
-  discContent: `Driver Ride Picker - மறுப்பு\nகடைசியாகப் புதுப்பிக்கப்பட்டது: அக்டோபர் 2026\n\n1. உதவி இயல்பு & சாலை பாதுகாப்பு\nசெயலி திரை கவனச்சிதறலைக் குறைத்து சாலை பாதுகாப்பை மேம்படுத்துவதை நோக்கமாகக் கொண்டுள்ளது. பாதுகாப்பான ஓட்டுதல் உங்கள் முழுப் பொறுப்பாகும்.\n\n2. தள கணக்கு நடவடிக்கைகளுக்கு பொறுப்பின்மை\nஎந்தவொரு மூன்றாம் தரப்பு தளத்தாலும் உங்கள் கணக்கின் மீது எடுக்கப்பட்ட எந்தவொரு நடவடிக்கைக்கும் உருவாக்குநர்கள் எந்தப் பொறுப்பையும் ஏற்க மாட்டார்கள். இதில் பின்வருவன அடங்கும், ஆனால் இவை மட்டுமல்ல:\n• எச்சரிக்கைகள், கட்டுப்பாடுகள், தற்காலிக இடைநீக்கம், நிரந்தர தடை, முடக்கப்பட்ட நிலை, நீக்கம் அல்லது முடித்தல்.\n• வருவாய் இழப்பு அல்லது சட்ட நடவடிக்கை.\n\n3. பொறுப்பு வரம்பு\nசட்டத்தால் அனுமதிக்கப்பட்ட அதிகபட்ச அளவிற்கு, செயலியின் பயன்பாடு அல்லது தளத்தால் உங்கள் கணக்கு இடைநீக்கம், தடை, முடக்கம், நீக்கம் அல்லது முடித்தல் காரணமாக ஏற்படும் எந்தவொரு மறைமுக, தற்செயலான, சிறப்பு, விளைவு அல்லது தண்டனைக்குரிய சேதங்களுக்கும் DRIVER RIDE PICKER அல்லது அதன் உருவாக்குநர்கள் எந்தவொரு சூழ்நிலையிலும் பொறுப்பேற்க மாட்டார்கள்.\n\nதொடர்பு: driverridepicker@gmail.com`
-}
-};
-const kn={
-navFeatures:"ವೈಶಿಷ್ಟ್ಯಗಳು",navPlans:"ಯೋಜನೆಗಳು",navGuide:"ಮಾರ್ಗದರ್ಶಿ",navSupport:"ಸಹಾಯ",version:"● ಆವೃತ್ತಿ 1.19.6",title:'ಇನ್ನಷ್ಟು ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ರೈಡ್ ಆಯ್ಕೆಮಾಡಿ.<br><span class="gradient">ನಿಮ್ಮ ನಿಯಮಗಳಂತೆ ಚಾಲನೆ ಮಾಡಿ.</span>',intro:"ಆಟೋ, ಕಾರು ಮತ್ತು ಬೈಕ್ ಚಾಲಕರಿಗಾಗಿ ಸಹಾಯಕ ರೈಡ್ ಆಯ್ಕೆ ಸಾಧನ (ವಿಶೇಷವಾಗಿ ಕೈ/ಬೆರಳಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ ಅಥವಾ ದೈಹಿಕ ಮಿತಿಗಳಿರುವವರಿಗೆ). ಕನಿಷ್ಠ ದರ, ಪಿಕಪ್ ದೂರ, ಪ್ರಯಾಣದ ದೂರ ಮತ್ತು ಪ್ರದೇಶದ ಆದ್ಯಂತಗಳನ್ನು ಹೊಂದಿಸಿ.",download:"⬇ APK v1.19.6 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",watch:"▶ ಸೆಟಪ್ ವೀಡಿಯೊ ನೋಡಿ",pill1:"🚗 ಆಟೋ • ಕಾರು • ಬೈಕ್",pill2:"🌐 5 ಭಾಷೆಗಳು",pill3:"🎁 48 ಗಂಟೆ ಉಚಿತ ಟ್ರಯಲ್",downloadNote:"ನೇರವಾಗಿ ಇತ್ತೀಚಿನ v1.19.6 APK ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. ಇದು ನಿಮಗೆ 100% ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಲಾಜಿಕ್ ಮತ್ತು ವೇಗದೊಂದಿಗೆ ಸುರಕ್ಷಿತ ಆವೃತ್ತಿಯನ್ನು ಪಡೆಯುತ್ತದೆ ಎಂದು ಖಚಿತಪಡಿಸುತ್ತದೆ.",cardTitle:"ನಿಮ್ಮ ರೈಡ್‌ಗಳು. ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳು.",tagline:"ಬುದ್ಧಿವಂತ ಚಾಲನೆ • ಸಮಯ ಉಳಿಸಿ • ಉತ್ತಮ ರೈಡ್!",join:"ಬೆಂಬಲಕ್ಕಾಗಿ Telegram ಸೇರಿ",featuresEyebrow:"ಚಾಲಕರಿಗಾಗಿ",featuresTitle:"ಅಗತ್ಯ ನಿಯಂತ್ರಣಗಳು ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ",featuresDesc:"ಕಾರ್ಯವಿಧಾನವು ಆಪ್ ಆವೃತ್ತಿ, ಅನುಮತಿಗಳು, ಫೋನ್ ಮತ್ತು ಪ್ಲಾಟ್‌ಫಾ
+  discContent: `Driver Ride Picker - மறுப்பு\nகடைசியாகப் புதுப்பிக்கப்பட்டது: அக்டோபர் 2026\n\n1. உதவி இயல்பு & சாலை பாதுகாப்பு\nசெயலி திரை கவனச்சிதறலைக் குறைத்து சாலை பாதுகாப்பை மேம்படுத்துவதை நோக்கமாகக் கொண்டுள்ளது. பாதுகாப்பான ஓட்டுதல் உங்கள் முழுப் பொறுப்பாகும்.\n\n2. தள கணக்கு நடவடி
