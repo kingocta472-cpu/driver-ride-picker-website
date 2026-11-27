@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#160604">
+<meta name="theme-color" content="#050816">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline';">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="DENY">
@@ -106,21 +106,60 @@
   .detailedVersionsGuide { font-size: 14.5px; padding: 16px 16px; }
 }
 
-/* v1.19.20 — top "next level" release card */
-@property --v20a{syntax:'<angle>';inherits:false;initial-value:0deg}
-@keyframes v20spin{to{--v20a:360deg}}
-@keyframes v20pulse{0%,100%{box-shadow:0 0 22px rgba(0,245,160,.55),0 0 46px rgba(0,217,255,.35),0 14px 34px rgba(0,0,0,.6)}50%{box-shadow:0 0 34px rgba(255,208,0,.65),0 0 64px rgba(123,92,255,.45),0 14px 34px rgba(0,0,0,.6)}}
-@keyframes v20btn{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
-.latest-release-card-v20{position:relative;isolation:isolate;overflow:hidden;border:4px solid transparent !important;border-radius:26px !important;background:linear-gradient(145deg,#020b14 0%,#06262b 34%,#0a3b2c 62%,#2b2000 100%) padding-box,conic-gradient(from var(--v20a),#00f5a0,#00d9ff,#7b5cff,#ff2bd6,#ffd000,#00f5a0) border-box !important;animation:v20spin 4s linear infinite,v20pulse 2.6s ease-in-out infinite;padding:30px !important;}
-.latest-release-card-v20::before{content:"";position:absolute;inset:-45% -20%;z-index:-1;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.2) 45%,transparent 60%);transform:rotate(-12deg);pointer-events:none;}
-.latest-release-card-v20 .v20-tag{display:block;width:100%;text-align:center;white-space:normal;background:linear-gradient(90deg,#ffd000,#00f5a0,#00d9ff,#ff2bd6,#ffd000) !important;color:#02121a !important;border:1px solid rgba(255,255,255,.85);border-radius:999px;padding:12px 14px;font-weight:950;letter-spacing:.5px;box-shadow:0 0 20px rgba(255,255,255,.3);}
-.latest-release-card-v20 h3{color:#fff !important;font-size:clamp(25px,3.4vw,34px) !important;text-shadow:0 2px 14px rgba(0,0,0,.65);}
-.latest-release-card-v20 .v20-date{display:inline-block;margin:2px 0 10px;padding:6px 14px;border-radius:999px;background:rgba(255,208,0,.16);border:1px solid #ffd000;color:#ffe680;font-weight:900;font-size:15px;letter-spacing:.3px;}
-.latest-release-card-v20 p{color:#fff !important;font-size:17px !important;font-weight:700;line-height:1.75 !important;text-shadow:0 1px 5px rgba(0,0,0,.45);}
-.latest-release-card-v20 .v20-btn{width:100% !important;min-height:64px;margin-top:14px !important;border:2px solid #fff !important;border-radius:16px !important;background:linear-gradient(90deg,#ffd000 0%,#00f5a0 35%,#00d9ff 68%,#a66bff 100%) !important;color:#02121a !important;font-size:19px !important;font-weight:950 !important;box-shadow:0 0 22px rgba(0,245,160,.5),0 6px 18px rgba(0,0,0,.45);animation:v20btn 1.8s ease-in-out infinite;transition:filter .18s ease;}
-.latest-release-card-v20 .v20-btn:hover{filter:brightness(1.1) saturate(1.2);}
-@media(max-width:600px){.latest-release-card-v20{padding:22px !important}.latest-release-card-v20 .v20-tag{font-size:12px;padding:10px}.latest-release-card-v20 .v20-btn{font-size:17px}}
-@media(prefers-reduced-motion:reduce){.latest-release-card-v20,.latest-release-card-v20 .v20-btn{animation:none}}
+
+/* ===== NEXT LEVEL THEME — midnight + aurora neon ===== */
+:root{--bg:#050816;--panel:#0d1330;--line:rgba(120,140,255,.22);--text:#f4f7ff;--muted:#aab4d8;--green:#00f5a0;--blue:#00d9ff;--violet:#8b5cff;--pink:#ff3cac}
+html{scroll-padding-top:84px}
+body{background:radial-gradient(900px 520px at 90% -5%,rgba(139,92,255,.38),transparent 60%),radial-gradient(800px 520px at -5% 12%,rgba(0,217,255,.26),transparent 60%),radial-gradient(900px 600px at 50% 105%,rgba(255,60,172,.18),transparent 60%),#050816 !important;background-attachment:fixed;color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+::selection{background:var(--violet);color:#fff}
+.top{background:rgba(6,10,30,.72) !important;backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid transparent !important;border-image:linear-gradient(90deg,transparent,var(--blue),var(--violet),var(--pink),transparent) 1;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.brand{letter-spacing:.5px}
+.brand img{box-shadow:0 0 0 2px rgba(0,245,160,.6),0 0 22px rgba(0,217,255,.55)}
+.links a{position:relative;transition:color .25s}
+.links a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:linear-gradient(90deg,var(--green),var(--blue));border-radius:2px;transition:width .3s}
+.links a:hover{color:#fff}.links a:hover::after{width:100%}
+.languageButtons button,.langChoices button{background:rgba(255,255,255,.06) !important;color:#e8ecff !important;border:1px solid rgba(139,92,255,.4) !important;border-radius:10px;transition:.25s}
+.languageButtons button:hover,.langChoices button:hover{background:rgba(139,92,255,.25) !important}
+.languageButtons button[aria-pressed="true"],.langChoices button[aria-pressed="true"],.popup-lang-btns button[aria-pressed="true"]{background:linear-gradient(90deg,var(--violet),var(--blue)) !important;border-color:transparent !important;color:#fff !important;box-shadow:0 0 18px rgba(0,217,255,.5)}
+.hero{padding:72px 0 28px}
+.hero h1{letter-spacing:-1.5px;text-shadow:0 4px 40px rgba(139,92,255,.35)}
+.gradient{background:linear-gradient(90deg,var(--green),var(--blue),var(--violet),var(--pink),var(--green)) !important;background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:nlShift 7s linear infinite}
+@keyframes nlShift{to{background-position:250% 0}}
+.badge,.pill{background:rgba(0,217,255,.1) !important;border:1px solid rgba(0,217,255,.45) !important;color:#bff6ff !important;backdrop-filter:blur(6px)}
+.pill{background:rgba(255,255,255,.06) !important;border-color:var(--line) !important;color:#e3e8ff !important}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.02)) !important;border:1px solid var(--line);border-radius:22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .35s,box-shadow .35s,border-color .35s}
+.card:hover{transform:translateY(-6px);border-color:rgba(0,217,255,.55);box-shadow:0 26px 64px rgba(0,0,0,.55),0 0 34px rgba(0,217,255,.22),inset 0 1px 0 rgba(255,255,255,.12)}
+.card h3{color:#fff}
+.logoCard img{box-shadow:0 0 0 3px rgba(0,245,160,.55),0 0 48px rgba(139,92,255,.6);animation:nlFloat 5s ease-in-out infinite}
+@keyframes nlFloat{50%{transform:translateY(-10px)}}
+.btn{border-radius:14px;transition:transform .25s,box-shadow .25s,filter .25s;letter-spacing:.2px}
+.btn:hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.1)}
+.btn:active{transform:scale(.98)}
+.primary{background:linear-gradient(90deg,var(--green),var(--blue)) !important;color:#02121a !important;box-shadow:0 8px 28px rgba(0,245,160,.35)}
+.primary:hover{box-shadow:0 12px 36px rgba(0,217,255,.55)}
+.secondary{background:rgba(139,92,255,.2) !important;border:1px solid rgba(139,92,255,.6) !important;color:#fff !important}
+.secondary:hover{background:rgba(139,92,255,.38) !important;box-shadow:0 0 26px rgba(139,92,255,.5)}
+.telegram{background:linear-gradient(90deg,#1d9bf0,#00d9ff) !important;color:#02121a !important;box-shadow:0 8px 28px rgba(0,170,255,.35)}
+.whatsapp{background:linear-gradient(90deg,#25d366,#00f5a0) !important;color:#02121a !important;box-shadow:0 8px 28px rgba(37,211,102,.35)}
+.eyebrow{background:linear-gradient(90deg,var(--green),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;letter-spacing:2px}
+.head h2{letter-spacing:-.5px}
+.price{background:linear-gradient(90deg,#fff,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.best{border-color:var(--green) !important;box-shadow:0 0 0 1px rgba(0,245,160,.5),0 0 40px rgba(0,245,160,.22),0 18px 50px rgba(0,0,0,.45) !important}
+.tag{background:linear-gradient(90deg,var(--green),var(--blue)) !important;color:#02121a !important;box-shadow:0 0 14px rgba(0,245,160,.45)}
+.tableWrap{border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+table{background:rgba(255,255,255,.03) !important}
+th{background:linear-gradient(90deg,rgba(139,92,255,.35),rgba(0,217,255,.25)) !important;color:#fff}
+td,th{border-bottom:1px solid var(--line) !important}
+tr:hover td{background:rgba(0,217,255,.06)}
+.joinPopup{backdrop-filter:blur(10px)}
+.joinCard{background:linear-gradient(160deg,#101640,#070b22) !important;border:1px solid rgba(0,217,255,.5) !important;border-radius:24px !important;box-shadow:0 0 60px rgba(139,92,255,.45) !important}
+.pp-video-wrap a[href*="youtu"]{border-color:var(--blue) !important;box-shadow:0 10px 36px rgba(0,217,255,.35) !important}
+.version-card.best{background:linear-gradient(160deg,rgba(0,245,160,.16),rgba(0,217,255,.05)) !important;border:2px solid var(--green) !important}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+section,.hero{animation:nlUp .8s both}
+@keyframes nlUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#050816}::-webkit-scrollbar-thumb{background:linear-gradient(var(--violet),var(--blue));border-radius:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
 </style>
 </head>
 <body>
@@ -201,13 +240,6 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       </div>
 
       <div class="version-grid">
-      <div class="card version-card latest-release-card-v20">
-        <span class="tag latest-release-tag v20-tag" data-k="v20Tag">🚀 ಹೊಸದು • ಮೊದಲು ಇದನ್ನು ಪ್ರಯತ್ನಿಸಿ</span>
-        <h3 data-k="v20Title">Driver Ride Picker v1.19.20</h3>
-        <div class="v20-date" data-k="v20Date">📅 24 ನವೆಂಬರ್ 2026</div>
-        <p data-k="v20Desc">ಯಾರೊಬ್ಬರ km ಫಿಲ್ಟರ್ ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡದಿದ್ದರೆ ಮತ್ತು ರೈಡ್‌ಗಳು ನಿಧಾನವಾಗಿ ಬರುತ್ತಿದ್ದರೆ ಅಥವಾ ಮಿಸ್ ಆಗುತ್ತಿದ್ದರೆ, ಈ ಆವೃತ್ತಿಯನ್ನು ಮೊದಲು ಪ್ರಯತ್ನಿಸಿ.</p>
-        <a class="btn primary latest-release-btn v20-btn" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.20/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="v20Btn">⬇ v1.19.20 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ</a>
-      </div>
       <div class="card version-card best" style="border: 2px solid #00c853; background: #0f2a1a;">
           <span class="tag" style="background: #00c853; color: #000;" data-k="vNewTag">ಹೊಸ / ಹೆಚ್ಚು RAM ಫೋನ್‌ಗಳು • ಮೊದಲು ಪ್ರಯತ್ನಿಸಿ</span>
           <h3 style="color: #fff;" data-k="vNewTitle">v1.19.6 (ಮೊದಲ ಆಯ್ಕೆ)</h3>
@@ -282,7 +314,7 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
       </div>
       <div class="pp-video-wrap">
         <h3 class="pp-video-title">▶ Setup Video (Full Screen)</h3>
-        <a href="https://youtu.be/cqFL7a6zC0c?si=IQraCmJtiffBpQBK" target="_blank" rel="noopener noreferrer" style="position: relative; display: block; max-width: 380px; margin: 0 auto; border-radius: 14px; overflow: hidden; border: 2px solid #ff4b00; box-shadow: 0 6px 20px rgba(255,75,0,0.35);">
+        <a href="https://youtu.be/d_K_nC_Qy_4?si=jfQ7vgp5b4qEO5Sp" target="_blank" rel="noopener noreferrer" style="position: relative; display: block; max-width: 380px; margin: 0 auto; border-radius: 14px; overflow: hidden; border: 2px solid #ff4b00; box-shadow: 0 6px 20px rgba(255,75,0,0.35);">
           <img src="https://i.ibb.co/xKk7dmp4/Screenshot-20261106-204437.jpg" alt="Watch Setup Video" style="width: 100%; display: block;">
           <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
@@ -290,7 +322,7 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
         </a>
         <p class="pp-video-tip">💡 <b>Full screen mein dekhne ke liye</b> — video ke bottom-right corner mein ⛶ (fullscreen) icon tap karo, ya neeche wala button dabao.</p>
         <div class="pp-video-actions">
-          <a class="btn primary" href="https://youtu.be/cqFL7a6zC0c?si=IQraCmJtiffBpQBK" target="_blank" rel="noopener noreferrer">▶ Watch in Full Screen (YouTube)</a>
+          <a class="btn primary" href="https://youtu.be/d_K_nC_Qy_4?si=jfQ7vgp5b4qEO5Sp" target="_blank" rel="noopener noreferrer">▶ Watch in Full Screen (YouTube)</a>
         </div>
       </div>
     </div>
@@ -566,13 +598,6 @@ By downloading or using this app, you acknowledge and accept: <b>Assistive Purpo
     </div>
 
     <div class="version-grid">
-      <div class="card version-card latest-release-card-v20">
-        <span class="tag latest-release-tag v20-tag" data-k="v20Tag">🚀 ಹೊಸದು • ಮೊದಲು ಇದನ್ನು ಪ್ರಯತ್ನಿಸಿ</span>
-        <h3 data-k="v20Title">Driver Ride Picker v1.19.20</h3>
-        <div class="v20-date" data-k="v20Date">📅 24 ನವೆಂಬರ್ 2026</div>
-        <p data-k="v20Desc">ಯಾರೊಬ್ಬರ km ಫಿಲ್ಟರ್ ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡದಿದ್ದರೆ ಮತ್ತು ರೈಡ್‌ಗಳು ನಿಧಾನವಾಗಿ ಬರುತ್ತಿದ್ದರೆ ಅಥವಾ ಮಿಸ್ ಆಗುತ್ತಿದ್ದರೆ, ಈ ಆವೃತ್ತಿಯನ್ನು ಮೊದಲು ಪ್ರಯತ್ನಿಸಿ.</p>
-        <a class="btn primary latest-release-btn v20-btn" href="https://github.com/kingocta472-cpu/driver-backend/releases/download/v1.19.20/app-release.apk" target="_blank" rel="noopener noreferrer" data-k="v20Btn">⬇ v1.19.20 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ</a>
-      </div>
       <div class="card version-card best" style="border: 2px solid #00c853; background: #0f2a1a;">
         <span class="tag" style="background: #00c853; color: #000;" data-k="vNewTag">ಹೊಸ / ಹೆಚ್ಚು RAM ಫೋನ್‌ಗಳು • ಮೊದಲು ಪ್ರಯತ್ನಿಸಿ</span>
         <h3 style="color: #fff;" data-k="vNewTitle">v1.19.6 (ಮೊದಲ ಆಯ್ಕೆ)</h3>
@@ -662,12 +687,6 @@ en: {
   vNewDesc: "Try v1.19.6 first on new phones and phones with higher RAM.",
   vNewBtn: "⬇ Download v1.19.6",
 
-  v20Tag: "🚀 NEW • TRY THIS FIRST",
-  v20Title: "Driver Ride Picker v1.19.20",
-  v20Date: "📅 November 24, 2026",
-  v20Desc: "If someone's km filter is not working properly and rides are slow or missed, try this version first.",
-  v20Btn: "⬇ Download v1.19.20",
-
   v10Tag: "OLD / LOW RAM PHONES • TRY FIRST",
   v10Title: "Driver Ride Picker v1.19.10",
   v10Desc: "Try v1.19.10 first for older / low-RAM phones. If needed, test the other versions below.",
@@ -705,6 +724,4 @@ en: {
   ppOutroDesc: "Once the app is installed, immediately go back to Google Play Store → Play Protect → and turn \"Scan apps with Play Protect\" back ON. Play Protect auto-resumes after 24 hours even if you forget. This keeps your phone safe.",
 
   ppContent: `Driver Ride Picker – Privacy Policy\nLast updated: October 2026\n\n1. Information We Collect\nWe collect mobile number, device identifiers, ride preferences, and transaction info.\n\n2. Accessibility Service Usage & Road Safety\nWe use Accessibility Service to read screen of ride-hailing apps to accept rides based on your filters. This acts as a ROAD SAFETY feature by reducing phone distraction. We DO NOT store any screen text.\n\n3. How We Use Information\nTo secure accounts, provide ride filtering, manage plans, and prevent fraud.\n\n4. INDEMNIFICATION & NO RESPONSIBILITY FOR ACCOUNT ACTIONS\nYou agree to INDEMNIFY AND HOLD HARMLESS Driver Ride Picker and its developers from any claims, losses, or damages arising from your use of this app. This includes, but is not limited to:\n• Any warning, restriction, temporary suspension, permanent ban, disablement, deletion, or termination of your account by any ride-hailing platform.\n• Any loss of earnings, rides, ratings, or goodwill.\n• Any legal action, penalty, or fine imposed on you by a platform or authority.\n• Any accident, injury, or traffic violation.\n• Any unintended booking, fare loss, or cancellation resulting from automatic acceptance.\n• Any other direct, indirect, incidental, or consequential damages.\n\nYou acknowledge that you are solely responsible for your account and compliance with platform terms. The developers accept NO responsibility for account actions taken against you.\n\nContact: driverridepicker@gmail.com`,
-  tcContent: `Driver Ride Picker – Terms & Conditions\nLast updated: October 2026\n\n1. Assistive Purpose\nDesigned for drivers with physical limitations. Use legally.\n\n2. Plans & Free Trial\nDaily (₹15), 3 Days (₹39), Weekly (₹99), 15 Days (₹175), Monthly (₹299). New eligible accounts receive a 48 Hours free trial.\n\n3. Acceptable Use\nNo misuse, bypassing security, or fraudulent accounts.\n\n4. INDEMNIFICATION & NO LIABILITY FOR ACCOUNT ACTIONS\nYou agree to INDEMNIFY, DEFEND, AND HOLD HARMLESS Driver Ride Picker, its developers, owners, and affiliates from any claims, damages, or liabilities arising out of:\n• Your use of the app.\n• Your violation of third-party platform terms.\n• Any warning, restriction, temporary suspension, permanent ban, disablement, deletion, or termination of your account by any ride-hailing platform.\n• Any loss of earnings, rides, ratings, or goodwill.\n• Any legal action, penalty, or fine imposed by a platform or authority.\n\nYou acknowledge you are solely responsible for your account. The developers accept NO responsibility for account disablement, deletion, suspension, termination, or any other action taken against you.\n\nContact: driverridepicker@gmail.com`,
-  rpContent: `Driver Ride Picker – Refund & Cancellation\nLast updated: October 2026\n\n1. Digital Plans\nOnce a plan is activated, it is generally not cancellable.\n\n2. NO REFUND FOR PLATFORM ACCOUNT ACTIONS\nNo refund will be provided if your account on any third-party ride-hailing platform is warned, restricted, temporarily suspended, permanently banned, disabled, deleted, terminated, or otherwise acted against. The developers are not responsible for any such action.\n\n3. Failed/Duplicate Payments\nReviewed individually based on transaction records.\n\nContact: driverridepicker@gmail.com`,
-  discContent: `Driver Ride Picker – Disclaimer\nLast updated: October 2026\n\n1. Assistive 
+  tcContent: `Driver Ride Picker – Terms & Conditions\nLast updated: October 2026\n\n1. Assistive Purpose\nDesigned for drivers with physical li
