@@ -160,6 +160,9 @@ section,.hero{animation:nlUp .8s both}
 @keyframes nlUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#050816}::-webkit-scrollbar-thumb{background:linear-gradient(var(--violet),var(--blue));border-radius:10px}
 @media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+
+.heroLogo{margin:18px 0 22px}
+.heroLogo img{width:150px;max-width:55%;height:auto;border-radius:30px;background:#fff;padding:6px;box-shadow:0 0 0 3px rgba(0,245,160,.6),0 0 42px rgba(139,92,255,.6),0 14px 36px rgba(0,0,0,.5);animation:nlFloat 5s ease-in-out infinite}
 </style>
 </head>
 <body>
@@ -195,7 +198,8 @@ section,.hero{animation:nlUp .8s both}
 <div class="heroGrid">
 <div>
 <span class="badge" data-k="version">● ಆವೃತ್ತಿ 1.19.10</span>
-<h1 data-k="title">ಇನ್ನಷ್ಟು ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ರೈಡ್ ಆಯ್ಕೆಮಾಡಿ.<br><span class="gradient">ನಿಮ್ಮ ನಿಯಮಗಳಂತೆ ಚಾಲನೆ ಮಾಡಿ.</span></h1>
+<h1 data-k="title">ಇನ್ನಷ್ಟು ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ರೈಡ್ ಆಯ್ಕೆಮಾಡಿ.</h1>
+<div class="heroLogo"><img src="https://i.ibb.co/23wYg7YM/file-0000000085b08211ae79c66db3f79e9d.png" alt="Driver Ride Picker logo" referrerpolicy="no-referrer"></div>
 <p data-k="intro">ಆಟೋ, ಕಾರು ಮತ್ತು ಬೈಕ್ ಚಾಲಕರಿಗಾಗಿ ಸಹಾಯಕ ರೈಡ್ ಆಯ್ಕೆ ಸಾಧನ (ವಿಶೇಷವಾಗಿ ಕೈ/ಬೆರಳಿನ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ ಅಥವಾ ದೈಹಿಕ ಮಿತಿಗಳಿರುವವರಿಗೆ).</p>
 <span class="pill" data-k="pill1">🚗 ಆಟೋ • ಕಾರು • ಬೈಕ್</span>
 <span class="pill" data-k="pill2">🌐 5 ಭಾಷೆಗಳು</span>
@@ -645,7 +649,7 @@ function renderFullGuide(lang){
 const common = {
 en: {
   navFeatures:"Features", navPlans:"Plans", navGuide:"Full Guide", navSupport:"Support", version:"● VERSION 1.19.10",
-  title:'Choose rides smarter.<br><span class="gradient">Drive on your terms.</span>',
+  title:'Choose rides smarter.',
   intro:"An assistive ride-selection helper for auto, car and bike drivers with physical limitations (such as hand/finger surgery recovery). Set fare, pickup distance, trip distance and area preferences.",
   download:"⬇ Download APK v1.19.10", watch:"▶ Watch setup video", pill1:"🚗 Auto • Car • Bike", pill2:"🌐 5 languages", pill3:"🎁 48 Hours Free Trial", downloadNote:"Download the latest v1.19.10 APK directly. This ensures you always get the safest version.",
   cardTitle:"Your rides. Your filters.", tagline:"Drive Smart • Save Time • Ride Better!", join:"Join Telegram for Support",
@@ -723,5 +727,4 @@ en: {
   ppOutroTitle: "✅ After Installation — Turn It Back ON:",
   ppOutroDesc: "Once the app is installed, immediately go back to Google Play Store → Play Protect → and turn \"Scan apps with Play Protect\" back ON. Play Protect auto-resumes after 24 hours even if you forget. This keeps your phone safe.",
 
-  ppContent: `Driver Ride Picker – Privacy Policy\nLast updated: October 2026\n\n1. Information We Collect\nWe collect mobile number, device identifiers, ride preferences, and transaction info.\n\n2. Accessibility Service Usage & Road Safety\nWe use Accessibility Service to read screen of ride-hailing apps to accept rides based on your filters. This acts as a ROAD SAFETY feature by reducing phone distraction. We DO NOT store any screen text.\n\n3. How We Use Information\nTo secure accounts, provide ride filtering, manage plans, and prevent fraud.\n\n4. INDEMNIFICATION & NO RESPONSIBILITY FOR ACCOUNT ACTIONS\nYou agree to INDEMNIFY AND HOLD HARMLESS Driver Ride Picker and its developers from any claims, losses, or damages arising from your use of this app. This includes, but is not limited to:\n• Any warning, restriction, temporary suspension, permanent ban, disablement, deletion, or termination of your account by any ride-hailing platform.\n• Any loss of earnings, rides, ratings, or goodwill.\n• Any legal action, penalty, or fine imposed on you by a platform or authority.\n• Any accident, injury, or traffic violation.\n• Any unintended booking, fare loss, or cancellation resulting from automatic acceptance.\n• Any other direct, indirect, incidental, or consequential damages.\n\nYou acknowledge that you are solely responsible for your account and compliance with platform terms. The developers accept NO responsibility for account actions taken against you.\n\nContact: driverridepicker@gmail.com`,
-  tcContent: `Driver Ride Picker – Terms & Conditions\nLast updated: October 2026\n\n1. Assistive Purpose\nDesigned for drivers with physical li
+  ppContent: `Driver Ride Picker – Privacy Policy\nLast updated: October 2026\n\n1. Information We Collect\nWe collect mobile number, device identifiers, ride preferences, and transaction info.\n\n2. Accessibility Service Usage & Road Safety\nWe use Accessibility Service to read screen of ride-hailing apps to accept rides based on your filters. This acts as a ROAD SAFETY feature by reducing phone distraction. We DO NOT store any screen text.\n\n3. How We Use Information\nTo secure accounts, provide ride filtering, manage plans, and prevent fraud.\n\n4. INDEMNIFICATION & NO RESPONSIBILITY FOR ACCOUNT ACTIONS\nYou agree to INDEMNIFY AND HOLD HARMLESS Driver Ride Picker and its developers from any claims, losses, or damages arising from your use of this app. This includes, but is not limited to:\n• Any warning, restriction, temporary suspension, permanent ban, disablement, deletion, or termination of your account by any ride-hailing platform.\n• Any loss of earnings, rides, ratings, or goodwill.\n• Any legal action, penalty, or fine imposed on you by a platform or authority.\n• Any accident, injury, or traffic violation.\n• Any unintended booking, fare loss, or cancellation resulting from automatic acceptance.\n• Any other direct, indirect, incidental, or consequential damages.\n\nYou acknowledge that you are solely responsi
